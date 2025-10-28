@@ -1,0 +1,31 @@
+# Lens Studio
+.vscode/
+Support/
+Backup*/
+jsconfig.json
+
+# Spark AR
+*.arprojbk
+
+# Effect House
+*.ignore
+
+# OS generated files 
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Large media files
+*.tiff
+*.avi
+*.flv
+*.mov
+*.wmv
+
+# Project files
+Project Assets/
+Media/
