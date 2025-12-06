@@ -1,12 +1,10 @@
-- !<Material/7954ab9e-9f33-4e8c-a18b-7c5c72cac3c2>
+- !<Material/b1d5e7fb-79f4-41c5-b631-7844501759a9>
   PackagePath: ""
   PassesInfo:
-    - !<own> 59205427-f9c4-4876-94c1-f984fda485ac
-- !<PassInfo/59205427-f9c4-4876-94c1-f984fda485ac>
+    - !<own> c42421f8-6f33-49f5-a73f-6442bc87a2f0
+- !<PassInfo/c42421f8-6f33-49f5-a73f-6442bc87a2f0>
   CachedProperties:
-    - Port_Default_N369:
-        typeIdx: 5
-        value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    []
   DepthWrite: false
   DepthTest: false
   DepthFunction: LessEqual
@@ -18,32 +16,35 @@
   FrustumCullPad: 0.000000
   InstanceCount: 1
   Defines:
+    - ENABLE_OPACITY_TEX
     - NODE_13_DROPLIST_ITEM 0
     - NODE_27_DROPLIST_ITEM 0
     - NODE_49_DROPLIST_ITEM 0
     - NODE_69_DROPLIST_ITEM 0
-    - ENABLE_BASE_TEX
   BlendMode: PremultipliedAlphaAuto
   Properties:
-    Port_Default_N204:
-      typeIdx: 1
-      value: 0.000000
+    Port_Default_N369:
+      typeIdx: 5
+      value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
     PreviewEnabled:
       typeIdx: 0
       value: 0
     baseColor:
       typeIdx: 5
-      value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
-    baseTex:
+      value: {x: 1.000000, y: 0.882353, z: 0.647059, w: 1.000000}
+    opacityMul:
+      typeIdx: 1
+      value: 1.000000
+    opacityTex:
       typeIdx: 9
       value:
-        id: 1350eb34-77b6-4f78-9c28-632e8d27d4fc
+        id: b1cc9164-bc3a-4fa0-8c61-fcd8e5724a0f
         sampler:
           filteringMode: Trilinear
-          wrapModeU: ClampToEdge
-          wrapModeV: ClampToEdge
-          wrapModeW: ClampToEdge
-          borderColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+          wrapModeU: Repeat
+          wrapModeV: Repeat
+          wrapModeW: Repeat
+          borderColor: {x: 0.000000, y: 0.000000, z: 0.000000, w: 0.000000}
           mipmaps: false
         type: Texture2D
-  Pass: !<reference> 86925cb2-9ceb-49fb-8d18-1861fef29c1b
+  Pass: !<reference> a9010209-60fe-4e9c-86d8-97955e1f50ea

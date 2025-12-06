@@ -1,0 +1,48 @@
+- !<AssetImportMetadata/884058bc-433d-45e0-8f43-c0165d074df8>
+  ImportedAssetIds:
+    JavaScriptAsset: !<reference> 6056775e-db08-441b-aea4-74353ab5a12d
+  ImporterName: JavaScriptAssetImporter
+  PrimaryAsset: !<reference> 6056775e-db08-441b-aea4-74353ab5a12d
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    JavaScriptAsset: !<own> 82b77463-8b18-4bdc-a460-aad4620b1dd2
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<ScriptAssetData/82b77463-8b18-4bdc-a460-aad4620b1dd2>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: cb1613ff-a3fa-4e9f-9710-03348d6e1f6a
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    aspect: false
+    debug: false
+    debugName: false
+    debugText: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - aspect: 0.500000
+      debug: false
+      debugName: Menu
+      debugText: !<reference.Text> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    -
+      {}
