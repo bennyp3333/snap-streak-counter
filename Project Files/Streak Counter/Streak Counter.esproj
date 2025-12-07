@@ -13,7 +13,7 @@ metaInfo:
     []
   tags:
     []
-  lensName: Untitled
+  lensName: Streak Counter
   lensDescriptors:
     []
   lensApplicability:
@@ -21,7 +21,6 @@ metaInfo:
     - Back
   lensClientCompatibilities:
     - Mobile
-    - Web
   platformBundlesEnabled: false
   iconHash: ""
   videoPreviewHash: ""

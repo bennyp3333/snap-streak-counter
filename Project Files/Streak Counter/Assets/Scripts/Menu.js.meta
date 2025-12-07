@@ -26,6 +26,7 @@
   ExportUid: 00000000-0000-0000-0000-000000000000
   PackagePolicy: CanBeUnpacked
   ScriptInputsHidden:
+    camera: false
     debug: false
     debugName: false
     debugText: false
@@ -38,7 +39,8 @@
   Attachments:
     []
   DefaultScriptInputs:
-    - debug: false
+    - camera: !<reference.Camera> 00000000-0000-0000-0000-000000000000
+      debug: false
       debugName: Menu
       debugText: !<reference.Text> 00000000-0000-0000-0000-000000000000
   ScriptTypes:

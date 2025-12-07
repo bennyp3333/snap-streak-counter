@@ -1,4 +1,4 @@
-
+//@input Component.Camera camera
 //@ui {"widget":"separator"}
 //@input bool debug
 //@input string debugName = "Menu" {"showIf":"debug"}
@@ -39,7 +39,7 @@ function toggle(){
 }
 
 function setAspect(screenTransform, aspect){
-    var cameraAspect = global.MainCamera.camera.aspect;
+    var cameraAspect = script.camera.aspect;
     var width = screenTransform.anchors.getSize().x;
     var height = width * aspect * cameraAspect;
     screenTransform.anchors.setSize(new vec2(width, height));
