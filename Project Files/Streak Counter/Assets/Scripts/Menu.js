@@ -1,4 +1,4 @@
-//@input float aspect = 1.0
+
 //@ui {"widget":"separator"}
 //@input bool debug
 //@input string debugName = "Menu" {"showIf":"debug"}
@@ -13,7 +13,7 @@ var isAnimating = false;
 
 function init(){
     //set aspect ratio
-    setAspect(selfScreenTransform, script.aspect);
+    setAspect(selfScreenTransform, 1.0);
     
     debugPrint("Initilized!");
 }

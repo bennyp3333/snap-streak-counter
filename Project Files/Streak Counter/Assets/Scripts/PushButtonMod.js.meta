@@ -1,0 +1,88 @@
+- !<AssetImportMetadata/56515974-6366-4c79-b888-f75e5d59d411>
+  ImportedAssetIds:
+    JavaScriptAsset: !<reference> 3767bec4-c5e9-4404-9465-3aa820dd6b20
+  ImporterName: JavaScriptAssetImporter
+  PrimaryAsset: !<reference> 3767bec4-c5e9-4404-9465-3aa820dd6b20
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    JavaScriptAsset: !<own> db0280c1-c656-493f-864d-614afe090325
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<ScriptAssetData/db0280c1-c656-493f-864d-614afe090325>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: e7891713-39b1-47ab-9615-d6f1a374f3fd
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    buttonID: false
+    callbackType: false
+    colorOnPress: false
+    customFunctionScript: false
+    defaultColor: false
+    delayTime: false
+    editAdvancedOptions: false
+    editEventCallbacks: false
+    interactable: false
+    moreOptions: false
+    onPressFunctionData: false
+    onPressFunctionName: false
+    onPressGlobalFunctionData: false
+    onPressGlobalFunctionName: false
+    pressOnStart: false
+    pressed: false
+    pressedColor: false
+    pressedScale: false
+    printDebugStatements: false
+    printWarningStatements: false
+    scaleOnPress: false
+    tapAudioTrack: false
+    touchBlockingEnabled: false
+    useAudio: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - interactable: true
+      pressed: false
+      buttonID: 0
+      moreOptions: false
+      pressOnStart: false
+      delayTime: !<float> 0.000000
+      editEventCallbacks: false
+      callbackType: 0
+      onPressGlobalFunctionName: ""
+      onPressGlobalFunctionData: ""
+      customFunctionScript: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
+      onPressFunctionName: ""
+      onPressFunctionData: ""
+      scaleOnPress: false
+      pressedScale: 0.900000
+      colorOnPress: false
+      defaultColor: !<Vec3> {x: 1.000000, y: 1.000000, z: 1.000000}
+      pressedColor: !<Vec3> {x: 0.800000, y: 0.800000, z: 0.800000}
+      useAudio: false
+      tapAudioTrack: !<reference.AudioTrackAsset> 00000000-0000-0000-0000-000000000000
+      editAdvancedOptions: false
+      touchBlockingEnabled: true
+      printDebugStatements: false
+      printWarningStatements: true
+  ScriptTypes:
+    -
+      {}

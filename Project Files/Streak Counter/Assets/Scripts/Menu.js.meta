@@ -26,7 +26,6 @@
   ExportUid: 00000000-0000-0000-0000-000000000000
   PackagePolicy: CanBeUnpacked
   ScriptInputsHidden:
-    aspect: false
     debug: false
     debugName: false
     debugText: false
@@ -39,8 +38,7 @@
   Attachments:
     []
   DefaultScriptInputs:
-    - aspect: 0.500000
-      debug: false
+    - debug: false
       debugName: Menu
       debugText: !<reference.Text> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
