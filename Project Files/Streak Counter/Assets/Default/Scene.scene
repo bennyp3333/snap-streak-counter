@@ -560,6 +560,39 @@
   RotationAngle: 0
   Pivot: {x: 0.000000, y: 0.000000}
   ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
+- !<ScreenTransform/11297743-5327-4880-93b9-0311fc6e5e30>
+  PrefabRemaps:
+    []
+  Name: Screen Transform
+  Enabled: true
+  IsAdvanced: false
+  Constraints:
+    pinToLeft: false
+    pinToTop: false
+    pinToRight: false
+    pinToBottom: false
+    fixedWidth: false
+    fixedHeight: false
+    deactivatedFixedSprite: false
+    deactivatedFixedPivot: false
+  Pivot: {x: 0.000000, y: 0.000000}
+  Transform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  RawMode: true
+  ForceBasic: true
+  Anchor:
+    left: -1.000000
+    bottom: -1.000000
+    right: 1.000000
+    top: 1.000000
+  Offset:
+    left: 0.000000
+    bottom: 0.000000
+    right: 0.000000
+    top: 0.000000
 - !<SceneObject/112b2cdc-d993-4a74-ba00-77f8d1fcd8da>
   PrefabRemaps:
     - 112b2cdc-d993-4a74-ba00-77f8d1fcd8da: 55ffa58e-5bd0-41d3-6ce7-a4a4f2df7f2a
@@ -1230,7 +1263,7 @@
   TouchHandler: !<reference> 00000000-0000-0000-0000-000000000000
   SizeToFit: false
   FontSize: 20.000000
-  Font: !<reference> d0dba574-04a2-4919-978c-62307b5532cf
+  Font: !<reference> 58614d7d-c8e3-459a-a611-0c1625bfc84b
   FontWeight: 500
   Italic: false
   LayoutRect:
@@ -1261,17 +1294,17 @@
       TextureStretch: FitWidth
     Size: 0.250000
   Dropshadow: !<DropshadowSettings>
-    Enabled: false
+    Enabled: true
     Fill: !<TextFill>
       Mode: Solid
-      Color: {x: 0.000000, y: 0.000000, z: 0.000000, w: 1.000000}
+      Color: {x: 0.000000, y: 0.000000, z: 0.000000, w: 0.200000}
       Texture: !<reference> 00000000-0000-0000-0000-000000000000
       ColorTint: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
       TileCount: 5.000000
       TileZone: Rect
       TextureStretch: FitWidth
-    OffsetX: 0.250000
-    OffsetY: 0.250000
+    OffsetX: 0.500000
+    OffsetY: 0.500000
   Background: !<BackgroundSettings>
     Enabled: false
     Fill: !<TextFill>
@@ -1897,6 +1930,22 @@
     bottom: 0.000000
     right: 0.000000
     top: 0.000000
+- !<SceneObject/3a9064b5-36e0-48f9-8c27-92ce05d7b6cb>
+  PrefabRemaps:
+    []
+  Name: Friend Icon
+  Enabled: false
+  Layers: 1048576
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 11297743-5327-4880-93b9-0311fc6e5e30
+    - !<own> 941b106b-9853-4d45-97ce-8204e38e88d0
 - !<SceneObject/3de6301a-6cf1-4dd2-a468-b3d4b355743f>
   PrefabRemaps:
     []
@@ -3677,6 +3726,25 @@
   Components:
     - !<own> 3a6dfab9-04fb-4a00-a1ef-38d884122739
     - !<own> 32a86a88-e96e-4208-b53e-174eff154467
+- !<Image/941b106b-9853-4d45-97ce-8204e38e88d0>
+  PrefabRemaps:
+    []
+  Name: Image
+  Enabled: true
+  RenderOrder: 2
+  StretchMode: Fit
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 499fe772-681f-45ab-a849-a1b4072082d5
+  FlipX: false
+  FlipY: false
+  RotationAngle: 0
+  Pivot: {x: 0.000000, y: 0.000000}
+  ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
 - !<ScriptComponent/948ebc0d-b936-4010-9328-daf043784b93>
   PrefabRemaps:
     []
@@ -5157,6 +5225,7 @@
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
   Children:
+    - !<own> 3a9064b5-36e0-48f9-8c27-92ce05d7b6cb
     - !<own> 995cddc4-bbe1-4391-af32-0e583e963cb7
     - !<own> 65de4636-074b-466d-bc5b-38f9269a3ccc
   Components:
