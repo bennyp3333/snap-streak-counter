@@ -29,7 +29,7 @@
       mesh: None Compression
     Overrides:
       {}
-- !<SceneObject/8fbe8d4a-7d55-4da2-4341-0543c5b1904f>
+- !<SceneObject/87427077-4b28-43dd-4813-1024468823b2>
   PrefabRemaps:
     []
   Name: flame_logo
@@ -41,25 +41,10 @@
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
   Children:
-    - !<own> 97e665e3-3f96-4071-43ca-f39f3c5561b4
+    - !<own> d52a8883-f12f-41e6-7b6e-6b67c0f38ceb
   Components:
     []
-- !<SceneObject/97e665e3-3f96-4071-43ca-f39f3c5561b4>
-  PrefabRemaps:
-    []
-  Name: Flame
-  Enabled: true
-  Layers: 1
-  LocalTransform: !<TransformEntity>
-    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
-    HasSegmentScaleCompensation: false
-  Children:
-    []
-  Components:
-    - !<own> d11602db-cefb-4987-6059-eafc9e4d2561
-- !<RenderMeshVisual/d11602db-cefb-4987-6059-eafc9e4d2561>
+- !<RenderMeshVisual/cc663286-796a-4351-7cd9-6487926def22>
   PrefabRemaps:
     []
   Name: component_0
@@ -79,8 +64,23 @@
   BlendNormals: false
   BlendShapes:
     {}
+- !<SceneObject/d52a8883-f12f-41e6-7b6e-6b67c0f38ceb>
+  PrefabRemaps:
+    []
+  Name: Flame
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> cc663286-796a-4351-7cd9-6487926def22
 - !<ObjectPrefabAssetData/d9dec3ab-2753-4a97-90ad-fb1cbc678280>
   Prototype: !<ObjectOwner/c1e207fd-d8d3-4840-9982-c18f6c748330>
     PackagePath: ""
     objects:
-      - !<own> 8fbe8d4a-7d55-4da2-4341-0543c5b1904f
+      - !<own> 87427077-4b28-43dd-4813-1024468823b2

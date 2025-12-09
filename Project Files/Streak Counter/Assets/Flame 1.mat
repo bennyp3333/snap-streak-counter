@@ -1,9 +1,15 @@
-- !<Material/5c868111-02ae-418b-a8e1-6ec2fd30c0aa>
+- !<Material/79520b2e-a2d0-44c0-8a0d-fae5656a82ca>
   PackagePath: ""
   PassesInfo:
-    - !<own> 10b3f04b-5932-42a2-ac43-b482668598d1
-- !<PassInfo/10b3f04b-5932-42a2-ac43-b482668598d1>
+    - !<own> c2a184b0-0ffb-4ed9-866b-d46eed8ec810
+- !<PassInfo/c2a184b0-0ffb-4ed9-866b-d46eed8ec810>
   CachedProperties:
+    - Port_Base_N178:
+        typeIdx: 5
+        value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    - Port_Color_N178:
+        typeIdx: 5
+        value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
     - Port_Default_N033:
         typeIdx: 4
         value: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -34,6 +40,15 @@
     - Port_Input0_N146:
         typeIdx: 1
         value: 1.000000
+    - Port_Input0_N177:
+        typeIdx: 5
+        value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    - Port_Input1_N177:
+        typeIdx: 4
+        value: {x: 1.000000, y: 1.000000, z: 1.000000}
+    - Port_Input_N178:
+        typeIdx: 5
+        value: {x: 0.000000, y: 0.000000, z: 0.000000, w: 0.000000}
     - Port_LODValue_N003:
         typeIdx: 1
         value: 0.000000
@@ -58,6 +73,12 @@
     - Port_Normal_N025:
         typeIdx: 4
         value: {x: 0.000000, y: 0.000000, z: 1.000000}
+    - Port_Output_N177:
+        typeIdx: 5
+        value: {x: 0.000000, y: 0.000000, z: 0.000000, w: 0.000000}
+    - Port_Override_N178:
+        typeIdx: 4
+        value: {x: 0.000000, y: 0.000000, z: 0.000000}
     - Port_PrevWorldPosition_N004:
         typeIdx: 4
         value: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -73,9 +94,9 @@
     - Port_Speed_N063:
         typeIdx: 1
         value: 1.000000
-    - Port_Value2_N179:
-        typeIdx: 1
-        value: 1.000000
+    - Port_Value1_N179:
+        typeIdx: 4
+        value: {x: 0.000000, y: 0.000000, z: 0.000000}
     - Port_Value3_N097:
         typeIdx: 1
         value: 0.000000
@@ -115,13 +136,13 @@
     - NODE_27_DROPLIST_ITEM 0
     - NODE_39_DROPLIST_ITEM 0
     - NODE_49_DROPLIST_ITEM 0
-    - NODE_73_DROPLIST_ITEM 0
-    - Tweak_N36
-    - Tweak_N41
     - NODE_69_DROPLIST_ITEM 0
+    - NODE_73_DROPLIST_ITEM 0
     - Tweak_N128 0
     - Tweak_N153 0
+    - Tweak_N36
     - Tweak_N39 0
+    - Tweak_N41
     - Tweak_N73 0
   BlendMode: PremultipliedAlphaAuto
   Properties:
@@ -152,6 +173,9 @@
     Port_Input1_N100:
       typeIdx: 4
       value: {x: 0.212500, y: 0.715400, z: 0.072100}
+    Port_Value2_N179:
+      typeIdx: 1
+      value: 1.000000
     Port_useMatrix_N034:
       typeIdx: 1
       value: 1.000000
@@ -178,7 +202,7 @@
         2: {x: 0.000000, y: 0.000000, z: 1.000000}
     baseColor:
       typeIdx: 5
-      value: {x: 0.972549, y: 0.454902, z: 0.000000, w: 1.000000}
+      value: {x: 0.972549, y: 0.453849, z: 0.000000, w: 0.500008}
     detNormalStrength:
       typeIdx: 1
       value: 1.000000
@@ -193,14 +217,14 @@
       value: 1.000000
     reflectionIntensity:
       typeIdx: 1
-      value: 5.000000
+      value: 1.000000
     reflectionRotationY:
       typeIdx: 1
       value: 0.000000
     reflectionTex:
       typeIdx: 9
       value:
-        id: a20f788e-3ded-48bb-9f9d-c132fe9e8d9d
+        id: 3a91893b-8591-49c7-9170-12a278474349
         sampler:
           filteringMode: Trilinear
           wrapModeU: Repeat
@@ -218,4 +242,4 @@
     refletionRotationX:
       typeIdx: 1
       value: 0.000000
-  Pass: !<reference> 8561b419-1701-4e42-bd3b-90a05c4d8492
+  Pass: !<reference> 8183490f-07bb-46ff-9eb5-882a6af66fb9
