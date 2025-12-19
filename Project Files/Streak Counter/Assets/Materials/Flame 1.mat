@@ -227,11 +227,11 @@
         id: 3a91893b-8591-49c7-9170-12a278474349
         sampler:
           filteringMode: Trilinear
-          wrapModeU: Repeat
-          wrapModeV: Repeat
+          wrapModeU: MirroredRepeat
+          wrapModeV: MirroredRepeat
           wrapModeW: Repeat
           borderColor: {x: 0.000000, y: 0.000000, z: 0.000000, w: 0.000000}
-          mipmaps: false
+          mipmaps: true
         type: Texture2D
     reflectionTexTransform:
       typeIdx: 7

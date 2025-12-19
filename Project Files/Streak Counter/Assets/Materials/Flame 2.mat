@@ -34,6 +34,24 @@
     - Port_Input0_N146:
         typeIdx: 1
         value: 1.000000
+    - Port_Input0_N181:
+        typeIdx: 5
+        value: {x: 0.000000, y: 0.000000, z: 0.000000, w: 0.000000}
+    - Port_Input0_N182:
+        typeIdx: 5
+        value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    - Port_Input0_N184:
+        typeIdx: 5
+        value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+    - Port_Input1_N181:
+        typeIdx: 1
+        value: 0.500000
+    - Port_Input1_N182:
+        typeIdx: 1
+        value: 0.500000
+    - Port_Input1_N184:
+        typeIdx: 5
+        value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
     - Port_LODValue_N003:
         typeIdx: 1
         value: 0.000000
@@ -52,6 +70,9 @@
     - Port_LODValue_N170:
         typeIdx: 1
         value: 10.000000
+    - Port_LODValue_N183:
+        typeIdx: 1
+        value: 0.000000
     - Port_Mask_N178:
         typeIdx: 1
         value: 1.000000
@@ -73,6 +94,9 @@
     - Port_Speed_N063:
         typeIdx: 1
         value: 1.000000
+    - Port_UVCoord_N183:
+        typeIdx: 3
+        value: {x: 0.000000, y: 0.000000}
     - Port_Value2_N179:
         typeIdx: 1
         value: 1.000000
@@ -203,11 +227,11 @@
         id: a20f788e-3ded-48bb-9f9d-c132fe9e8d9d
         sampler:
           filteringMode: Trilinear
-          wrapModeU: Repeat
-          wrapModeV: Repeat
+          wrapModeU: MirroredRepeat
+          wrapModeV: MirroredRepeat
           wrapModeW: Repeat
           borderColor: {x: 0.000000, y: 0.000000, z: 0.000000, w: 0.000000}
-          mipmaps: false
+          mipmaps: true
         type: Texture2D
     reflectionTexTransform:
       typeIdx: 7
