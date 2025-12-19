@@ -3,6 +3,8 @@
 //@ui {"widget":"separator"}
 //@input Asset.Texture[] blankTextures
 //@ui {"widget":"separator"}
+//@input Component.ScriptComponent pushButton
+//@ui {"widget":"separator"}
 //@input bool debug
 //@input string debugName = "Spawnable" {"showIf":"debug"}
 //@input Component.Text debugText {"showIf":"debug"}
@@ -77,6 +79,19 @@ script.lock = function(){
 
 script.onPress = function(){
     global.events.trigger("onBadgePressed", script.id);
+}
+
+script.reparent = function(newParent){
+    self.setParent(newParent);
+}
+
+script.setRenderOrder = function(renderOrder){
+    selfImage.setRenderOrder(renderOrder);
+    script.blankIcon.setRenderOrder(renderOrder + 1);
+}
+
+script.setInteractable = function(state){
+    script.pushButton.setInteractable(state);
 }
 
 // SELF-MANAGEMENT METHODS

@@ -26,14 +26,17 @@
   ExportUid: 00000000-0000-0000-0000-000000000000
   PackagePolicy: CanBeUnpacked
   ScriptInputsHidden:
+    badgeEnd: false
+    badgeNameText: false
     badgeTemplate: false
     badgeTextures: false
     debug: false
     debugName: false
     debugText: false
+    maskedContainer: false
     padding: false
-    spawnParent: false
     swipeMultiplier: false
+    unmaskedContainer: false
   ScriptTypesHidden:
     {}
   ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
@@ -43,8 +46,11 @@
   Attachments:
     []
   DefaultScriptInputs:
-    - badgeTemplate: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
-      spawnParent: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+    - maskedContainer: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      unmaskedContainer: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      badgeTemplate: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      badgeEnd: !<reference.ScreenTransform> 00000000-0000-0000-0000-000000000000
+      badgeNameText: !<reference.Text> 00000000-0000-0000-0000-000000000000
       badgeTextures: !<reference.Texture[]>
         []
       padding: 0.050000

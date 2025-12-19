@@ -151,7 +151,7 @@ script.api.setPosition = function(screenPos, depth) {
 script.api.update = updatePosition;
 
 // Initialize and set initial position
-
+/*
 var delayedEvent = script.createEvent("DelayedCallbackEvent");
 delayedEvent.bind(function(eventData)
 {
@@ -160,6 +160,7 @@ delayedEvent.bind(function(eventData)
     }
 });
 delayedEvent.reset(1);
+*/
 
 // ===== Debug Functions =====
 function printDebug(message) {

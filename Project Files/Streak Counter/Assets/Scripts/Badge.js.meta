@@ -32,6 +32,7 @@
     debugName: false
     debugText: false
     extents: false
+    pushButton: false
   ScriptTypesHidden:
     {}
   ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
@@ -45,6 +46,7 @@
       blankIcon: !<reference.Image> 00000000-0000-0000-0000-000000000000
       blankTextures: !<reference.Texture[]>
         []
+      pushButton: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
       debug: false
       debugName: Spawnable
       debugText: !<reference.Text> 00000000-0000-0000-0000-000000000000
