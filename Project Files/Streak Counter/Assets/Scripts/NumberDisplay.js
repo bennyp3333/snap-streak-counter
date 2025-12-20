@@ -60,7 +60,7 @@ function setLogoMaterial(num){
         logoMesh.clearMaterials();
         logoMesh.addMaterial(script.logoMaterials[1]);
         script.logoSparkles.enabled = true;
-    }else if(num < 400){
+    }else{
         logoMesh.clearMaterials();
         logoMesh.addMaterial(script.logoMaterials[2]);
         script.logoSparkles.enabled = true;
@@ -210,4 +210,4 @@ function debugPrint(text, force) {
 
 // Expose API
 script.setNumber = setNumber;
-setNumber(340);
+setNumber(0);

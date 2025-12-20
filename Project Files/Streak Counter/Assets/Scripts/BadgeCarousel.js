@@ -9,6 +9,8 @@
 //@input float padding = 0.05
 //@input float swipeMultiplier = 1
 //@ui {"widget":"separator"}
+//@input Component.Image popupBadge
+//@ui {"widget":"separator"}
 //@input bool debug
 //@input string debugName = "" {"showIf":"debug"}
 //@input Component.Text debugText {"showIf":"debug"}
@@ -129,6 +131,7 @@ function spawnAllBadges() {
             script: spawned.script,
             priority: badge.priority,
             group: badge.group,
+            texture: script.badgeTextures[i],
             unlocked: false
         };
         
@@ -309,7 +312,7 @@ function unlockRandomBadge(){
     sortAndLayout();
 }
 
-function unlockBadge(badgeId) {
+function unlockBadge(badgeId, callback) {
     for (var i = 0; i < spawnedBadges.length; i++) {
         if (spawnedBadges[i].id !== badgeId) continue;
         if (spawnedBadges[i].unlocked) return true; // Already unlocked
@@ -321,11 +324,24 @@ function unlockBadge(badgeId) {
             unlockedIds.push(badgeId);
             saveUnlockedBadges();
         }
+
+        unlockAnim(spawnedBadges[i].texture, callback);
         
         sortAndLayout();
         return true;
     }
     return false;
+}
+
+function unlockAnim(badgeTexture, callback){
+    print("animating");
+    script.popupBadge.mainPass.baseTex = badgeTexture;
+    global.faderManager.show("Badge Popup");
+    global.faderManager.hide("Badge Popup", {delay: 3, cancel: "none"});
+    global.faderManager.show("Badge Unlocked Text");
+    global.faderManager.hide("Badge Unlocked Text", {delay: 3, cancel: "none"}, function(){
+        if(callback){ callback(); }
+    });
 }
 
 function lockBadge(badgeId) {
