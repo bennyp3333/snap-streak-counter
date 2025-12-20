@@ -4,6 +4,7 @@
 //@input string spawnGroup
 //@input SceneObject spawnParent
 //@input SceneObject logo
+//@input SceneObject heart
 //@ui {"widget":"separator"}
 //@input float padding = 0.5
 //@input float logoPadding = 1.0
@@ -23,7 +24,7 @@
 //@input Component.Text debugText {"showIf":"debug"}
 
 var activeDigits = [];
-var currentNumber = -1;
+var currentNumber = null;
 
 function setNumber(num) {
     if (num === currentNumber) {
@@ -37,16 +38,24 @@ function setNumber(num) {
     // Clear existing digits
     clearDigits();
     
-    // Get individual digits
-    var digits = getDigitsArray(num);
-    
-    // Spawn new digit models
-    spawnDigits(digits);
-    
-    // Arrange digits and logo
-    arrangeDisplay();
+    if(num >= 0){
+        script.heart.enabled = false;
+        script.logo.enabled = true;
 
-    setLogoMaterial(num);
+        // Get individual digits
+        var digits = getDigitsArray(num);
+        
+        // Spawn new digit models
+        spawnDigits(digits);
+        
+        // Arrange digits and logo
+        arrangeDisplay();
+
+        setLogoMaterial(num);
+    }else{
+        script.heart.enabled = true;
+        script.logo.enabled = false;
+    }
 }
 
 function setLogoMaterial(num){
@@ -210,4 +219,4 @@ function debugPrint(text, force) {
 
 // Expose API
 script.setNumber = setNumber;
-setNumber(0);
+setNumber(-1);

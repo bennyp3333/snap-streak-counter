@@ -31,6 +31,7 @@
     debugText: false
     digitPositionY: false
     digits: false
+    heart: false
     logo: false
     logoMaterials: false
     logoPadding: false
@@ -56,6 +57,7 @@
       spawnGroup: ""
       spawnParent: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       logo: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      heart: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       padding: 0.500000
       logoPadding: !<float> 1.000000
       maxWidth: !<float> 10.000000
