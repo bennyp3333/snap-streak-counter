@@ -1,8 +1,8 @@
-- !<Material/eb4ec570-58d9-43fe-80b2-c48681529b09>
+- !<Material/fc063a93-5519-4fef-b50a-c872a0b0949a>
   PackagePath: ""
   PassesInfo:
-    - !<own> e1de1a68-8a9c-40b8-88b1-8810de01d3d0
-- !<PassInfo/e1de1a68-8a9c-40b8-88b1-8810de01d3d0>
+    - !<own> baa6519b-48d6-468d-bc02-47ed11a30382
+- !<PassInfo/baa6519b-48d6-468d-bc02-47ed11a30382>
   CachedProperties:
     - Port_Default_N033:
         typeIdx: 4
@@ -34,24 +34,6 @@
     - Port_Input0_N146:
         typeIdx: 1
         value: 1.000000
-    - Port_Input0_N181:
-        typeIdx: 5
-        value: {x: 0.000000, y: 0.000000, z: 0.000000, w: 0.000000}
-    - Port_Input0_N182:
-        typeIdx: 5
-        value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
-    - Port_Input0_N184:
-        typeIdx: 5
-        value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
-    - Port_Input1_N181:
-        typeIdx: 1
-        value: 0.500000
-    - Port_Input1_N182:
-        typeIdx: 1
-        value: 0.500000
-    - Port_Input1_N184:
-        typeIdx: 5
-        value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
     - Port_LODValue_N003:
         typeIdx: 1
         value: 0.000000
@@ -70,9 +52,6 @@
     - Port_LODValue_N170:
         typeIdx: 1
         value: 10.000000
-    - Port_LODValue_N183:
-        typeIdx: 1
-        value: 0.000000
     - Port_Mask_N178:
         typeIdx: 1
         value: 1.000000
@@ -94,9 +73,6 @@
     - Port_Speed_N063:
         typeIdx: 1
         value: 1.000000
-    - Port_UVCoord_N183:
-        typeIdx: 3
-        value: {x: 0.000000, y: 0.000000}
     - Port_Value2_N179:
         typeIdx: 1
         value: 1.000000
@@ -121,9 +97,6 @@
     - Port_WorldTangent_N004:
         typeIdx: 4
         value: {x: 0.000000, y: 0.000000, z: 1.000000}
-    - mainColor:
-        typeIdx: 5
-        value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
   DepthWrite: true
   DepthTest: true
   DepthFunction: LessEqual
@@ -144,12 +117,12 @@
     - NODE_49_DROPLIST_ITEM 0
     - NODE_73_DROPLIST_ITEM 0
     - Tweak_N36
+    - Tweak_N41
     - NODE_69_DROPLIST_ITEM 0
     - Tweak_N128 0
     - Tweak_N153 0
     - Tweak_N39 0
     - Tweak_N73 0
-    - Tweak_N41
   BlendMode: PremultipliedAlphaAuto
   Properties:
     Port_Default_N070:
@@ -188,7 +161,7 @@
     Tweak_N71:
       typeIdx: 9
       value:
-        id: 954e968f-c32e-4ef7-bd63-8c9a4a8b9a65
+        id: d3457a80-2c03-41d0-a95a-b603da4f452e
         sampler:
           filteringMode: Trilinear
           wrapModeU: Repeat
@@ -205,7 +178,7 @@
         2: {x: 0.000000, y: 0.000000, z: 1.000000}
     baseColor:
       typeIdx: 5
-      value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+      value: {x: 1.000000, y: 0.882353, z: 0.411765, w: 1.000000}
     detNormalStrength:
       typeIdx: 1
       value: 1.000000
@@ -214,27 +187,27 @@
       value: 1.000000
     modulusContrast:
       typeIdx: 1
-      value: 0.500000
+      value: 1.000000
     normalStrength:
       typeIdx: 1
       value: 1.000000
     reflectionIntensity:
       typeIdx: 1
-      value: 8.000000
+      value: 2.000000
     reflectionRotationY:
       typeIdx: 1
       value: 0.000000
     reflectionTex:
       typeIdx: 9
       value:
-        id: 396af842-3e32-4969-b0f8-89c110db3f5f
+        id: afc78a08-e2e6-4d29-a7b7-04ea13ce2352
         sampler:
           filteringMode: Trilinear
-          wrapModeU: Repeat
-          wrapModeV: Repeat
+          wrapModeU: MirroredRepeat
+          wrapModeV: MirroredRepeat
           wrapModeW: Repeat
           borderColor: {x: 0.000000, y: 0.000000, z: 0.000000, w: 0.000000}
-          mipmaps: false
+          mipmaps: true
         type: Texture2D
     reflectionTexTransform:
       typeIdx: 7

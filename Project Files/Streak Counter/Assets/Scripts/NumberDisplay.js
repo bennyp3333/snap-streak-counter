@@ -15,6 +15,9 @@
 //@input float digitPositionY = 0
 //@input float logoPositionY = 0
 //@ui {"widget":"separator"}
+//@input Asset.Material[] logoMaterials
+//@input SceneObject logoSparkles
+//@ui {"widget":"separator"}
 //@input bool debug
 //@input string debugName = "" {"showIf":"debug"}
 //@input Component.Text debugText {"showIf":"debug"}
@@ -42,6 +45,26 @@ function setNumber(num) {
     
     // Arrange digits and logo
     arrangeDisplay();
+
+    setLogoMaterial(num);
+}
+
+function setLogoMaterial(num){
+    var logoMesh = script.logo.getComponent("Component.RenderMeshVisual");
+    if(num < 100){
+        //keep current materials
+    }else if(num < 200){
+        logoMesh.clearMaterials();
+        logoMesh.addMaterial(script.logoMaterials[0]);
+    }else if(num < 300){
+        logoMesh.clearMaterials();
+        logoMesh.addMaterial(script.logoMaterials[1]);
+        script.logoSparkles.enabled = true;
+    }else if(num < 400){
+        logoMesh.clearMaterials();
+        logoMesh.addMaterial(script.logoMaterials[2]);
+        script.logoSparkles.enabled = true;
+    }
 }
 
 function getDigitsArray(num) {
@@ -187,4 +210,4 @@ function debugPrint(text, force) {
 
 // Expose API
 script.setNumber = setNumber;
-setNumber(234);
+setNumber(340);

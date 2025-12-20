@@ -32,8 +32,10 @@
     digitPositionY: false
     digits: false
     logo: false
+    logoMaterials: false
     logoPadding: false
     logoPositionY: false
+    logoSparkles: false
     maxScale: false
     maxWidth: false
     padding: false
@@ -61,6 +63,9 @@
       zScalePercent: !<float> 1.000000
       digitPositionY: !<float> 0.000000
       logoPositionY: !<float> 0.000000
+      logoMaterials: !<reference.Material[]>
+        []
+      logoSparkles: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       debug: false
       debugName: ""
       debugText: !<reference.Text> 00000000-0000-0000-0000-000000000000
