@@ -94,13 +94,13 @@
     baseTex:
       typeIdx: 9
       value:
-        id: 00000000-0000-0000-0000-000000000000
+        id: 103e7308-69e7-4db4-af33-09d107c9ada5
         sampler:
           filteringMode: Trilinear
           wrapModeU: Repeat
           wrapModeV: Repeat
           wrapModeW: Repeat
           borderColor: {x: 0.000000, y: 0.000000, z: 0.000000, w: 0.000000}
-          mipmaps: false
+          mipmaps: true
         type: Texture2D
   Pass: !<reference> a9010209-60fe-4e9c-86d8-97955e1f50ea

@@ -4,9 +4,18 @@
     - !<own> bf24ea10-f975-4a62-af9d-683feb925bba
 - !<PassInfo/bf24ea10-f975-4a62-af9d-683feb925bba>
   CachedProperties:
-    - Port_Default_N369:
+    - Port_Bool1_N008:
+        typeIdx: 1
+        value: 0.000000
+    - Port_Bool1_N009:
+        typeIdx: 1
+        value: 0.000000
+    - Port_Default_N008:
         typeIdx: 5
-        value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+        value: {x: 0.000000, y: 0.000000, z: 0.000000, w: 0.000000}
+    - Port_Default_N009:
+        typeIdx: 5
+        value: {x: 0.000000, y: 0.000000, z: 0.000000, w: 0.000000}
     - Port_Depth_N004:
         typeIdx: 1
         value: 1.000000
@@ -28,10 +37,7 @@
     - Port_GSplatScale_N004:
         typeIdx: 4
         value: {x: 0.000000, y: 0.000000, z: 0.000000}
-    - Port_LODValue_N002:
-        typeIdx: 1
-        value: 0.000000
-    - Port_LODValue_N003:
+    - Port_LODValue_N000:
         typeIdx: 1
         value: 0.000000
     - Port_PrevWorldPosition_N004:
@@ -43,16 +49,22 @@
     - Port_RayOrigin_N004:
         typeIdx: 4
         value: {x: 0.000000, y: 0.000000, z: 0.000000}
-    - Port_Speed_N022:
+    - Port_UVCoord_N000:
+        typeIdx: 3
+        value: {x: 0.000000, y: 0.000000}
+    - Port_Value1_N008:
+        typeIdx: 5
+        value: {x: 0.000000, y: 0.000000, z: 0.000000, w: 0.000000}
+    - Port_Value1_N009:
+        typeIdx: 5
+        value: {x: 0.000000, y: 0.000000, z: 0.000000, w: 0.000000}
+    - Port_Value2_N006:
         typeIdx: 1
         value: 1.000000
-    - Port_Speed_N063:
-        typeIdx: 1
-        value: 1.000000
-    - Port_Value3_N001:
+    - Port_Value3_N006:
         typeIdx: 1
         value: 0.000000
-    - Port_Value4_N001:
+    - Port_Value4_N006:
         typeIdx: 1
         value: 0.000000
     - Port_WorldNormal_N004:
@@ -75,32 +87,94 @@
   FrustumCullPad: 0.000000
   InstanceCount: 1
   Defines:
-    - NODE_13_DROPLIST_ITEM 0
-    - NODE_27_DROPLIST_ITEM 0
-    - NODE_49_DROPLIST_ITEM 0
-    - NODE_69_DROPLIST_ITEM 0
-    - ENABLE_BASE_TEX
+    []
   BlendMode: PremultipliedAlphaAuto
   Properties:
-    Port_Default_N204:
+    Port_Center_N065:
+      typeIdx: 3
+      value: {x: 0.500000, y: 0.500000}
+    Port_Import_N063:
+      typeIdx: 3
+      value: {x: 1.000000, y: 1.000000}
+    Port_Import_N066:
+      typeIdx: 3
+      value: {x: -1.000000, y: 1.000000}
+    Port_Import_N068:
+      typeIdx: 3
+      value: {x: 1.000000, y: 0.000000}
+    Port_Import_N140:
       typeIdx: 1
       value: 1.000000
+    Port_Import_N142:
+      typeIdx: 1
+      value: 20.000000
+    Port_Input0_N086:
+      typeIdx: 1
+      value: 0.000000
+    Port_Input1_N083:
+      typeIdx: 1
+      value: 0.000000
+    Port_Input1_N086:
+      typeIdx: 1
+      value: 1.000000
+    Port_Input1_N137:
+      typeIdx: 3
+      value: {x: 0.500000, y: 0.500000}
+    Port_Input1_N138:
+      typeIdx: 1
+      value: 2.000000
+    Port_Input1_N144:
+      typeIdx: 1
+      value: 0.000000
+    Port_Input2_N083:
+      typeIdx: 1
+      value: 1.000000
+    Port_Input2_N144:
+      typeIdx: 1
+      value: 1.000000
+    Port_Mask_N003:
+      typeIdx: 1
+      value: 1.000000
+    Port_RangeMaxA_N062:
+      typeIdx: 1
+      value: 1.000000
+    Port_RangeMaxB_N062:
+      typeIdx: 1
+      value: 1.000000
+    Port_RangeMinA_N062:
+      typeIdx: 1
+      value: 0.000000
+    Port_RangeMinB_N062:
+      typeIdx: 1
+      value: -1.000000
     PreviewEnabled:
       typeIdx: 0
       value: 0
-    baseColor:
-      typeIdx: 5
-      value: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
     baseTex:
       typeIdx: 9
       value:
-        id: a87cdf19-daf8-4460-9cca-d17b45fc0c8d
+        id: dab0b757-3bf3-4dcf-845d-73f10d4fc965
         sampler:
           filteringMode: Trilinear
-          wrapModeU: ClampToEdge
-          wrapModeV: ClampToEdge
-          wrapModeW: ClampToEdge
-          borderColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
-          mipmaps: false
+          wrapModeU: Repeat
+          wrapModeV: Repeat
+          wrapModeW: Repeat
+          borderColor: {x: 0.000000, y: 0.000000, z: 0.000000, w: 0.000000}
+          mipmaps: true
         type: Texture2D
-  Pass: !<reference> a9010209-60fe-4e9c-86d8-97955e1f50ea
+    baseTexTransform:
+      typeIdx: 7
+      value:
+        0: {x: 1.000000, y: 0.000000, z: 0.000000}
+        1: {x: 0.000000, y: 1.000000, z: 0.000000}
+        2: {x: 0.000000, y: 0.000000, z: 1.000000}
+    color1:
+      typeIdx: 5
+      value: {x: 0.247059, y: 0.717647, z: 0.988235, w: 1.000000}
+    color2:
+      typeIdx: 5
+      value: {x: 0.019608, y: 0.627451, z: 0.988235, w: 1.000000}
+    cropToCircle:
+      typeIdx: 1
+      value: 1.000000
+  Pass: !<reference> 5db0318e-704e-4ccf-8730-86e188cd5c20
