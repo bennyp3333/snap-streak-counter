@@ -26,10 +26,22 @@
   ExportUid: 00000000-0000-0000-0000-000000000000
   PackagePolicy: CanBeUnpacked
   ScriptInputsHidden:
+    avgResponseUser1Num: false
+    avgResponseUser1Units: false
+    avgResponseUser2Num: false
+    avgResponseUser2Units: false
     camera: false
+    currentStreakNum: false
     debug: false
     debugName: false
     debugText: false
+    fastestResponseBitmoji: false
+    fastestResponseNum: false
+    fastestResponseUnits: false
+    longestStreakNum: false
+    streakController: false
+    totalSnapsBitmoji: false
+    totalSnapsNum: false
   ScriptTypesHidden:
     {}
   ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
@@ -39,7 +51,19 @@
   Attachments:
     []
   DefaultScriptInputs:
-    - camera: !<reference.Camera> 00000000-0000-0000-0000-000000000000
+    - streakController: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
+      camera: !<reference.Camera> 00000000-0000-0000-0000-000000000000
+      currentStreakNum: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      longestStreakNum: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      totalSnapsNum: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      totalSnapsBitmoji: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
+      fastestResponseNum: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      fastestResponseUnits: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      fastestResponseBitmoji: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
+      avgResponseUser1Num: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      avgResponseUser1Units: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      avgResponseUser2Num: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      avgResponseUser2Units: !<reference.Text> 00000000-0000-0000-0000-000000000000
       debug: false
       debugName: Menu
       debugText: !<reference.Text> 00000000-0000-0000-0000-000000000000

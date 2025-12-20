@@ -1,3 +1,5 @@
+//@input Component.ScriptComponent streakController
+//@ui {"widget":"separator"}
 //@ui {"widget":"label", "label":"Digit Models (0-9)"}
 //@input SceneObject[] digits
 //@ui {"widget":"separator"}
@@ -25,6 +27,18 @@
 
 var activeDigits = [];
 var currentNumber = null;
+
+function init(){
+    script.streakController.onReady(function(data) {
+        setNumber(data.currentStreak);
+    });
+    script.streakController.onStreakChanged(function(data) {
+        setNumber(data.currentStreak);
+    });
+    script.streakController.onStreakBroken(function(data) {
+        setNumber(-1);
+    });
+}
 
 function setNumber(num) {
     if (num === currentNumber) {
@@ -219,4 +233,5 @@ function debugPrint(text, force) {
 
 // Expose API
 script.setNumber = setNumber;
-setNumber(-1);
+
+init();

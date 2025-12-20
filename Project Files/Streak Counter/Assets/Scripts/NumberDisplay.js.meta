@@ -42,6 +42,7 @@
     padding: false
     spawnGroup: false
     spawnParent: false
+    streakController: false
     zScalePercent: false
   ScriptTypesHidden:
     {}
@@ -52,7 +53,8 @@
   Attachments:
     []
   DefaultScriptInputs:
-    - digits: !<reference.SceneObject[]>
+    - streakController: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
+      digits: !<reference.SceneObject[]>
         []
       spawnGroup: ""
       spawnParent: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000

@@ -15,6 +15,11 @@
         name: Preview
         color: 0
 
+      - |
+        id: 2
+        name: Logs
+        color: 1
+
     HasOrtho: true
   RenderOutput: !<reference> 923415f5-4245-4675-ade1-6d69d6d23e71
   RenderPreviewOutput: !<reference> b30d3b84-dcfe-4a93-b5b6-9f243d8b69e5
@@ -1573,7 +1578,7 @@
   PrefabRemaps:
     []
   Name: Flame
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -2563,7 +2568,6 @@
   Enabled: true
   ScriptAsset: !<reference> 8a7bdc69-76bf-461f-853b-ff2dce8f38b3
   ScriptInputsDefault:
-    targetUser: true
     bitmoji3DConfigInputs: true
     useTextDisplay: true
     textDisplayConfigInputs: true
@@ -2573,7 +2577,7 @@
     "":
       turnBased: !<reference.ScriptComponent> 33d57d25-3ff1-4ea0-aefa-f600e9bd5620
       targetUser:
-        type: Current
+        type: User1
       useBitmoji3D: false
       bitmoji3DConfigInputs:
         bitmojiComponent: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
@@ -3040,7 +3044,7 @@
   Enabled: true
   renderLayer: 2
   MipmapLevel: 0
-  RenderOrder: 1
+  RenderOrder: 2
   Size: 1280.000000
   Near: -1.000000
   Far: 200.000000
@@ -3068,7 +3072,7 @@
   PrefabRemaps:
     []
   Name: Flame
-  Enabled: true
+  Enabled: false
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -4114,7 +4118,7 @@
     "":
       turnBased: !<reference.ScriptComponent> 33d57d25-3ff1-4ea0-aefa-f600e9bd5620
       targetUser:
-        type: Other
+        type: User2
       useBitmoji3D: false
       bitmoji3DConfigInputs:
         bitmojiComponent: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
@@ -4173,7 +4177,7 @@
     []
   Name: Logger Text
   Enabled: true
-  Layers: 1048576
+  Layers: 4
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -4193,12 +4197,14 @@
   ScriptInputsDefault:
     digitPositionY: true
     logoPositionY: true
+    debug: true
     debugName: true
     debugText: true
   ScriptTypesDefault:
     {}
   ScriptInputs:
     "":
+      streakController: !<reference.ScriptComponent> d99c5880-55b6-4c85-9a5d-501f988df960
       digits: !<reference.SceneObject[]>
         - !<reference> 08f01b02-0abb-4ac3-a481-86b3b41bfc45
         - !<reference> 3ed62bba-c3ef-4ebe-9e18-7d74401298fd
@@ -4226,7 +4232,7 @@
         - !<reference> fc063a93-5519-4fef-b50a-c872a0b0949a
         - !<reference> bdac459f-c3d4-4a6a-8484-f982fc4f073e
       logoSparkles: !<reference.SceneObject> e9d05ef3-be38-4531-889e-e38436c56d50
-      debug: true
+      debug: false
       debugName: ""
       debugText: !<reference.Text> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
@@ -6020,7 +6026,7 @@
     []
   Name: Text Logger Camera
   Enabled: true
-  Layers: 1048576
+  Layers: 4
   LocalTransform: !<TransformEntity>
     Position: {x: -120.000000, y: 0.000000, z: 40.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -6142,13 +6148,14 @@
   ScriptInputsDefault:
     loggingEnabled: true
     logLimit: true
+    logTopToBottom: true
   ScriptTypesDefault:
     {}
   ScriptInputs:
     "":
       loggingEnabled: true
       logLimit: 20
-      logTopToBottom: true
+      logTopToBottom: false
       textComponent: !<reference.Text> 7d155c6d-1022-44ab-9299-894c94cce022
       useUniqueLayer: true
       camera: !<reference.Camera> d85ce528-c14a-4ebd-9a7c-3fd5ccc60284
@@ -6372,7 +6379,7 @@
   Components:
     - !<own> 4ce194ff-709d-4256-8c7b-e84e027c7803
     - !<own> 4fa85d93-b3e1-48f9-b25e-a823b54aa979
-    - !<own> b6b27108-f4e8-4696-b347-547c152928f8
+    - !<own> d99c5880-55b6-4c85-9a5d-501f988df960
 - !<RenderMeshVisual/ac6fb6e8-0eb4-4120-89f4-b1b7603af066>
   PrefabRemaps:
     []
@@ -6538,6 +6545,7 @@
     {}
   ScriptInputs:
     "":
+      streakController: !<reference.ScriptComponent> d99c5880-55b6-4c85-9a5d-501f988df960
       digits: !<reference.SceneObject[]>
         - !<reference> c9f707a3-c5c2-45a5-88c5-ab8addba5c23
         - !<reference> 8c1bf40d-83ea-49de-811b-9269075910da
@@ -6811,22 +6819,6 @@
     bottom: 0.000000
     right: 0.000000
     top: 0.000000
-- !<ScriptComponent/b6b27108-f4e8-4696-b347-547c152928f8>
-  PrefabRemaps:
-    []
-  Name: MainController
-  Enabled: true
-  ScriptAsset: !<reference> 909dc913-4f22-4a8b-b07e-2a820b5a7ba4
-  ScriptInputsDefault:
-    {}
-  ScriptTypesDefault:
-    {}
-  ScriptInputs:
-    "":
-      {}
-  ScriptTypes:
-    "":
-      {}
 - !<SceneObject/b6c2b7a3-1e7c-46f0-9526-915d98720238>
   PrefabRemaps:
     []
@@ -8050,9 +8042,9 @@
     []
   Name: Camera
   Enabled: true
-  renderLayer: 1048576
+  renderLayer: 4
   MipmapLevel: 0
-  RenderOrder: 1
+  RenderOrder: 3
   Size: 20.000000
   Near: -1.000000
   Far: 200.000000
@@ -8071,7 +8063,7 @@
   DeviceProperty: All
   AspectPreset: Custom
   OitLayers: NoOit
-  RenderTarget: !<reference> 00000000-0000-0000-0000-000000000000
+  RenderTarget: !<reference> b30d3b84-dcfe-4a93-b5b6-9f243d8b69e5
   DepthStencilRenderTarget: !<reference> 00000000-0000-0000-0000-000000000000
   MaskTexture: !<reference> 00000000-0000-0000-0000-000000000000
   RayTracing: !<reference> 00000000-0000-0000-0000-000000000000
@@ -8096,6 +8088,49 @@
   BlendNormals: false
   BlendShapes:
     {}
+- !<ScriptComponent/d99c5880-55b6-4c85-9a5d-501f988df960>
+  PrefabRemaps:
+    []
+  Name: StreakController
+  Enabled: true
+  ScriptAsset: !<reference> 7bcaca09-a601-47bb-b937-81197dd98944
+  ScriptInputsDefault:
+    streakWindowHours: true
+    graceWindowHours: true
+    enableTestingMode: true
+    forceStreakValue: true
+    forceStreakBroken: true
+    forceStats: true
+    forcedLongestStreak: true
+    forcedTotalSnaps: true
+    forcedUser0StreaksBroken: true
+    forcedUser1StreaksBroken: true
+    forceTimeRemaining: true
+    forcedHoursRemaining: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      turnBased: !<reference.ScriptComponent> 33d57d25-3ff1-4ea0-aefa-f600e9bd5620
+      badgeCarousel: !<reference.ScriptComponent> f6f42258-8724-42d6-998a-995aade3f913
+      streakWindowHours: !<float> 24.000000
+      graceWindowHours: !<float> 4.000000
+      printDebugStatements: true
+      enableTestingMode: false
+      forceStreakValue: false
+      forcedStreak: 666
+      forceStreakBroken: false
+      brokenByUserIndex: 1
+      forceStats: false
+      forcedLongestStreak: 0
+      forcedTotalSnaps: 0
+      forcedUser0StreaksBroken: 0
+      forcedUser1StreaksBroken: 0
+      forceTimeRemaining: false
+      forcedHoursRemaining: !<float> 12.000000
+  ScriptTypes:
+    "":
+      {}
 - !<SceneObject/d9ece1df-489b-4f92-96b5-49ad748b2e5a>
   PrefabRemaps:
     []
@@ -8208,7 +8243,19 @@
     {}
   ScriptInputs:
     "":
+      streakController: !<reference.ScriptComponent> d99c5880-55b6-4c85-9a5d-501f988df960
       camera: !<reference.Camera> 490a082c-0f06-44f9-94b2-8eefe4f5d06c
+      currentStreakNum: !<reference.Text> ca31a013-c723-4adf-a6ed-cca49660a7c0
+      longestStreakNum: !<reference.Text> e9581470-5aef-43bb-b26d-5c9bb6e53027
+      totalSnapsNum: !<reference.Text> c482be42-36af-4806-8578-9c9e9e599912
+      totalSnapsBitmoji: !<reference.ScriptComponent> edefc296-22b0-4220-a286-2e9c078772ba
+      fastestResponseNum: !<reference.Text> f7813ea0-2f42-44ea-9cb9-bb3d5dfc13bc
+      fastestResponseUnits: !<reference.Text> 32a86a88-e96e-4208-b53e-174eff154467
+      fastestResponseBitmoji: !<reference.ScriptComponent> ce21425b-668a-4d69-8600-8cea28a4ea41
+      avgResponseUser1Num: !<reference.Text> 0545b0dd-b0bf-4ca8-82a7-74ea3f99b159
+      avgResponseUser1Units: !<reference.Text> 1c11c7c8-2e2e-4034-8177-dfd5beb1bada
+      avgResponseUser2Num: !<reference.Text> 997b6dd8-8e91-4254-92f0-aac6223f2e72
+      avgResponseUser2Units: !<reference.Text> 580baa6e-d218-4e71-a460-f1cf09f08d15
       debug: true
       debugName: Menu
       debugText: !<reference.Text> 00000000-0000-0000-0000-000000000000
@@ -8999,7 +9046,7 @@
     []
   Name: Full Frame Region
   Enabled: true
-  Layers: 1048576
+  Layers: 4
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
