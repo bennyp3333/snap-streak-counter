@@ -2,6 +2,7 @@
   PackagePath: ""
   objects:
     - !<own> 2bbb75f5-9acf-4f0d-a837-2aef299267f7
+    - !<own> a644bcd7-d965-4595-8738-a24c73b0ee02
     - !<own> 112b2cdc-d993-4a74-ba00-77f8d1fcd8da
     - !<own> ac1acfad-7021-4ed6-974b-bd4b939992df
     - !<own> c92a90f5-cce2-42ae-9eb7-8c10b632967a
@@ -4955,6 +4956,22 @@
   ScriptTypes:
     "":
       {}
+- !<ScriptComponent/8239b531-b6d9-4a24-8197-bc872189b339>
+  PrefabRemaps:
+    []
+  Name: TurnBasedFix
+  Enabled: true
+  ScriptAsset: !<reference> 4d426a48-0770-464f-b340-ad69cac4d357
+  ScriptInputsDefault:
+    {}
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      turnBased: !<reference.ScriptComponent> 33d57d25-3ff1-4ea0-aefa-f600e9bd5620
+  ScriptTypes:
+    "":
+      {}
 - !<Text/836e0150-77f3-4fe2-a1b7-f54101f1ff18>
   PrefabRemaps:
     []
@@ -6307,6 +6324,21 @@
     bottom: 0.000000
     right: 0.000000
     top: 0.000000
+- !<SceneObject/a644bcd7-d965-4595-8738-a24c73b0ee02>
+  PrefabRemaps:
+    []
+  Name: TurnBasedFix
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 8239b531-b6d9-4a24-8197-bc872189b339
 - !<SceneObject/a6f76802-6b48-42cd-af32-c3bd92d71c49>
   PrefabRemaps:
     []
