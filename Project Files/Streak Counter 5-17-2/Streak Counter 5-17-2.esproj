@@ -1,8 +1,8 @@
 studioVersion:
   major: 5
   minor: 17
-  patch: 0
-  build: 25121001
+  patch: 2
+  build: 26011319
   type: Public
 coreVersion: 340
 clientVersion: 13.70
@@ -39,5 +39,5 @@ metaInfo:
     minor: 0
     patch: 0
     build: 0
-  documentId: f3d524c5-ac07-44a7-b03a-e07d591396ec
+  documentId: 9c832421-ba70-4f0a-b009-ccbfcb92fbd1
   originalDocumentId: f3d524c5-ac07-44a7-b03a-e07d591396ec
