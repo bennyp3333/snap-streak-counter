@@ -69,7 +69,7 @@ var onStreakReadyCallbacks = [];
 
 function printDebug(message) {
     if (script.printDebugStatements) {
-        var newLog = "[StreakController] " + message;
+        var newLog = '[StreakController] ' + message;
         if (global.textLogger) {
             global.logToScreen(newLog);
         }
@@ -78,7 +78,7 @@ function printDebug(message) {
 }
 
 function printWarning(message) {
-    var warningLog = "[StreakController WARNING] " + message;
+    var warningLog = '[StreakController WARNING] ' + message;
     if (global.textLogger) {
         global.logError(warningLog);
     }
@@ -255,7 +255,7 @@ async function onTurnStart(eventData) {
     await loadOrInitializeStats();
 
     // Process the turn - check timing, update streak
-    await processTurn(eventData.previousTurnVariables);
+    await processTurn();
 
     // Apply any testing overrides (editor only)
     applyTestingOverrides();
@@ -318,7 +318,7 @@ async function loadOrInitializeStats() {
 
     previousStreakValue = cachedStreakStats.currentStreak;
 
-    printDebug('Loaded stats - Streak: ' + cachedStreakStats.currentStreak + ', Longest: ' + cachedStreakStats.longestStreak);
+    printDebug('Loaded global stats: ' + JSON.stringify(cachedStreakStats));
 }
 
 async function loadUserStats(userIndex) {
@@ -329,12 +329,16 @@ async function loadUserStats(userIndex) {
         script.turnBased.getUserVariable(userIndex, 'fastestResponse')
     ]);
 
-    return {
+    var userStats = {
         lastSendTimestamp: results[0] || 0,
         totalResponseTime: results[1] || 0,
         responseCount: results[2] || 0,
         fastestResponse: results[3] || Infinity
     };
+
+    printDebug('Loaded user ' + userIndex + ' stats: ' + JSON.stringify(userStats));
+
+    return userStats
 }
 
 function saveGlobalStats() {
@@ -347,18 +351,24 @@ function saveGlobalStats() {
     script.turnBased.setGlobalVariable('user1StreaksBroken', cachedStreakStats.user1StreaksBroken);
     script.turnBased.setGlobalVariable('lastRoundCompletedDate', cachedStreakStats.lastRoundCompletedDate);
     script.turnBased.setGlobalVariable('roundsCompletedToday', cachedStreakStats.roundsCompletedToday);
+
+    printDebug('Saved global stats: ' + JSON.stringify(cachedStreakStats));
 }
 
-function saveUserStats(userIndex, stats) {
-    script.turnBased.setUserVariable(userIndex, 'lastSendTimestamp', stats.lastSendTimestamp);
-    script.turnBased.setUserVariable(userIndex, 'totalResponseTime', stats.totalResponseTime);
-    script.turnBased.setUserVariable(userIndex, 'responseCount', stats.responseCount);
-    script.turnBased.setUserVariable(userIndex, 'fastestResponse', stats.fastestResponse);
+function saveUserStats(userIndex, userStats) {
+    script.turnBased.setUserVariable(userIndex, 'lastSendTimestamp', userStats.lastSendTimestamp);
+    script.turnBased.setUserVariable(userIndex, 'totalResponseTime', userStats.totalResponseTime);
+    script.turnBased.setUserVariable(userIndex, 'responseCount', userStats.responseCount);
+    script.turnBased.setUserVariable(userIndex, 'fastestResponse', userStats.fastestResponse);
+
+    printDebug('Loaded user ' + userIndex + ' stats: ' + JSON.stringify(userStats));
 }
 
 // ===== Turn Processing & Streak Logic =====
 
-async function processTurn(previousTurnVars) {
+async function processTurn() {
+    printDebug('Processing Turn');
+    
     var now = Date.now();
     streakBrokenThisTurn = false;
     pendingStreakIncrement = false;
@@ -372,6 +382,8 @@ async function processTurn(previousTurnVars) {
         return;
     }
 
+    var previousTurnVars = await script.turnBased.getPreviousTurnVariables();
+
     // Get timing info from previous turn
     var prevSendTimestamp = previousTurnVars.sendTimestamp || 0;
     var prevSenderIndex = previousTurnVars.senderIndex !== undefined ? previousTurnVars.senderIndex : -1;
@@ -379,6 +391,8 @@ async function processTurn(previousTurnVars) {
     if (prevSendTimestamp === 0) {
         printDebug('No previous send timestamp found');
         return;
+    } else {
+        printDebug('Previous time stamp: ' + prevSendTimestamp);
     }
 
     // Calculate response time

@@ -334,7 +334,6 @@ function unlockBadge(badgeId, callback) {
 }
 
 function unlockAnim(badgeTexture, callback){
-    print("animating");
     script.popupBadge.mainPass.baseTex = badgeTexture;
     global.faderManager.show("Badge Popup");
     global.faderManager.hide("Badge Popup", {delay: 3, cancel: "none"});
