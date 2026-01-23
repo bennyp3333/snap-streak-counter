@@ -39,6 +39,8 @@
     fastestResponseNum: false
     fastestResponseUnits: false
     longestStreakNum: false
+    section2Bitmoji: false
+    section3Bitmoji: false
     streakController: false
     totalSnapsBitmoji: false
     totalSnapsNum: false
@@ -64,6 +66,10 @@
       avgResponseUser1Units: !<reference.Text> 00000000-0000-0000-0000-000000000000
       avgResponseUser2Num: !<reference.Text> 00000000-0000-0000-0000-000000000000
       avgResponseUser2Units: !<reference.Text> 00000000-0000-0000-0000-000000000000
+      section2Bitmoji: !<reference.SceneObject[]>
+        []
+      section3Bitmoji: !<reference.SceneObject[]>
+        []
       debug: false
       debugName: Menu
       debugText: !<reference.Text> 00000000-0000-0000-0000-000000000000

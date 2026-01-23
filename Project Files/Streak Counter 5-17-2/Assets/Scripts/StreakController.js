@@ -733,28 +733,28 @@ script.getFastestResponse = async function() {
 
     var user0Fastest = user0Stats.fastestResponse === Infinity ? null : user0Stats.fastestResponse;
     var user1Fastest = user1Stats.fastestResponse === Infinity ? null : user1Stats.fastestResponse;
-
-    var winner = null;
+    
+    var winnerId = null;
     var winnerTime = null;
 
     if (user0Fastest !== null && user1Fastest !== null) {
         if (user0Fastest <= user1Fastest) {
-            winner = currentUserIndex === 0 ? cachedDisplayNames.current : cachedDisplayNames.other;
+            winnerId = 0;
             winnerTime = user0Fastest;
         } else {
-            winner = currentUserIndex === 1 ? cachedDisplayNames.current : cachedDisplayNames.other;
+            winnerId = 1;
             winnerTime = user1Fastest;
         }
     } else if (user0Fastest !== null) {
-        winner = currentUserIndex === 0 ? cachedDisplayNames.current : cachedDisplayNames.other;
+        winnerId = 0;
         winnerTime = user0Fastest;
     } else if (user1Fastest !== null) {
-        winner = currentUserIndex === 1 ? cachedDisplayNames.current : cachedDisplayNames.other;
+        winnerId = 1;
         winnerTime = user1Fastest;
     }
 
     return {
-        winner: winner,
+        winnerId: winnerId,
         timeMs: winnerTime,
         timeFormatted: winnerTime ? formatTime(winnerTime) : null
     };
@@ -774,7 +774,9 @@ script.getAverageResponseTime = function(userIndex) {
 script.getAverageResponseTimes = function() {
     return {
         currentUser: script.getAverageResponseTime(currentUserIndex),
-        otherUser: script.getAverageResponseTime(currentUserIndex === 0 ? 1 : 0)
+        otherUser: script.getAverageResponseTime(currentUserIndex === 0 ? 1 : 0),
+        user1: script.getAverageResponseTime(0),
+        user2: script.getAverageResponseTime(1)
     };
 };
 

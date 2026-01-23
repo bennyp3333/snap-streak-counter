@@ -1,8 +1,8 @@
-- !<Material/9a64f225-d6bc-4f0e-a6ea-b1766f964966>
+- !<Material/b23dd053-31c0-4c48-a1a8-d55781961e4c>
   PackagePath: ""
   PassesInfo:
-    - !<own> 246b3041-58fc-44e9-beb8-05c3beab0afb
-- !<PassInfo/246b3041-58fc-44e9-beb8-05c3beab0afb>
+    - !<own> 8364b5e9-3f79-4825-b9f7-f52cf07a0653
+- !<PassInfo/8364b5e9-3f79-4825-b9f7-f52cf07a0653>
   CachedProperties:
     - Port_Default_N369:
         typeIdx: 5
@@ -94,11 +94,11 @@
     baseTex:
       typeIdx: 9
       value:
-        id: 103e7308-69e7-4db4-af33-09d107c9ada5
+        id: c9536e75-c652-452b-a866-65d3c19acd9c
         sampler:
           filteringMode: Trilinear
-          wrapModeU: Repeat
-          wrapModeV: Repeat
+          wrapModeU: ClampToEdge
+          wrapModeV: ClampToEdge
           wrapModeW: Repeat
           borderColor: {x: 0.000000, y: 0.000000, z: 0.000000, w: 0.000000}
           mipmaps: true

@@ -13,6 +13,9 @@
 //@input Component.Text avgResponseUser2Num
 //@input Component.Text avgResponseUser2Units
 //@ui {"widget":"separator"}
+//@input SceneObject[] section2Bitmoji
+//@input SceneObject[] section3Bitmoji
+//@ui {"widget":"separator"}
 //@input bool debug
 //@input string debugName = "Menu" {"showIf":"debug"}
 //@input Component.Text debugText {"showIf":"debug"}
@@ -24,9 +27,25 @@ var selfScreenTransform = self.getComponent("Component.ScreenTransform");
 var isOpen = false;
 var isAnimating = false;
 
+var section2BitmojiScript = null;
+var section3BitmojiScript = null;
+
 function init(){
     //set aspect ratio
     setAspect(selfScreenTransform, 1.0);
+
+    //set bitmoji stickers
+    var randomSection2Bitmoji = Math.floor(Math.random() * script.section2Bitmoji.length);
+    section2BitmojiScript = script.section2Bitmoji[randomSection2Bitmoji].getComponent("Component.ScriptComponent");
+    for(var i = 0; i < script.section2Bitmoji.length; i++){
+        script.section2Bitmoji[i].enabled = (i == randomSection2Bitmoji);
+    }
+
+    var randomSection3Bitmoji = Math.floor(Math.random() * script.section3Bitmoji.length);
+    section3BitmojiScript = script.section3Bitmoji[randomSection3Bitmoji].getComponent("Component.ScriptComponent");
+    for(var i = 0; i < script.section3Bitmoji.length; i++){
+        script.section3Bitmoji[i].enabled = (i == randomSection3Bitmoji);
+    }
     
     debugPrint("Initilized!");
 }
@@ -65,8 +84,66 @@ function loadStats(){
         script.currentStreakNum.text = stats.currentStreak.toString();
         script.longestStreakNum.text = stats.longestStreak.toString();
         script.totalSnapsNum.text = stats.totalSnaps.toString();
+
+        if(stats.averageResponseTimes.user1){
+            var formatUser1AvgRespTime = formatTime(stats.averageResponseTimes.user1.timeMs);
+            script.avgResponseUser1Num.text = formatUser1AvgRespTime.number.toString();
+            script.avgResponseUser1Units.text = formatUser1AvgRespTime.units;
+        }
+        
+        if(stats.averageResponseTimes.user2){
+            var formatUser2AvgRespTime = formatTime(stats.averageResponseTimes.user2.timeMs);
+            script.avgResponseUser2Num.text = formatUser2AvgRespTime.number.toString();
+            script.avgResponseUser2Units.text = formatUser2AvgRespTime.units;
+        }
+
+        if(stats.fastestResponse.timeMs){
+            var formatFastestRespTime = formatTime(stats.fastestResponse.timeMs);
+            script.fastestResponseNum.text = formatFastestRespTime.number.toString();
+            script.fastestResponseUnits.text = formatFastestRespTime.units;
+        }
+
+        if(stats.totalSnaps > 0){
+            section2BitmojiScript.loadUserByIndex(Math.round(Math.random()));
+        }
+
+        if(stats.fastestResponse.winnerId){
+            section3BitmojiScript.loadUserByIndex(stats.fastestResponse.winnerId);
+        }else if(stats.totalSnaps > 0){
+            section3BitmojiScript.loadUserByIndex(Math.round(Math.random()));
+        }
     });
     
+}
+
+function formatTime(ms) {
+    if (ms === Infinity || ms === null || isNaN(ms)) return null;
+
+    var seconds = Math.floor(ms / 1000);
+    var minutes = Math.floor(seconds / 60);
+    var hours = Math.floor(minutes / 60);
+
+    var number = 0;
+    var units = '';
+
+    if (hours > 0) {
+        number = hours;
+        units = 'hr';
+    } else if (minutes > 0) {
+        number = minutes;
+        units = "min";
+    } else if (seconds > 0) {
+        number = seconds;
+        units = "sec";
+    } else {
+        number = ms;
+        units = "ms";
+    }
+
+    return {
+        number: number,
+        units: units
+    }
 }
 
 script.toggle = toggle;

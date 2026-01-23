@@ -179,6 +179,25 @@
     - !<own> 8a2b8655-121d-40b3-ad36-d6643a82e318
     - !<own> c910c7bd-7bed-43f6-9680-36369e3ed40a
     - !<own> 42a97f04-930a-409b-aaad-b512f3e3d36b
+- !<Image/04cac116-6aa0-40ee-8ad1-00617e32bdce>
+  PrefabRemaps:
+    []
+  Name: Image
+  Enabled: true
+  RenderOrder: 1
+  StretchMode: Fit
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> d571b947-19e1-479e-ab29-47fd496779c0
+  FlipX: false
+  FlipY: false
+  RotationAngle: 0
+  Pivot: {x: 0.000000, y: 0.000000}
+  ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
 - !<SceneObject/04eeca3d-e877-4c2a-a10a-55396ec4568b>
   PrefabRemaps:
     []
@@ -217,6 +236,57 @@
   BlendNormals: false
   BlendShapes:
     {}
+- !<ScriptComponent/05922406-fe15-4fef-910a-c6942e7dffc4>
+  PrefabRemaps:
+    []
+  Name: Turn Based Player Info
+  Enabled: true
+  ScriptAsset: !<reference> 8a7bdc69-76bf-461f-853b-ff2dce8f38b3
+  ScriptInputsDefault:
+    targetUser: true
+    bitmoji3DConfigInputs: true
+    useTextDisplay: true
+    textDisplayConfigInputs: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      turnBased: !<reference.ScriptComponent> 33d57d25-3ff1-4ea0-aefa-f600e9bd5620
+      targetUser:
+        type: Current
+      useBitmoji3D: false
+      bitmoji3DConfigInputs:
+        bitmojiComponent: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
+        autoLoadBitmoji3D: true
+        hideBitmoji3DIfNotFound: false
+      useBitmojiSticker: true
+      bitmojiStickerConfigInputs:
+        stickerType: StickerID
+        stickerId: !<string> 20030797
+        autoLoad: true
+        applyActionInputs:
+          outputType: Image
+          meshVisual: !<reference.MaterialMeshVisual> 00000000-0000-0000-0000-000000000000
+          image: !<reference.Image> d6848e78-e7c1-4042-8cd6-c21c1f6756ce
+          material: !<reference.Material> 00000000-0000-0000-0000-000000000000
+          showAdvancedOptions: false
+          meshVisualCloneType: None
+          materialPropertyName: baseTex
+          meshVisualMaterialIndex: 0
+        fallbackSettings:
+          placeholderTexture: !<reference.Texture> c9536e75-c652-452b-a866-65d3c19acd9c
+          loadingTexture: !<reference.Texture> c9536e75-c652-452b-a866-65d3c19acd9c
+          missingUserTexture: !<reference.Texture> c9536e75-c652-452b-a866-65d3c19acd9c
+      useTextDisplay: false
+      textDisplayConfigInputs:
+        fallbackText: ""
+        configurableSetTextInputs:
+          targetType: Text
+          text: !<reference.Text> 00000000-0000-0000-0000-000000000000
+          text3D: !<reference.Text3D> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    "":
+      {}
 - !<SceneObject/05f3f973-5808-4643-84fd-d2d65b15a177>
   PrefabRemaps:
     []
@@ -265,6 +335,74 @@
     bottom: 0.000000
     right: 0.000000
     top: 0.000000
+- !<ScriptComponent/06a2cd02-4b75-43e6-b246-8e071f6c9299>
+  PrefabRemaps:
+    []
+  Name: Turn Based Player Info
+  Enabled: true
+  ScriptAsset: !<reference> 8a7bdc69-76bf-461f-853b-ff2dce8f38b3
+  ScriptInputsDefault:
+    targetUser: true
+    bitmoji3DConfigInputs: true
+    useTextDisplay: true
+    textDisplayConfigInputs: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      turnBased: !<reference.ScriptComponent> 33d57d25-3ff1-4ea0-aefa-f600e9bd5620
+      targetUser:
+        type: Current
+      useBitmoji3D: false
+      bitmoji3DConfigInputs:
+        bitmojiComponent: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
+        autoLoadBitmoji3D: true
+        hideBitmoji3DIfNotFound: false
+      useBitmojiSticker: true
+      bitmojiStickerConfigInputs:
+        stickerType: StickerID
+        stickerId: !<string> 10217268
+        autoLoad: true
+        applyActionInputs:
+          outputType: Image
+          meshVisual: !<reference.MaterialMeshVisual> 00000000-0000-0000-0000-000000000000
+          image: !<reference.Image> f1fccafe-7c1b-47c7-bf1e-70a4962dceff
+          material: !<reference.Material> 00000000-0000-0000-0000-000000000000
+          showAdvancedOptions: false
+          meshVisualCloneType: None
+          materialPropertyName: baseTex
+          meshVisualMaterialIndex: 0
+        fallbackSettings:
+          placeholderTexture: !<reference.Texture> c9536e75-c652-452b-a866-65d3c19acd9c
+          loadingTexture: !<reference.Texture> c9536e75-c652-452b-a866-65d3c19acd9c
+          missingUserTexture: !<reference.Texture> c9536e75-c652-452b-a866-65d3c19acd9c
+      useTextDisplay: false
+      textDisplayConfigInputs:
+        fallbackText: ""
+        configurableSetTextInputs:
+          targetType: Text
+          text: !<reference.Text> 00000000-0000-0000-0000-000000000000
+          text3D: !<reference.Text3D> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    "":
+      {}
+- !<SceneObject/07ed1771-0eac-44d8-a48d-ac201e942258>
+  PrefabRemaps:
+    []
+  Name: Bitmoji 6
+  Enabled: false
+  Layers: 2
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 7c105137-09f7-4408-bee9-6c72ec51223f
+    - !<own> ed4ae5d5-4436-4918-b6fc-f73ac1736907
+    - !<own> 3bad170a-b9f4-46a8-ab0e-42b3cc208412
 - !<SceneObject/08f01b02-0abb-4ac3-a481-86b3b41bfc45>
   PrefabRemaps:
     []
@@ -280,6 +418,23 @@
     []
   Components:
     - !<own> ab64a234-8337-497d-8b88-a41623281197
+- !<SceneObject/08f72dab-7f81-4ec9-8145-d98ca6539921>
+  PrefabRemaps:
+    []
+  Name: Bitmoji 4
+  Enabled: false
+  Layers: 2
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 274ac2e3-a0ef-4a79-9b27-8a31cd0ce163
+    - !<own> 04cac116-6aa0-40ee-8ad1-00617e32bdce
+    - !<own> edc939c5-7f2e-433a-930d-bac9ecfc2a88
 - !<SceneObject/09b4056b-e249-4e4d-9a8a-b123c4b754f7>
   PrefabRemaps:
     []
@@ -316,6 +471,25 @@
   BlendNormals: false
   BlendShapes:
     {}
+- !<Image/0b19083a-3513-4248-b8a0-9888cd23c00b>
+  PrefabRemaps:
+    []
+  Name: Image
+  Enabled: true
+  RenderOrder: 1
+  StretchMode: Fit
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 28a46bd6-49f4-462f-bafb-34694fcc4bef
+  FlipX: false
+  FlipY: false
+  RotationAngle: 0
+  Pivot: {x: 0.000000, y: 0.000000}
+  ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
 - !<RenderMeshVisual/0bb02615-f4d7-4828-a420-a4ddede24059>
   PrefabRemaps:
     []
@@ -512,6 +686,23 @@
     - !<own> c387884c-ca50-42b9-af94-bc77154266ef
   Components:
     []
+- !<SceneObject/11c70b15-b2d3-4119-a3f1-717f42a865b4>
+  PrefabRemaps:
+    []
+  Name: Bitmoji 7
+  Enabled: false
+  Layers: 2
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> cac200b2-6362-40c7-903a-f5ef3e1a6ae3
+    - !<own> 0b19083a-3513-4248-b8a0-9888cd23c00b
+    - !<own> 323975e2-2183-49af-bd14-f44e819c7f1e
 - !<SceneObject/1388dc45-7e6e-4003-954d-7d755158f24b>
   PrefabRemaps:
     []
@@ -876,6 +1067,23 @@
     bottom: 0.000000
     right: 0.000000
     top: 0.000000
+- !<SceneObject/18a273af-c06e-4794-aa42-e39cf85f859f>
+  PrefabRemaps:
+    []
+  Name: Bitmoji 3
+  Enabled: false
+  Layers: 2
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 6e27127c-aaf0-445d-a4d0-bf47fc4d5fef
+    - !<own> eee44af5-9ed0-4595-93b3-32627829e558
+    - !<own> b8a741f2-663b-4c90-af68-328924fe4a76
 - !<SceneObject/1a299841-ff11-411e-b68b-4c8032526171>
   PrefabRemaps:
     []
@@ -1128,6 +1336,57 @@
   Components:
     - !<own> 55d6d49d-4f10-47fa-b2fd-de45a4eee278
     - !<own> 424b8692-494f-4c11-b37e-817abe4f0b86
+- !<ScriptComponent/230ec7a6-de73-4a1c-beb5-265cc553a016>
+  PrefabRemaps:
+    []
+  Name: Turn Based Player Info
+  Enabled: true
+  ScriptAsset: !<reference> 8a7bdc69-76bf-461f-853b-ff2dce8f38b3
+  ScriptInputsDefault:
+    targetUser: true
+    bitmoji3DConfigInputs: true
+    useTextDisplay: true
+    textDisplayConfigInputs: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      turnBased: !<reference.ScriptComponent> 33d57d25-3ff1-4ea0-aefa-f600e9bd5620
+      targetUser:
+        type: Current
+      useBitmoji3D: false
+      bitmoji3DConfigInputs:
+        bitmojiComponent: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
+        autoLoadBitmoji3D: true
+        hideBitmoji3DIfNotFound: false
+      useBitmojiSticker: true
+      bitmojiStickerConfigInputs:
+        stickerType: StickerID
+        stickerId: !<string> 10218405
+        autoLoad: true
+        applyActionInputs:
+          outputType: Image
+          meshVisual: !<reference.MaterialMeshVisual> 00000000-0000-0000-0000-000000000000
+          image: !<reference.Image> fb0ec9ce-702a-40ee-851f-4eced16652f3
+          material: !<reference.Material> 00000000-0000-0000-0000-000000000000
+          showAdvancedOptions: false
+          meshVisualCloneType: None
+          materialPropertyName: baseTex
+          meshVisualMaterialIndex: 0
+        fallbackSettings:
+          placeholderTexture: !<reference.Texture> 103e7308-69e7-4db4-af33-09d107c9ada5
+          loadingTexture: !<reference.Texture> 103e7308-69e7-4db4-af33-09d107c9ada5
+          missingUserTexture: !<reference.Texture> 103e7308-69e7-4db4-af33-09d107c9ada5
+      useTextDisplay: false
+      textDisplayConfigInputs:
+        fallbackText: ""
+        configurableSetTextInputs:
+          targetType: Text
+          text: !<reference.Text> 00000000-0000-0000-0000-000000000000
+          text3D: !<reference.Text3D> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    "":
+      {}
 - !<SceneObject/24711e1a-b841-4818-8a76-8fe1b02f17c8>
   PrefabRemaps:
     []
@@ -1291,6 +1550,39 @@
     bottom: 0.000000
     right: 0.000000
     top: 0.000000
+- !<ScreenTransform/274ac2e3-a0ef-4a79-9b27-8a31cd0ce163>
+  PrefabRemaps:
+    []
+  Name: Screen Transform
+  Enabled: true
+  IsAdvanced: false
+  Constraints:
+    pinToLeft: true
+    pinToTop: true
+    pinToRight: true
+    pinToBottom: true
+    fixedWidth: false
+    fixedHeight: false
+    deactivatedFixedSprite: false
+    deactivatedFixedPivot: false
+  Pivot: {x: 0.000000, y: 0.000000}
+  Transform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  RawMode: true
+  ForceBasic: true
+  Anchor:
+    left: -1.000000
+    bottom: -1.000000
+    right: 1.000000
+    top: 1.000000
+  Offset:
+    left: 10.000000
+    bottom: 10.000000
+    right: 0.000000
+    top: -10.000000
 - !<Text/281236f7-64e1-416f-a606-97bb153dc4d0>
   PrefabRemaps:
     []
@@ -1689,6 +1981,57 @@
     bottom: 0.000000
     right: 0.000000
     top: 0.000000
+- !<ScriptComponent/323975e2-2183-49af-bd14-f44e819c7f1e>
+  PrefabRemaps:
+    []
+  Name: Turn Based Player Info
+  Enabled: true
+  ScriptAsset: !<reference> 8a7bdc69-76bf-461f-853b-ff2dce8f38b3
+  ScriptInputsDefault:
+    targetUser: true
+    bitmoji3DConfigInputs: true
+    useTextDisplay: true
+    textDisplayConfigInputs: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      turnBased: !<reference.ScriptComponent> 33d57d25-3ff1-4ea0-aefa-f600e9bd5620
+      targetUser:
+        type: Current
+      useBitmoji3D: false
+      bitmoji3DConfigInputs:
+        bitmojiComponent: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
+        autoLoadBitmoji3D: true
+        hideBitmoji3DIfNotFound: false
+      useBitmojiSticker: true
+      bitmojiStickerConfigInputs:
+        stickerType: StickerID
+        stickerId: !<string> 37921494
+        autoLoad: true
+        applyActionInputs:
+          outputType: Image
+          meshVisual: !<reference.MaterialMeshVisual> 00000000-0000-0000-0000-000000000000
+          image: !<reference.Image> 0b19083a-3513-4248-b8a0-9888cd23c00b
+          material: !<reference.Material> 00000000-0000-0000-0000-000000000000
+          showAdvancedOptions: false
+          meshVisualCloneType: None
+          materialPropertyName: baseTex
+          meshVisualMaterialIndex: 0
+        fallbackSettings:
+          placeholderTexture: !<reference.Texture> 103e7308-69e7-4db4-af33-09d107c9ada5
+          loadingTexture: !<reference.Texture> 103e7308-69e7-4db4-af33-09d107c9ada5
+          missingUserTexture: !<reference.Texture> 103e7308-69e7-4db4-af33-09d107c9ada5
+      useTextDisplay: false
+      textDisplayConfigInputs:
+        fallbackText: ""
+        configurableSetTextInputs:
+          targetType: Text
+          text: !<reference.Text> 00000000-0000-0000-0000-000000000000
+          text3D: !<reference.Text3D> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    "":
+      {}
 - !<ScreenTransform/328a7d2e-eb03-4653-bd82-a4e248a92caf>
   PrefabRemaps:
     []
@@ -2018,6 +2361,57 @@
     - !<own> ac85bc75-6af7-4d4f-a4d4-980d600b2bea
   Components:
     - !<own> ae4e04af-43bb-4634-b002-5206e324597b
+- !<ScriptComponent/3942f05b-3c4f-411b-9811-cc0c17cf95ac>
+  PrefabRemaps:
+    []
+  Name: Turn Based Player Info
+  Enabled: true
+  ScriptAsset: !<reference> 8a7bdc69-76bf-461f-853b-ff2dce8f38b3
+  ScriptInputsDefault:
+    targetUser: true
+    bitmoji3DConfigInputs: true
+    useTextDisplay: true
+    textDisplayConfigInputs: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      turnBased: !<reference.ScriptComponent> 33d57d25-3ff1-4ea0-aefa-f600e9bd5620
+      targetUser:
+        type: Current
+      useBitmoji3D: false
+      bitmoji3DConfigInputs:
+        bitmojiComponent: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
+        autoLoadBitmoji3D: true
+        hideBitmoji3DIfNotFound: false
+      useBitmojiSticker: true
+      bitmojiStickerConfigInputs:
+        stickerType: StickerID
+        stickerId: !<string> 20089248
+        autoLoad: true
+        applyActionInputs:
+          outputType: Image
+          meshVisual: !<reference.MaterialMeshVisual> 00000000-0000-0000-0000-000000000000
+          image: !<reference.Image> e381c29b-47a9-4ad2-a5a6-d518cbc08393
+          material: !<reference.Material> 00000000-0000-0000-0000-000000000000
+          showAdvancedOptions: false
+          meshVisualCloneType: None
+          materialPropertyName: baseTex
+          meshVisualMaterialIndex: 0
+        fallbackSettings:
+          placeholderTexture: !<reference.Texture> c9536e75-c652-452b-a866-65d3c19acd9c
+          loadingTexture: !<reference.Texture> c9536e75-c652-452b-a866-65d3c19acd9c
+          missingUserTexture: !<reference.Texture> c9536e75-c652-452b-a866-65d3c19acd9c
+      useTextDisplay: false
+      textDisplayConfigInputs:
+        fallbackText: ""
+        configurableSetTextInputs:
+          targetType: Text
+          text: !<reference.Text> 00000000-0000-0000-0000-000000000000
+          text3D: !<reference.Text3D> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    "":
+      {}
 - !<RenderMeshVisual/3a51457a-d745-4bb1-b1cb-28c508bd40fe>
   PrefabRemaps:
     []
@@ -2127,6 +2521,57 @@
     bottom: 0.000000
     right: 0.000000
     top: 0.000000
+- !<ScriptComponent/3bad170a-b9f4-46a8-ab0e-42b3cc208412>
+  PrefabRemaps:
+    []
+  Name: Turn Based Player Info
+  Enabled: true
+  ScriptAsset: !<reference> 8a7bdc69-76bf-461f-853b-ff2dce8f38b3
+  ScriptInputsDefault:
+    targetUser: true
+    bitmoji3DConfigInputs: true
+    useTextDisplay: true
+    textDisplayConfigInputs: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      turnBased: !<reference.ScriptComponent> 33d57d25-3ff1-4ea0-aefa-f600e9bd5620
+      targetUser:
+        type: Current
+      useBitmoji3D: false
+      bitmoji3DConfigInputs:
+        bitmojiComponent: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
+        autoLoadBitmoji3D: true
+        hideBitmoji3DIfNotFound: false
+      useBitmojiSticker: true
+      bitmojiStickerConfigInputs:
+        stickerType: StickerID
+        stickerId: !<string> 20045669
+        autoLoad: true
+        applyActionInputs:
+          outputType: Image
+          meshVisual: !<reference.MaterialMeshVisual> 00000000-0000-0000-0000-000000000000
+          image: !<reference.Image> ed4ae5d5-4436-4918-b6fc-f73ac1736907
+          material: !<reference.Material> 00000000-0000-0000-0000-000000000000
+          showAdvancedOptions: false
+          meshVisualCloneType: None
+          materialPropertyName: baseTex
+          meshVisualMaterialIndex: 0
+        fallbackSettings:
+          placeholderTexture: !<reference.Texture> c9536e75-c652-452b-a866-65d3c19acd9c
+          loadingTexture: !<reference.Texture> c9536e75-c652-452b-a866-65d3c19acd9c
+          missingUserTexture: !<reference.Texture> c9536e75-c652-452b-a866-65d3c19acd9c
+      useTextDisplay: false
+      textDisplayConfigInputs:
+        fallbackText: ""
+        configurableSetTextInputs:
+          targetType: Text
+          text: !<reference.Text> 00000000-0000-0000-0000-000000000000
+          text3D: !<reference.Text3D> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    "":
+      {}
 - !<SceneObject/3bb62845-1f84-4f4f-99b5-133bac9dd783>
   PrefabRemaps:
     []
@@ -3489,6 +3934,90 @@
     - !<own> f4c47c48-d390-41cc-8539-b773886fd9fd
   Components:
     - !<own> eda96a0f-6637-43c9-8e50-521444a0e70f
+- !<ScriptComponent/5ec2b3f7-a435-4e5c-845f-a8fcc8191d3f>
+  PrefabRemaps:
+    []
+  Name: Turn Based Player Info
+  Enabled: true
+  ScriptAsset: !<reference> 8a7bdc69-76bf-461f-853b-ff2dce8f38b3
+  ScriptInputsDefault:
+    targetUser: true
+    bitmoji3DConfigInputs: true
+    useTextDisplay: true
+    textDisplayConfigInputs: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      turnBased: !<reference.ScriptComponent> 33d57d25-3ff1-4ea0-aefa-f600e9bd5620
+      targetUser:
+        type: Current
+      useBitmoji3D: false
+      bitmoji3DConfigInputs:
+        bitmojiComponent: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
+        autoLoadBitmoji3D: true
+        hideBitmoji3DIfNotFound: false
+      useBitmojiSticker: true
+      bitmojiStickerConfigInputs:
+        stickerType: StickerID
+        stickerId: !<string> 20005759
+        autoLoad: true
+        applyActionInputs:
+          outputType: Image
+          meshVisual: !<reference.MaterialMeshVisual> 00000000-0000-0000-0000-000000000000
+          image: !<reference.Image> 715be329-ce4c-468d-8f72-66b373f0d6bc
+          material: !<reference.Material> 00000000-0000-0000-0000-000000000000
+          showAdvancedOptions: false
+          meshVisualCloneType: None
+          materialPropertyName: baseTex
+          meshVisualMaterialIndex: 0
+        fallbackSettings:
+          placeholderTexture: !<reference.Texture> 103e7308-69e7-4db4-af33-09d107c9ada5
+          loadingTexture: !<reference.Texture> 103e7308-69e7-4db4-af33-09d107c9ada5
+          missingUserTexture: !<reference.Texture> 103e7308-69e7-4db4-af33-09d107c9ada5
+      useTextDisplay: false
+      textDisplayConfigInputs:
+        fallbackText: ""
+        configurableSetTextInputs:
+          targetType: Text
+          text: !<reference.Text> 00000000-0000-0000-0000-000000000000
+          text3D: !<reference.Text3D> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    "":
+      {}
+- !<ScreenTransform/5f0d3b2e-7bd2-4d6a-94eb-ac45afdd7717>
+  PrefabRemaps:
+    []
+  Name: Screen Transform
+  Enabled: true
+  IsAdvanced: false
+  Constraints:
+    pinToLeft: true
+    pinToTop: true
+    pinToRight: true
+    pinToBottom: true
+    fixedWidth: false
+    fixedHeight: false
+    deactivatedFixedSprite: false
+    deactivatedFixedPivot: false
+  Pivot: {x: 0.000000, y: 0.000000}
+  Transform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  RawMode: true
+  ForceBasic: true
+  Anchor:
+    left: -1.000000
+    bottom: -1.000000
+    right: 1.000000
+    top: 1.000000
+  Offset:
+    left: 10.000000
+    bottom: 10.000000
+    right: 0.000000
+    top: -10.000000
 - !<Image/63a92702-7d26-48a0-85a3-4acc1509e79e>
   PrefabRemaps:
     []
@@ -3604,6 +4133,23 @@
     []
   Components:
     - !<own> cd5f2bd2-e78e-48be-a638-f72d75b2538b
+- !<SceneObject/65b6a1b9-efc1-4f33-9f02-e61c3927cc76>
+  PrefabRemaps:
+    []
+  Name: Bitmoji 2
+  Enabled: false
+  Layers: 2
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 6a107c51-3a0f-4a0d-b26a-427e6034a074
+    - !<own> 91d2c65a-5322-45f0-8f59-79115c0ba89b
+    - !<own> f431cc67-03b3-491c-9478-9aa65a23509b
 - !<SceneObject/66abfcba-3464-488d-938f-f05193af7556>
   PrefabRemaps:
     []
@@ -3805,6 +4351,39 @@
   RotationAngle: 0
   Pivot: {x: 0.000000, y: 0.000000}
   ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
+- !<ScreenTransform/6a107c51-3a0f-4a0d-b26a-427e6034a074>
+  PrefabRemaps:
+    []
+  Name: Screen Transform
+  Enabled: true
+  IsAdvanced: false
+  Constraints:
+    pinToLeft: true
+    pinToTop: true
+    pinToRight: true
+    pinToBottom: true
+    fixedWidth: false
+    fixedHeight: false
+    deactivatedFixedSprite: false
+    deactivatedFixedPivot: false
+  Pivot: {x: 0.000000, y: 0.000000}
+  Transform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  RawMode: true
+  ForceBasic: true
+  Anchor:
+    left: -1.000000
+    bottom: -1.000000
+    right: 1.000000
+    top: 1.000000
+  Offset:
+    left: 10.000000
+    bottom: 10.000000
+    right: 0.000000
+    top: -10.000000
 - !<Text/6a19cd30-f6ab-4139-9a5b-5daaf9aaa64f>
   PrefabRemaps:
     []
@@ -4106,6 +4685,39 @@
     bottom: 0.000000
     right: 0.000000
     top: 0.000000
+- !<ScreenTransform/6e27127c-aaf0-445d-a4d0-bf47fc4d5fef>
+  PrefabRemaps:
+    []
+  Name: Screen Transform
+  Enabled: true
+  IsAdvanced: false
+  Constraints:
+    pinToLeft: true
+    pinToTop: true
+    pinToRight: true
+    pinToBottom: true
+    fixedWidth: false
+    fixedHeight: false
+    deactivatedFixedSprite: false
+    deactivatedFixedPivot: false
+  Pivot: {x: 0.000000, y: 0.000000}
+  Transform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  RawMode: true
+  ForceBasic: true
+  Anchor:
+    left: -1.000000
+    bottom: -1.000000
+    right: 1.000000
+    top: 1.000000
+  Offset:
+    left: 10.000000
+    bottom: 10.000000
+    right: 0.000000
+    top: -10.000000
 - !<ScreenTransform/6e402f22-d0a4-4339-9448-329f9af88900>
   PrefabRemaps:
     []
@@ -4161,6 +4773,25 @@
   Enabled: true
   ScreenRegionType: FullFrame
   ResizeWithKeyboard: false
+- !<Image/715be329-ce4c-468d-8f72-66b373f0d6bc>
+  PrefabRemaps:
+    []
+  Name: Image
+  Enabled: true
+  RenderOrder: 1
+  StretchMode: Fit
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> f0c5f09d-43d9-4fbc-b5fa-1e6d5cf9fb6b
+  FlipX: false
+  FlipY: false
+  RotationAngle: 0
+  Pivot: {x: 0.000000, y: 0.000000}
+  ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
 - !<Text/728726b3-a94d-48d9-8ed2-a488acdfc123>
   PrefabRemaps:
     []
@@ -4330,6 +4961,74 @@
     bottom: 0.000000
     right: 0.000000
     top: 0.000000
+- !<SceneObject/754fc386-653d-471d-9378-d8c34a1b384d>
+  PrefabRemaps:
+    []
+  Name: Bitmoji 3
+  Enabled: false
+  Layers: 2
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> b0de2867-b3da-4a7c-bb7b-ebdab99312b5
+    - !<own> fb0ec9ce-702a-40ee-851f-4eced16652f3
+    - !<own> 230ec7a6-de73-4a1c-beb5-265cc553a016
+- !<ScriptComponent/75799f2f-45a8-43ae-932b-ee4efcf9eb21>
+  PrefabRemaps:
+    []
+  Name: Turn Based Player Info
+  Enabled: true
+  ScriptAsset: !<reference> 8a7bdc69-76bf-461f-853b-ff2dce8f38b3
+  ScriptInputsDefault:
+    targetUser: true
+    bitmoji3DConfigInputs: true
+    useTextDisplay: true
+    textDisplayConfigInputs: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      turnBased: !<reference.ScriptComponent> 33d57d25-3ff1-4ea0-aefa-f600e9bd5620
+      targetUser:
+        type: Current
+      useBitmoji3D: false
+      bitmoji3DConfigInputs:
+        bitmojiComponent: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
+        autoLoadBitmoji3D: true
+        hideBitmoji3DIfNotFound: false
+      useBitmojiSticker: true
+      bitmojiStickerConfigInputs:
+        stickerType: StickerID
+        stickerId: !<string> 10212071
+        autoLoad: true
+        applyActionInputs:
+          outputType: Image
+          meshVisual: !<reference.MaterialMeshVisual> 00000000-0000-0000-0000-000000000000
+          image: !<reference.Image> 7c827223-5b9b-4523-8c0f-83b3c7086771
+          material: !<reference.Material> 00000000-0000-0000-0000-000000000000
+          showAdvancedOptions: false
+          meshVisualCloneType: None
+          materialPropertyName: baseTex
+          meshVisualMaterialIndex: 0
+        fallbackSettings:
+          placeholderTexture: !<reference.Texture> 103e7308-69e7-4db4-af33-09d107c9ada5
+          loadingTexture: !<reference.Texture> 103e7308-69e7-4db4-af33-09d107c9ada5
+          missingUserTexture: !<reference.Texture> 103e7308-69e7-4db4-af33-09d107c9ada5
+      useTextDisplay: false
+      textDisplayConfigInputs:
+        fallbackText: ""
+        configurableSetTextInputs:
+          targetType: Text
+          text: !<reference.Text> 00000000-0000-0000-0000-000000000000
+          text3D: !<reference.Text3D> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    "":
+      {}
 - !<Camera/75e87103-573e-494d-9429-27da52fb0339>
   PrefabRemaps:
     []
@@ -4515,6 +5214,23 @@
   RotationAngle: 0
   Pivot: {x: 0.000000, y: 0.000000}
   ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
+- !<SceneObject/7a58558b-a573-48db-93d4-a5fdafee1992>
+  PrefabRemaps:
+    []
+  Name: Bitmoji 6
+  Enabled: false
+  Layers: 2
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 84471206-96da-4e17-a3b6-221ee49af40b
+    - !<own> 7c827223-5b9b-4523-8c0f-83b3c7086771
+    - !<own> 75799f2f-45a8-43ae-932b-ee4efcf9eb21
 - !<Text/7a92d474-4468-48a5-868b-2e0ca7818611>
   PrefabRemaps:
     []
@@ -4682,6 +5398,58 @@
   ScriptTypes:
     "":
       {}
+- !<ScreenTransform/7c105137-09f7-4408-bee9-6c72ec51223f>
+  PrefabRemaps:
+    []
+  Name: Screen Transform
+  Enabled: true
+  IsAdvanced: false
+  Constraints:
+    pinToLeft: true
+    pinToTop: true
+    pinToRight: true
+    pinToBottom: true
+    fixedWidth: false
+    fixedHeight: false
+    deactivatedFixedSprite: false
+    deactivatedFixedPivot: false
+  Pivot: {x: 0.000000, y: 0.000000}
+  Transform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  RawMode: true
+  ForceBasic: true
+  Anchor:
+    left: -1.000000
+    bottom: -1.000000
+    right: 1.000000
+    top: 1.000000
+  Offset:
+    left: 10.000000
+    bottom: 10.000000
+    right: 0.000000
+    top: -10.000000
+- !<Image/7c827223-5b9b-4523-8c0f-83b3c7086771>
+  PrefabRemaps:
+    []
+  Name: Image
+  Enabled: true
+  RenderOrder: 1
+  StretchMode: Fit
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> b61ac926-2cf0-4751-97a5-08739201c6e6
+  FlipX: false
+  FlipY: false
+  RotationAngle: 0
+  Pivot: {x: 0.000000, y: 0.000000}
+  ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
 - !<Text/7d155c6d-1022-44ab-9299-894c94cce022>
   PrefabRemaps:
     []
@@ -4800,11 +5568,44 @@
   BlendNormals: false
   BlendShapes:
     {}
+- !<ScreenTransform/7e9d742b-6013-410a-9ee4-a97b6a08f8f5>
+  PrefabRemaps:
+    []
+  Name: Screen Transform
+  Enabled: true
+  IsAdvanced: false
+  Constraints:
+    pinToLeft: true
+    pinToTop: true
+    pinToRight: true
+    pinToBottom: true
+    fixedWidth: false
+    fixedHeight: false
+    deactivatedFixedSprite: false
+    deactivatedFixedPivot: false
+  Pivot: {x: 0.000000, y: 0.000000}
+  Transform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  RawMode: true
+  ForceBasic: true
+  Anchor:
+    left: -1.000000
+    bottom: -1.000000
+    right: 1.000000
+    top: 1.000000
+  Offset:
+    left: 10.000000
+    bottom: 10.000000
+    right: 0.000000
+    top: -10.000000
 - !<SceneObject/7f9ace8c-df73-4efd-a3fd-d24bfb0cfcb1>
   PrefabRemaps:
     []
-  Name: Bitmoji
-  Enabled: true
+  Name: Bitmoji 1
+  Enabled: false
   Layers: 2
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -4851,6 +5652,23 @@
     []
   Components:
     - !<own> e2c38a95-5a29-4f63-ade6-a117d06bfdf4
+- !<SceneObject/808e71de-9336-4391-8ee0-d0bf6a12c921>
+  PrefabRemaps:
+    []
+  Name: Bitmoji 4
+  Enabled: false
+  Layers: 2
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 7e9d742b-6013-410a-9ee4-a97b6a08f8f5
+    - !<own> e381c29b-47a9-4ad2-a5a6-d518cbc08393
+    - !<own> 3942f05b-3c4f-411b-9811-cc0c17cf95ac
 - !<Image/808f00ec-1fc8-417a-a8ec-af696b7abd02>
   PrefabRemaps:
     []
@@ -5088,6 +5906,39 @@
     bottom: -0.000002
     right: -20.000000
     top: -5.000000
+- !<ScreenTransform/84471206-96da-4e17-a3b6-221ee49af40b>
+  PrefabRemaps:
+    []
+  Name: Screen Transform
+  Enabled: true
+  IsAdvanced: false
+  Constraints:
+    pinToLeft: true
+    pinToTop: true
+    pinToRight: true
+    pinToBottom: true
+    fixedWidth: false
+    fixedHeight: false
+    deactivatedFixedSprite: false
+    deactivatedFixedPivot: false
+  Pivot: {x: 0.000000, y: 0.000000}
+  Transform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  RawMode: true
+  ForceBasic: true
+  Anchor:
+    left: -1.000000
+    bottom: -1.000000
+    right: 1.000000
+    top: 1.000000
+  Offset:
+    left: 10.000000
+    bottom: 10.000000
+    right: 0.000000
+    top: -10.000000
 - !<Image/86767419-38b1-4d90-8208-76539c39872f>
   PrefabRemaps:
     []
@@ -5556,6 +6407,25 @@
     - !<own> 04eeca3d-e877-4c2a-a10a-55396ec4568b
   Components:
     - !<own> 7775cc1e-6070-4659-92dd-678f24c4eb7d
+- !<Image/91d2c65a-5322-45f0-8f59-79115c0ba89b>
+  PrefabRemaps:
+    []
+  Name: Image
+  Enabled: true
+  RenderOrder: 1
+  StretchMode: Fit
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 7433fb39-03d5-4d9e-98cf-29d43c8c8f4d
+  FlipX: false
+  FlipY: false
+  RotationAngle: 0
+  Pivot: {x: 0.000000, y: 0.000000}
+  ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
 - !<ScriptComponent/9219ac80-79aa-4961-8544-345caa6b0eeb>
   PrefabRemaps:
     []
@@ -5823,6 +6693,23 @@
   BlendNormals: false
   BlendShapes:
     {}
+- !<SceneObject/99fc280b-6c26-42cf-b0b7-fa58b4f1fb3b>
+  PrefabRemaps:
+    []
+  Name: Bitmoji 5
+  Enabled: false
+  Layers: 2
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> bd958f81-7e07-4d68-8040-a8bec8484d6a
+    - !<own> f1fccafe-7c1b-47c7-bf1e-70a4962dceff
+    - !<own> 06a2cd02-4b75-43e6-b246-8e071f6c9299
 - !<SceneObject/9abd04d9-7fad-4357-954c-998b0630e52c>
   PrefabRemaps:
     []
@@ -5876,6 +6763,12 @@
     HasSegmentScaleCompensation: false
   Children:
     - !<own> 7f9ace8c-df73-4efd-a3fd-d24bfb0cfcb1
+    - !<own> 65b6a1b9-efc1-4f33-9f02-e61c3927cc76
+    - !<own> 18a273af-c06e-4794-aa42-e39cf85f859f
+    - !<own> 808e71de-9336-4391-8ee0-d0bf6a12c921
+    - !<own> 99fc280b-6c26-42cf-b0b7-fa58b4f1fb3b
+    - !<own> 07ed1771-0eac-44d8-a48d-ac201e942258
+    - !<own> b11a311b-0fa6-4fea-8c0f-857852740455
   Components:
     - !<own> 18963acf-d9c3-4b89-b004-2d3a6cf27257
 - !<ScreenTransform/9ccd7333-0db6-485e-8dd2-5761ea68a51d>
@@ -6743,6 +7636,56 @@
   Components:
     - !<own> f0a69c74-4142-4227-ae48-e3de056011cf
     - !<own> b4fc74ae-df07-40f4-8310-271540ed0d60
+- !<ScreenTransform/b0de2867-b3da-4a7c-bb7b-ebdab99312b5>
+  PrefabRemaps:
+    []
+  Name: Screen Transform
+  Enabled: true
+  IsAdvanced: false
+  Constraints:
+    pinToLeft: true
+    pinToTop: true
+    pinToRight: true
+    pinToBottom: true
+    fixedWidth: false
+    fixedHeight: false
+    deactivatedFixedSprite: false
+    deactivatedFixedPivot: false
+  Pivot: {x: 0.000000, y: 0.000000}
+  Transform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  RawMode: true
+  ForceBasic: true
+  Anchor:
+    left: -1.000000
+    bottom: -1.000000
+    right: 1.000000
+    top: 1.000000
+  Offset:
+    left: 10.000000
+    bottom: 10.000000
+    right: 0.000000
+    top: -10.000000
+- !<SceneObject/b11a311b-0fa6-4fea-8c0f-857852740455>
+  PrefabRemaps:
+    []
+  Name: Bitmoji 7
+  Enabled: false
+  Layers: 2
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> df41be59-9baa-471a-8e57-c487de7ae695
+    - !<own> d6848e78-e7c1-4042-8cd6-c21c1f6756ce
+    - !<own> 05922406-fe15-4fef-910a-c6942e7dffc4
 - !<ScriptComponent/b1b5d34f-4672-4d42-add0-4d870c4f207d>
   PrefabRemaps:
     []
@@ -7078,6 +8021,57 @@
     bottom: 0.000000
     right: 0.000000
     top: 0.000000
+- !<ScriptComponent/b8a741f2-663b-4c90-af68-328924fe4a76>
+  PrefabRemaps:
+    []
+  Name: Turn Based Player Info
+  Enabled: true
+  ScriptAsset: !<reference> 8a7bdc69-76bf-461f-853b-ff2dce8f38b3
+  ScriptInputsDefault:
+    targetUser: true
+    bitmoji3DConfigInputs: true
+    useTextDisplay: true
+    textDisplayConfigInputs: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      turnBased: !<reference.ScriptComponent> 33d57d25-3ff1-4ea0-aefa-f600e9bd5620
+      targetUser:
+        type: Current
+      useBitmoji3D: false
+      bitmoji3DConfigInputs:
+        bitmojiComponent: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
+        autoLoadBitmoji3D: true
+        hideBitmoji3DIfNotFound: false
+      useBitmojiSticker: true
+      bitmojiStickerConfigInputs:
+        stickerType: StickerID
+        stickerId: !<string> 20037257
+        autoLoad: true
+        applyActionInputs:
+          outputType: Image
+          meshVisual: !<reference.MaterialMeshVisual> 00000000-0000-0000-0000-000000000000
+          image: !<reference.Image> eee44af5-9ed0-4595-93b3-32627829e558
+          material: !<reference.Material> 00000000-0000-0000-0000-000000000000
+          showAdvancedOptions: false
+          meshVisualCloneType: None
+          materialPropertyName: baseTex
+          meshVisualMaterialIndex: 0
+        fallbackSettings:
+          placeholderTexture: !<reference.Texture> c9536e75-c652-452b-a866-65d3c19acd9c
+          loadingTexture: !<reference.Texture> c9536e75-c652-452b-a866-65d3c19acd9c
+          missingUserTexture: !<reference.Texture> c9536e75-c652-452b-a866-65d3c19acd9c
+      useTextDisplay: false
+      textDisplayConfigInputs:
+        fallbackText: ""
+        configurableSetTextInputs:
+          targetType: Text
+          text: !<reference.Text> 00000000-0000-0000-0000-000000000000
+          text3D: !<reference.Text3D> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    "":
+      {}
 - !<SceneObject/ba6a932a-c5fb-4a99-9548-41f4df23b82f>
   PrefabRemaps:
     []
@@ -7184,6 +8178,56 @@
   Components:
     - !<own> 20abe156-492f-443f-8755-bec47119ca42
     - !<own> 2c39ec8f-924e-4b13-808b-388fc1d72b6b
+- !<SceneObject/bd3f4aca-4ed1-41de-b414-5fa4f55e3f8f>
+  PrefabRemaps:
+    []
+  Name: Bitmoji 2
+  Enabled: false
+  Layers: 2
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 5f0d3b2e-7bd2-4d6a-94eb-ac45afdd7717
+    - !<own> c7741dcc-51fa-4b50-a441-d2d6894f3368
+    - !<own> eb23073d-6682-4f3c-a253-dac55a61fb93
+- !<ScreenTransform/bd958f81-7e07-4d68-8040-a8bec8484d6a>
+  PrefabRemaps:
+    []
+  Name: Screen Transform
+  Enabled: true
+  IsAdvanced: false
+  Constraints:
+    pinToLeft: true
+    pinToTop: true
+    pinToRight: true
+    pinToBottom: true
+    fixedWidth: false
+    fixedHeight: false
+    deactivatedFixedSprite: false
+    deactivatedFixedPivot: false
+  Pivot: {x: 0.000000, y: 0.000000}
+  Transform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  RawMode: true
+  ForceBasic: true
+  Anchor:
+    left: -1.000000
+    bottom: -1.000000
+    right: 1.000000
+    top: 1.000000
+  Offset:
+    left: 10.000000
+    bottom: 10.000000
+    right: 0.000000
+    top: -10.000000
 - !<ScreenRegionComponent/bf15314a-5da2-4d9b-bf8c-a9b0f16a9f37>
   PrefabRemaps:
     []
@@ -7499,6 +8543,25 @@
     - !<own> 53ad502a-afd6-4b59-a4d7-6e7a50551995
   Components:
     - !<own> 7517586b-e2aa-4a44-a8e3-a8e0136dfb27
+- !<Image/c7741dcc-51fa-4b50-a441-d2d6894f3368>
+  PrefabRemaps:
+    []
+  Name: Image
+  Enabled: true
+  RenderOrder: 1
+  StretchMode: Fit
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 8abb6a17-f085-4da3-9578-e764e1aacd37
+  FlipX: false
+  FlipY: false
+  RotationAngle: 0
+  Pivot: {x: 0.000000, y: 0.000000}
+  ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
 - !<Image/c910c7bd-7bed-43f6-9680-36369e3ed40a>
   PrefabRemaps:
     []
@@ -7648,6 +8711,39 @@
     - !<own> 73ce23e6-e191-47bc-b202-fa327cee5baa
   Components:
     - !<own> b894e110-2bad-4474-8a58-99bf5f2b4544
+- !<ScreenTransform/cac200b2-6362-40c7-903a-f5ef3e1a6ae3>
+  PrefabRemaps:
+    []
+  Name: Screen Transform
+  Enabled: true
+  IsAdvanced: false
+  Constraints:
+    pinToLeft: true
+    pinToTop: true
+    pinToRight: true
+    pinToBottom: true
+    fixedWidth: false
+    fixedHeight: false
+    deactivatedFixedSprite: false
+    deactivatedFixedPivot: false
+  Pivot: {x: 0.000000, y: 0.000000}
+  Transform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  RawMode: true
+  ForceBasic: true
+  Anchor:
+    left: -1.000000
+    bottom: -1.000000
+    right: 1.000000
+    top: 1.000000
+  Offset:
+    left: 10.000000
+    bottom: 10.000000
+    right: 0.000000
+    top: -10.000000
 - !<Image/cbb22f6e-6804-4f3e-974d-303b8e7a2a61>
   PrefabRemaps:
     []
@@ -7947,6 +9043,39 @@
     bottom: 0.000000
     right: -5.000011
     top: -5.000000
+- !<ScreenTransform/d3fb1016-900c-446c-b72c-57d71cff11fb>
+  PrefabRemaps:
+    []
+  Name: Screen Transform
+  Enabled: true
+  IsAdvanced: false
+  Constraints:
+    pinToLeft: true
+    pinToTop: true
+    pinToRight: true
+    pinToBottom: true
+    fixedWidth: false
+    fixedHeight: false
+    deactivatedFixedSprite: false
+    deactivatedFixedPivot: false
+  Pivot: {x: 0.000000, y: 0.000000}
+  Transform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  RawMode: true
+  ForceBasic: true
+  Anchor:
+    left: -1.000000
+    bottom: -1.000000
+    right: 1.000000
+    top: 1.000000
+  Offset:
+    left: 10.000000
+    bottom: 10.000000
+    right: 0.000000
+    top: -10.000000
 - !<ScreenTransform/d5644ea2-c350-44d9-a54a-e740cdcc3301>
   PrefabRemaps:
     []
@@ -7980,6 +9109,25 @@
     bottom: 0.000000
     right: 0.000000
     top: 0.000000
+- !<Image/d6848e78-e7c1-4042-8cd6-c21c1f6756ce>
+  PrefabRemaps:
+    []
+  Name: Image
+  Enabled: true
+  RenderOrder: 1
+  StretchMode: Fit
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 6846aff9-4f85-4864-ae6d-b6b0a9eeb227
+  FlipX: false
+  FlipY: false
+  RotationAngle: 0
+  Pivot: {x: 0.000000, y: 0.000000}
+  ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
 - !<Text/d785333d-459f-4988-9373-634c74860339>
   PrefabRemaps:
     []
@@ -8282,12 +9430,61 @@
       avgResponseUser1Units: !<reference.Text> 424b8692-494f-4c11-b37e-817abe4f0b86
       avgResponseUser2Num: !<reference.Text> 836e0150-77f3-4fe2-a1b7-f54101f1ff18
       avgResponseUser2Units: !<reference.Text> 4c50f32f-e3e1-4689-9795-ad98812c069f
+      section2Bitmoji: !<reference.SceneObject[]>
+        - !<reference> 7f9ace8c-df73-4efd-a3fd-d24bfb0cfcb1
+        - !<reference> 65b6a1b9-efc1-4f33-9f02-e61c3927cc76
+        - !<reference> 18a273af-c06e-4794-aa42-e39cf85f859f
+        - !<reference> 808e71de-9336-4391-8ee0-d0bf6a12c921
+        - !<reference> 99fc280b-6c26-42cf-b0b7-fa58b4f1fb3b
+        - !<reference> 07ed1771-0eac-44d8-a48d-ac201e942258
+        - !<reference> b11a311b-0fa6-4fea-8c0f-857852740455
+      section3Bitmoji: !<reference.SceneObject[]>
+        - !<reference> ef198d09-db77-4d98-9bf0-f48908083016
+        - !<reference> bd3f4aca-4ed1-41de-b414-5fa4f55e3f8f
+        - !<reference> 754fc386-653d-471d-9378-d8c34a1b384d
+        - !<reference> 08f72dab-7f81-4ec9-8145-d98ca6539921
+        - !<reference> fa97ec5d-54bb-4ad9-9638-9c74677457c1
+        - !<reference> 7a58558b-a573-48db-93d4-a5fdafee1992
+        - !<reference> 11c70b15-b2d3-4119-a3f1-717f42a865b4
       debug: true
       debugName: Menu
       debugText: !<reference.Text> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     "":
       {}
+- !<ScreenTransform/df41be59-9baa-471a-8e57-c487de7ae695>
+  PrefabRemaps:
+    []
+  Name: Screen Transform
+  Enabled: true
+  IsAdvanced: false
+  Constraints:
+    pinToLeft: true
+    pinToTop: true
+    pinToRight: true
+    pinToBottom: true
+    fixedWidth: false
+    fixedHeight: false
+    deactivatedFixedSprite: false
+    deactivatedFixedPivot: false
+  Pivot: {x: 0.000000, y: 0.000000}
+  Transform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  RawMode: true
+  ForceBasic: true
+  Anchor:
+    left: -1.000000
+    bottom: -1.000000
+    right: 1.000000
+    top: 1.000000
+  Offset:
+    left: 10.000000
+    bottom: 10.000000
+    right: 0.000000
+    top: -10.000000
 - !<SceneObject/e03357ee-9f49-4860-b371-d02f2e50bf21>
   PrefabRemaps:
     []
@@ -8477,6 +9674,25 @@
     - !<own> 47ce04ba-aadd-465e-a023-cf37c128f734
     - !<own> 867d35a6-7cc0-45d0-9d21-bb6ef448a02a
     - !<own> f41c894e-dfce-43d2-8043-8a5618ddbe70
+- !<Image/e381c29b-47a9-4ad2-a5a6-d518cbc08393>
+  PrefabRemaps:
+    []
+  Name: Image
+  Enabled: true
+  RenderOrder: 1
+  StretchMode: Fit
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> e311a957-6513-4a81-a21d-1867a2c9f3ca
+  FlipX: false
+  FlipY: false
+  RotationAngle: 0
+  Pivot: {x: 0.000000, y: 0.000000}
+  ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
 - !<SceneObject/e39e644b-da89-4ddf-acca-7e2bea22fa62>
   PrefabRemaps:
     []
@@ -8783,6 +9999,57 @@
     - !<own> 93955b52-d6d2-4695-9bf6-818efc121e21
   Components:
     - !<own> a5e346a6-8843-4bb3-9aed-6a99a5278be7
+- !<ScriptComponent/eb23073d-6682-4f3c-a253-dac55a61fb93>
+  PrefabRemaps:
+    []
+  Name: Turn Based Player Info
+  Enabled: true
+  ScriptAsset: !<reference> 8a7bdc69-76bf-461f-853b-ff2dce8f38b3
+  ScriptInputsDefault:
+    targetUser: true
+    bitmoji3DConfigInputs: true
+    useTextDisplay: true
+    textDisplayConfigInputs: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      turnBased: !<reference.ScriptComponent> 33d57d25-3ff1-4ea0-aefa-f600e9bd5620
+      targetUser:
+        type: Current
+      useBitmoji3D: false
+      bitmoji3DConfigInputs:
+        bitmojiComponent: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
+        autoLoadBitmoji3D: true
+        hideBitmoji3DIfNotFound: false
+      useBitmojiSticker: true
+      bitmojiStickerConfigInputs:
+        stickerType: StickerID
+        stickerId: !<string> 10212530
+        autoLoad: true
+        applyActionInputs:
+          outputType: Image
+          meshVisual: !<reference.MaterialMeshVisual> 00000000-0000-0000-0000-000000000000
+          image: !<reference.Image> c7741dcc-51fa-4b50-a441-d2d6894f3368
+          material: !<reference.Material> 00000000-0000-0000-0000-000000000000
+          showAdvancedOptions: false
+          meshVisualCloneType: None
+          materialPropertyName: baseTex
+          meshVisualMaterialIndex: 0
+        fallbackSettings:
+          placeholderTexture: !<reference.Texture> 103e7308-69e7-4db4-af33-09d107c9ada5
+          loadingTexture: !<reference.Texture> 103e7308-69e7-4db4-af33-09d107c9ada5
+          missingUserTexture: !<reference.Texture> 103e7308-69e7-4db4-af33-09d107c9ada5
+      useTextDisplay: false
+      textDisplayConfigInputs:
+        fallbackText: ""
+        configurableSetTextInputs:
+          targetType: Text
+          text: !<reference.Text> 00000000-0000-0000-0000-000000000000
+          text3D: !<reference.Text3D> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    "":
+      {}
 - !<SceneObject/eb97bba3-773e-4894-ac97-a7d588f91c69>
   PrefabRemaps:
     []
@@ -8848,6 +10115,25 @@
     bottom: 10.000000
     right: 0.000000
     top: -10.000000
+- !<Image/ed4ae5d5-4436-4918-b6fc-f73ac1736907>
+  PrefabRemaps:
+    []
+  Name: Image
+  Enabled: true
+  RenderOrder: 1
+  StretchMode: Fit
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 6dbe52d8-c233-43e6-90f9-89756ba36117
+  FlipX: false
+  FlipY: false
+  RotationAngle: 0
+  Pivot: {x: 0.000000, y: 0.000000}
+  ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
 - !<ScreenTransform/eda96a0f-6637-43c9-8e50-521444a0e70f>
   PrefabRemaps:
     []
@@ -8881,6 +10167,57 @@
     bottom: 0.000000
     right: 0.000000
     top: 0.000000
+- !<ScriptComponent/edc939c5-7f2e-433a-930d-bac9ecfc2a88>
+  PrefabRemaps:
+    []
+  Name: Turn Based Player Info
+  Enabled: true
+  ScriptAsset: !<reference> 8a7bdc69-76bf-461f-853b-ff2dce8f38b3
+  ScriptInputsDefault:
+    targetUser: true
+    bitmoji3DConfigInputs: true
+    useTextDisplay: true
+    textDisplayConfigInputs: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      turnBased: !<reference.ScriptComponent> 33d57d25-3ff1-4ea0-aefa-f600e9bd5620
+      targetUser:
+        type: Current
+      useBitmoji3D: false
+      bitmoji3DConfigInputs:
+        bitmojiComponent: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
+        autoLoadBitmoji3D: true
+        hideBitmoji3DIfNotFound: false
+      useBitmojiSticker: true
+      bitmojiStickerConfigInputs:
+        stickerType: StickerID
+        stickerId: !<string> 30614111
+        autoLoad: true
+        applyActionInputs:
+          outputType: Image
+          meshVisual: !<reference.MaterialMeshVisual> 00000000-0000-0000-0000-000000000000
+          image: !<reference.Image> 04cac116-6aa0-40ee-8ad1-00617e32bdce
+          material: !<reference.Material> 00000000-0000-0000-0000-000000000000
+          showAdvancedOptions: false
+          meshVisualCloneType: None
+          materialPropertyName: baseTex
+          meshVisualMaterialIndex: 0
+        fallbackSettings:
+          placeholderTexture: !<reference.Texture> 103e7308-69e7-4db4-af33-09d107c9ada5
+          loadingTexture: !<reference.Texture> 103e7308-69e7-4db4-af33-09d107c9ada5
+          missingUserTexture: !<reference.Texture> 103e7308-69e7-4db4-af33-09d107c9ada5
+      useTextDisplay: false
+      textDisplayConfigInputs:
+        fallbackText: ""
+        configurableSetTextInputs:
+          targetType: Text
+          text: !<reference.Text> 00000000-0000-0000-0000-000000000000
+          text3D: !<reference.Text3D> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    "":
+      {}
 - !<ScreenTransform/edd70f01-e327-4180-9ea8-84c564e240a9>
   PrefabRemaps:
     []
@@ -8965,11 +10302,30 @@
   ScriptTypes:
     "":
       {}
+- !<Image/eee44af5-9ed0-4595-93b3-32627829e558>
+  PrefabRemaps:
+    []
+  Name: Image
+  Enabled: true
+  RenderOrder: 1
+  StretchMode: Fit
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> b23dd053-31c0-4c48-a1a8-d55781961e4c
+  FlipX: false
+  FlipY: false
+  RotationAngle: 0
+  Pivot: {x: 0.000000, y: 0.000000}
+  ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
 - !<SceneObject/ef198d09-db77-4d98-9bf0-f48908083016>
   PrefabRemaps:
     []
-  Name: Bitmoji
-  Enabled: true
+  Name: Bitmoji 1
+  Enabled: false
   Layers: 2
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -9133,6 +10489,25 @@
   RotationAngle: 0
   Pivot: {x: 0.000000, y: 0.000000}
   ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
+- !<Image/f1fccafe-7c1b-47c7-bf1e-70a4962dceff>
+  PrefabRemaps:
+    []
+  Name: Image
+  Enabled: true
+  RenderOrder: 1
+  StretchMode: Fit
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> ca5648ca-72a7-4b9e-97e1-e09426ba710d
+  FlipX: false
+  FlipY: false
+  RotationAngle: 0
+  Pivot: {x: 0.000000, y: 0.000000}
+  ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
 - !<ScreenTransform/f22c8cd3-bd12-46ce-a049-7bdc7d96fef9>
   PrefabRemaps:
     []
@@ -9179,6 +10554,12 @@
     HasSegmentScaleCompensation: false
   Children:
     - !<own> ef198d09-db77-4d98-9bf0-f48908083016
+    - !<own> bd3f4aca-4ed1-41de-b414-5fa4f55e3f8f
+    - !<own> 754fc386-653d-471d-9378-d8c34a1b384d
+    - !<own> 08f72dab-7f81-4ec9-8145-d98ca6539921
+    - !<own> fa97ec5d-54bb-4ad9-9638-9c74677457c1
+    - !<own> 7a58558b-a573-48db-93d4-a5fdafee1992
+    - !<own> 11c70b15-b2d3-4119-a3f1-717f42a865b4
   Components:
     - !<own> e59a338d-b5bf-4b96-846f-4c2cdaabe020
 - !<Canvas/f3e7419f-58d6-4984-98df-6440f6424292>
@@ -9303,6 +10684,57 @@
       debug: false
       printDebugStatements: false
       printWarningStatements: true
+  ScriptTypes:
+    "":
+      {}
+- !<ScriptComponent/f431cc67-03b3-491c-9478-9aa65a23509b>
+  PrefabRemaps:
+    []
+  Name: Turn Based Player Info
+  Enabled: true
+  ScriptAsset: !<reference> 8a7bdc69-76bf-461f-853b-ff2dce8f38b3
+  ScriptInputsDefault:
+    targetUser: true
+    bitmoji3DConfigInputs: true
+    useTextDisplay: true
+    textDisplayConfigInputs: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      turnBased: !<reference.ScriptComponent> 33d57d25-3ff1-4ea0-aefa-f600e9bd5620
+      targetUser:
+        type: Current
+      useBitmoji3D: false
+      bitmoji3DConfigInputs:
+        bitmojiComponent: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
+        autoLoadBitmoji3D: true
+        hideBitmoji3DIfNotFound: false
+      useBitmojiSticker: true
+      bitmojiStickerConfigInputs:
+        stickerType: StickerID
+        stickerId: !<string> 20090206
+        autoLoad: true
+        applyActionInputs:
+          outputType: Image
+          meshVisual: !<reference.MaterialMeshVisual> 00000000-0000-0000-0000-000000000000
+          image: !<reference.Image> 91d2c65a-5322-45f0-8f59-79115c0ba89b
+          material: !<reference.Material> 00000000-0000-0000-0000-000000000000
+          showAdvancedOptions: false
+          meshVisualCloneType: None
+          materialPropertyName: baseTex
+          meshVisualMaterialIndex: 0
+        fallbackSettings:
+          placeholderTexture: !<reference.Texture> c9536e75-c652-452b-a866-65d3c19acd9c
+          loadingTexture: !<reference.Texture> c9536e75-c652-452b-a866-65d3c19acd9c
+          missingUserTexture: !<reference.Texture> c9536e75-c652-452b-a866-65d3c19acd9c
+      useTextDisplay: false
+      textDisplayConfigInputs:
+        fallbackText: ""
+        configurableSetTextInputs:
+          targetType: Text
+          text: !<reference.Text> 00000000-0000-0000-0000-000000000000
+          text3D: !<reference.Text3D> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     "":
       {}
@@ -9663,6 +11095,42 @@
     bottom: 0.000000
     right: 0.000000
     top: 0.000000
+- !<SceneObject/fa97ec5d-54bb-4ad9-9638-9c74677457c1>
+  PrefabRemaps:
+    []
+  Name: Bitmoji 5
+  Enabled: false
+  Layers: 2
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> d3fb1016-900c-446c-b72c-57d71cff11fb
+    - !<own> 715be329-ce4c-468d-8f72-66b373f0d6bc
+    - !<own> 5ec2b3f7-a435-4e5c-845f-a8fcc8191d3f
+- !<Image/fb0ec9ce-702a-40ee-851f-4eced16652f3>
+  PrefabRemaps:
+    []
+  Name: Image
+  Enabled: true
+  RenderOrder: 1
+  StretchMode: Fit
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> ff9d65fa-77e6-458b-a8d6-c39756988289
+  FlipX: false
+  FlipY: false
+  RotationAngle: 0
+  Pivot: {x: 0.000000, y: 0.000000}
+  ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
 - !<ScreenTransform/fc47cb69-c7de-4ada-a201-cc78eb2a9106>
   PrefabRemaps:
     []
