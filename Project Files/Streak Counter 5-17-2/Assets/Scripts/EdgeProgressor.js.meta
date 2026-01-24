@@ -1,0 +1,50 @@
+- !<AssetImportMetadata/23ff3c59-d5ef-4e05-b833-5a8ce9a6e441>
+  ImportedAssetIds:
+    JavaScriptAsset: !<reference> d902d943-a91e-40b0-8ff9-7cf856f0386d
+  ImporterName: JavaScriptAssetImporter
+  PrimaryAsset: !<reference> d902d943-a91e-40b0-8ff9-7cf856f0386d
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    JavaScriptAsset: !<own> 9a7280e2-0027-4354-8943-c072e10fb080
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<ScriptAssetData/9a7280e2-0027-4354-8943-c072e10fb080>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: 712f46e5-eef5-43aa-94fb-d04115518ddc
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    debug: false
+    debugName: false
+    debugText: false
+    edgeMaterial: false
+    streakController: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - streakController: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
+      edgeMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      debug: false
+      debugName: ""
+      debugText: !<reference.Text> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    -
+      {}

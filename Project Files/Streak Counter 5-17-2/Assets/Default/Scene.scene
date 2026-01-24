@@ -8823,6 +8823,7 @@
   Components:
     - !<own> 2656963e-b06b-4287-98c5-edea0f34f75f
     - !<own> e06f58de-153d-48b4-9920-85685544a33d
+    - !<own> d86d1cca-cd02-417d-ab6c-9986330f4a52
 - !<ScreenTransform/a8aaee41-26d0-4c2e-bc4c-511c2fda1097>
   PrefabRemaps:
     []
@@ -11586,6 +11587,27 @@
   MaskTexture: !<reference> 00000000-0000-0000-0000-000000000000
   RayTracing: !<reference> 00000000-0000-0000-0000-000000000000
   DevicePropertiesSource: !<reference> 00000000-0000-0000-0000-000000000000
+- !<ScriptComponent/d86d1cca-cd02-417d-ab6c-9986330f4a52>
+  PrefabRemaps:
+    []
+  Name: EdgeProgressor
+  Enabled: true
+  ScriptAsset: !<reference> d902d943-a91e-40b0-8ff9-7cf856f0386d
+  ScriptInputsDefault:
+    debugName: true
+    debugText: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      streakController: !<reference.ScriptComponent> d99c5880-55b6-4c85-9a5d-501f988df960
+      edgeMaterial: !<reference.Material> 33b1ff26-39c1-445c-aedc-229cee287f98
+      debug: true
+      debugName: ""
+      debugText: !<reference.Text> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    "":
+      {}
 - !<RenderMeshVisual/d9126006-0cca-417b-a89e-343b81d508d2>
   PrefabRemaps:
     []

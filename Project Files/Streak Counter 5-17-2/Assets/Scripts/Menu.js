@@ -62,8 +62,6 @@ function toggle(){
     if(isAnimating) return;
     isAnimating = true;
 
-    
-    
     if(isOpen){
         global.faderManager.hide(self, function(){
             isAnimating = false;
