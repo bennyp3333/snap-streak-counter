@@ -30,6 +30,7 @@
     debugName: false
     debugText: false
     edgeMaterial: false
+    smokeParticles: false
     streakController: false
   ScriptTypesHidden:
     {}
@@ -42,6 +43,7 @@
   DefaultScriptInputs:
     - streakController: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
       edgeMaterial: !<reference.Material> 00000000-0000-0000-0000-000000000000
+      smokeParticles: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
       debug: false
       debugName: ""
       debugText: !<reference.Text> 00000000-0000-0000-0000-000000000000

@@ -2015,6 +2015,21 @@
     - !<own> e9d05ef3-be38-4531-889e-e38436c56d50
   Components:
     - !<own> 3e07c066-3b7e-44b3-a145-b15efd815ad4
+- !<SceneObject/2b56ee26-ac73-426c-9f52-e5167f63e480>
+  PrefabRemaps:
+    []
+  Name: Smoke
+  Enabled: false
+  Layers: 1048576
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 100.000000, y: 100.000000, z: 100.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> c7eeeae0-04fc-4c96-a0d3-9eb8dbada391
 - !<SceneObject/2bbb75f5-9acf-4f0d-a837-2aef299267f7>
   PrefabRemaps:
     []
@@ -5650,7 +5665,6 @@
   ScriptInputsDefault:
     digitPositionY: true
     logoPositionY: true
-    debug: true
     debugName: true
     debugText: true
   ScriptTypesDefault:
@@ -5685,7 +5699,7 @@
         - !<reference> fc063a93-5519-4fef-b50a-c872a0b0949a
         - !<reference> bdac459f-c3d4-4a6a-8484-f982fc4f073e
       logoSparkles: !<reference.SceneObject> e9d05ef3-be38-4531-889e-e38436c56d50
-      debug: false
+      debug: true
       debugName: ""
       debugText: !<reference.Text> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
@@ -8820,6 +8834,7 @@
     HasSegmentScaleCompensation: false
   Children:
     - !<own> 4058ebd8-6694-4121-be8d-96e67b5a6b10
+    - !<own> 2b56ee26-ac73-426c-9f52-e5167f63e480
   Components:
     - !<own> 2656963e-b06b-4287-98c5-edea0f34f75f
     - !<own> e06f58de-153d-48b4-9920-85685544a33d
@@ -10540,6 +10555,26 @@
   RotationAngle: 0
   Pivot: {x: 0.000000, y: 0.000000}
   ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
+- !<RenderMeshVisual/c7eeeae0-04fc-4c96-a0d3-9eb8dbada391>
+  PrefabRemaps:
+    []
+  Name: Render Mesh Visual
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Stretch
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> e8cfc901-8c49-4e54-af47-e2689b1dcc2d
+  Mesh: !<reference> 542c56b2-3b9d-46a8-8397-766c34c39648
+  Skin: !<reference> 00000000-0000-0000-0000-000000000000
+  BlendShapesEnabled: true
+  BlendNormals: false
+  BlendShapes:
+    {}
 - !<ScriptComponent/c88edb39-ca5a-4041-890d-85ea0d3517ef>
   PrefabRemaps:
     []
@@ -11602,6 +11637,7 @@
     "":
       streakController: !<reference.ScriptComponent> d99c5880-55b6-4c85-9a5d-501f988df960
       edgeMaterial: !<reference.Material> 33b1ff26-39c1-445c-aedc-229cee287f98
+      smokeParticles: !<reference.SceneObject> 2b56ee26-ac73-426c-9f52-e5167f63e480
       debug: true
       debugName: ""
       debugText: !<reference.Text> 00000000-0000-0000-0000-000000000000
@@ -11646,7 +11682,6 @@
     forcedUser0StreaksBroken: true
     forcedUser1StreaksBroken: true
     forceTimeRemaining: true
-    forcedHoursRemaining: true
   ScriptTypesDefault:
     {}
   ScriptInputs:
@@ -11667,7 +11702,7 @@
       forcedUser0StreaksBroken: 0
       forcedUser1StreaksBroken: 0
       forceTimeRemaining: false
-      forcedHoursRemaining: !<float> 12.000000
+      forcedHoursRemaining: 1.170000
   ScriptTypes:
     "":
       {}

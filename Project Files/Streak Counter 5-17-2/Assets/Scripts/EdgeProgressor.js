@@ -1,6 +1,8 @@
 //@input Component.ScriptComponent streakController
 //@input Asset.Material edgeMaterial
 //@ui {"widget":"separator"}
+//@input SceneObject smokeParticles
+//@ui {"widget":"separator"}
 //@input bool debug
 //@input string debugName = "" {"showIf":"debug"}
 //@input Component.Text debugText {"showIf":"debug"}
@@ -21,16 +23,17 @@ function init() {
         setEdgeColor(data.currentStreak, false);
     });
 
-    script.streakController.onStreakChanged(function(data) {
+    script.streakController.onStreakBroken(function(data) {
         debugPrint('Streak broken, settting edge color');
         setEdgeColor(null, true);
+        script.smokeParticles.enabled = true;
     });
 
     debugPrint("Initialized!");
 }
 
 function setEdgeColor(streakCount, streakBroken){
-    var edgeColor = new vec4(0.25, 0.25, 0.25, 1.0);
+    var edgeColor = new vec4(0, 0, 0, 0);
     if(!streakBroken){
         var hue = ((streakCount / 100 ) + 0.569) % 1;
         debugPrint("Edge Hue: " + hue);

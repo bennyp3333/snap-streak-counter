@@ -499,6 +499,9 @@
     - Port_Value2_N065:
         typeIdx: 1
         value: 1.000000
+    - Port_Value2_N110:
+        typeIdx: 1
+        value: 1.000000
     - Port_Value3_N005:
         typeIdx: 1
         value: 0.000000
@@ -691,9 +694,6 @@
       typeIdx: 1
       value: 1.000000
     Port_Value2_N085:
-      typeIdx: 1
-      value: 1.000000
-    Port_Value2_N110:
       typeIdx: 1
       value: 1.000000
     Port_Value3_N110:
