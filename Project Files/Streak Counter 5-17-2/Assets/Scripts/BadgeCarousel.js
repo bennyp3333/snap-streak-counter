@@ -162,6 +162,8 @@ function onTouchStart(eventData) {
     isDragging = true;
     dragStartX = eventData.getTouchPosition().x;
     dragOffsetX = 0;
+
+    global.faderManager.hide("Swipe Hint");
 }
 
 function onTouchMove(eventData) {

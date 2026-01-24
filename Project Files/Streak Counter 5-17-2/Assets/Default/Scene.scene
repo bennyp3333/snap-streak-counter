@@ -116,6 +116,25 @@
   RotationAngle: 0
   Pivot: {x: 0.000000, y: 0.000000}
   ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
+- !<Image/026c4888-5045-4105-b716-a6a894cc7012>
+  PrefabRemaps:
+    []
+  Name: Image
+  Enabled: true
+  RenderOrder: 10
+  StretchMode: Fit
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> e3179a61-aae1-4e34-b5cd-bb0660f4462d
+  FlipX: false
+  FlipY: false
+  RotationAngle: 0
+  Pivot: {x: 0.000000, y: 0.000000}
+  ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
 - !<ScreenTransform/02d3eff1-7f03-4153-9a10-73ac0120f617>
   PrefabRemaps:
     []
@@ -1242,7 +1261,7 @@
   PrefabRemaps:
     []
   Name: Preview Camera
-  Enabled: false
+  Enabled: true
   Layers: 2
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -1816,7 +1835,7 @@
   PrefabRemaps:
     []
   Name: Orthographic Camera
-  Enabled: false
+  Enabled: true
   Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -2954,6 +2973,23 @@
   Enabled: true
   ScreenRegionType: FullFrame
   ResizeWithKeyboard: false
+- !<SceneObject/38a861e1-f67c-42e7-b5b5-cfd6e5168f2c>
+  PrefabRemaps:
+    []
+  Name: Swipe Hint
+  Enabled: true
+  Layers: 2
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> f2a1d332-365a-4c02-8975-45162b0539b3
+    - !<own> 026c4888-5045-4105-b716-a6a894cc7012
+    - !<own> 58dc1ab0-906a-465f-8f54-3fa504456206
 - !<SceneObject/38c6734a-0e97-4de2-ab48-0d64b8595037>
   PrefabRemaps:
     []
@@ -3224,7 +3260,7 @@
       defaultColor: !<Vec3> {x: 1.000000, y: 1.000000, z: 1.000000}
       pressedColor: !<Vec3> {x: 0.800000, y: 0.800000, z: 0.800000}
       useAudio: true
-      tapAudioTrack: !<reference.AudioTrackAsset> ac0b8134-3bc9-4f5f-adbb-e03d97291938
+      tapAudioTrack: !<reference.AudioTrackAsset> 95392bff-ddaf-45c2-9c6e-cd65cf9ca1ef
       editAdvancedOptions: false
       touchBlockingEnabled: true
       printDebugStatements: false
@@ -5061,6 +5097,90 @@
     bottom: 0.000000
     right: -10.000000
     top: 0.000000
+- !<ScriptComponent/58dc1ab0-906a-465f-8f54-3fa504456206>
+  PrefabRemaps:
+    []
+  Name: Fader
+  Enabled: true
+  ScriptAsset: !<reference> e3dcb676-1915-43f2-82f0-d39cc516aa29
+  ScriptInputsDefault:
+    autoShow: true
+    autoShowDelay: true
+    autoHide: true
+    autoHideDelay: true
+    inMode: true
+    inAdvanced: true
+    inAlpha: true
+    inScale: true
+    inRect: true
+    inEasing: true
+    inEasingType: true
+    inRecursiveFade: true
+    inFadeMaterialParameter: true
+    inScaleLocal: true
+    outMode: true
+    outAdvanced: true
+    outAlpha: true
+    outScale: true
+    outRect: true
+    outEasing: true
+    outEasingType: true
+    outRecursiveFade: true
+    outFadeMaterialParameter: true
+    outScaleLocal: true
+    optional: true
+    sceneObject: true
+    faderName: true
+    faderTags: true
+    disableWhenHidden: true
+    makeMaterialsUnique: true
+    debug: true
+    printDebugStatements: true
+    printWarningStatements: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      initialState: hidden
+      autoShow: false
+      autoShowDelay: !<float> 0.000000
+      autoHide: false
+      autoHideDelay: !<float> 2.000000
+      inMode: fade
+      inTime: 0.500000
+      inAdvanced: false
+      inAlpha: !<float> 1.000000
+      inScale: !<Vec3> {x: 1.000000, y: 1.000000, z: 1.000000}
+      inRect: !<Vec4> {x: -1.000000, y: 1.000000, z: -1.000000, w: 1.000000}
+      inEasing: Quadratic
+      inEasingType: Out
+      inRecursiveFade: false
+      inFadeMaterialParameter: baseColor
+      inScaleLocal: Local
+      outMode: fade
+      outTime: 0.250000
+      outAdvanced: false
+      outAlpha: !<float> 0.000000
+      outScale: !<Vec3> {x: 0.000000, y: 0.000000, z: 0.000000}
+      outRect: !<Vec4> {x: -1.000000, y: 1.000000, z: -1.000000, w: 1.000000}
+      outEasing: Quadratic
+      outEasingType: Out
+      outRecursiveFade: false
+      outFadeMaterialParameter: baseColor
+      outScaleLocal: Local
+      optional: false
+      sceneObject: !<reference.SceneObject> 00000000-0000-0000-0000-000000000000
+      faderName: ""
+      faderTags: !<string[]>
+        []
+      disableWhenHidden: false
+      makeMaterialsUnique: true
+      debug: false
+      printDebugStatements: false
+      printWarningStatements: true
+  ScriptTypes:
+    "":
+      {}
 - !<SceneObject/595c50ac-20a6-499f-b268-2ef96b0c1cf0>
   PrefabRemaps:
     []
@@ -9035,7 +9155,7 @@
       defaultColor: !<Vec3> {x: 1.000000, y: 1.000000, z: 1.000000}
       pressedColor: !<Vec3> {x: 0.800000, y: 0.800000, z: 0.800000}
       useAudio: true
-      tapAudioTrack: !<reference.AudioTrackAsset> 4cc2985a-879d-42b8-b0f3-8a5238c40152
+      tapAudioTrack: !<reference.AudioTrackAsset> 537e6e69-e3a4-4e73-a82b-a94f7bdec33d
       editAdvancedOptions: false
       touchBlockingEnabled: true
       printDebugStatements: false
@@ -11010,6 +11130,7 @@
     - !<own> 25a81970-86e6-4a4f-b7bc-b4aec2ddd6e4
     - !<own> 38c6734a-0e97-4de2-ab48-0d64b8595037
     - !<own> bd98d80e-ae74-4a13-84bc-93b538f98055
+    - !<own> 38a861e1-f67c-42e7-b5b5-cfd6e5168f2c
   Components:
     - !<own> 58b9d9a0-29f0-4147-a7c7-82fc6ae216af
     - !<own> f6f42258-8724-42d6-998a-995aade3f913
@@ -14670,6 +14791,39 @@
     CapitalizationOverride: None
   DepthTest: false
   TwoSided: false
+- !<ScreenTransform/f2a1d332-365a-4c02-8975-45162b0539b3>
+  PrefabRemaps:
+    []
+  Name: Screen Transform
+  Enabled: true
+  IsAdvanced: false
+  Constraints:
+    pinToLeft: false
+    pinToTop: false
+    pinToRight: false
+    pinToBottom: false
+    fixedWidth: false
+    fixedHeight: false
+    deactivatedFixedSprite: false
+    deactivatedFixedPivot: false
+  Pivot: {x: 0.000000, y: 0.000000}
+  Transform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  RawMode: true
+  ForceBasic: true
+  Anchor:
+    left: 0.033833
+    bottom: -1.886004
+    right: 1.083040
+    top: 0.393841
+  Offset:
+    left: 0.000000
+    bottom: 0.000000
+    right: 0.000000
+    top: 0.000000
 - !<SceneObject/f38c770b-9f38-4390-9b49-00050a224d14>
   PrefabRemaps:
     []

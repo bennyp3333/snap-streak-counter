@@ -52,6 +52,7 @@ function init(){
         if(data.totalSnaps < 2){
             global.faderManager.show("Tap Hint 1");
             global.faderManager.show("Tap Hint 2");
+            global.faderManager.show("Swipe Hint");
         }
     });
     
