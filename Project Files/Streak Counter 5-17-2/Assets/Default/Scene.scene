@@ -305,6 +305,56 @@
     []
   Components:
     - !<own> 38d18464-69bd-4a72-a08c-c89f1d24fa31
+- !<ScriptComponent/0631efaf-80db-4c70-8348-fe87920a930f>
+  PrefabRemaps:
+    []
+  Name: Turn Based Player Info
+  Enabled: true
+  ScriptAsset: !<reference> 8a7bdc69-76bf-461f-853b-ff2dce8f38b3
+  ScriptInputsDefault:
+    bitmoji3DConfigInputs: true
+    useTextDisplay: true
+    textDisplayConfigInputs: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      turnBased: !<reference.ScriptComponent> 33d57d25-3ff1-4ea0-aefa-f600e9bd5620
+      targetUser:
+        type: Other
+      useBitmoji3D: false
+      bitmoji3DConfigInputs:
+        bitmojiComponent: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
+        autoLoadBitmoji3D: true
+        hideBitmoji3DIfNotFound: false
+      useBitmojiSticker: true
+      bitmojiStickerConfigInputs:
+        stickerType: StickerID
+        stickerId: !<string> 31137070
+        autoLoad: true
+        applyActionInputs:
+          outputType: Image
+          meshVisual: !<reference.MaterialMeshVisual> 00000000-0000-0000-0000-000000000000
+          image: !<reference.Image> 29270222-b7ec-43b6-a441-d7ecd17265e6
+          material: !<reference.Material> 00000000-0000-0000-0000-000000000000
+          showAdvancedOptions: true
+          meshVisualCloneType: None
+          materialPropertyName: baseTex
+          meshVisualMaterialIndex: 0
+        fallbackSettings:
+          placeholderTexture: !<reference.Texture> dab0b757-3bf3-4dcf-845d-73f10d4fc965
+          loadingTexture: !<reference.Texture> dab0b757-3bf3-4dcf-845d-73f10d4fc965
+          missingUserTexture: !<reference.Texture> dab0b757-3bf3-4dcf-845d-73f10d4fc965
+      useTextDisplay: false
+      textDisplayConfigInputs:
+        fallbackText: ""
+        configurableSetTextInputs:
+          targetType: Text
+          text: !<reference.Text> 00000000-0000-0000-0000-000000000000
+          text3D: !<reference.Text3D> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    "":
+      {}
 - !<ScreenTransform/0661c43b-f0cb-4dee-8fd1-53e6e6b3aebb>
   PrefabRemaps:
     []
@@ -512,6 +562,39 @@
   RotationAngle: 0
   Pivot: {x: 0.000000, y: 0.000000}
   ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
+- !<ScreenTransform/0b89a562-47f6-4839-be42-052fd18cec33>
+  PrefabRemaps:
+    []
+  Name: Screen Transform
+  Enabled: true
+  IsAdvanced: false
+  Constraints:
+    pinToLeft: false
+    pinToTop: false
+    pinToRight: true
+    pinToBottom: false
+    fixedWidth: true
+    fixedHeight: true
+    deactivatedFixedSprite: false
+    deactivatedFixedPivot: false
+  Pivot: {x: 0.000000, y: 0.000000}
+  Transform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  RawMode: true
+  ForceBasic: true
+  Anchor:
+    left: 1.000000
+    bottom: 0.000000
+    right: 1.000000
+    top: 0.000000
+  Offset:
+    left: -116.999992
+    bottom: -48.500000
+    right: -19.999992
+    top: 48.500000
 - !<RenderMeshVisual/0bb02615-f4d7-4828-a420-a4ddede24059>
   PrefabRemaps:
     []
@@ -805,6 +888,23 @@
     []
   Components:
     - !<own> d9126006-0cca-417b-a89e-343b81d508d2
+- !<SceneObject/14f3d697-db65-4633-80a8-7e72403b99ef>
+  PrefabRemaps:
+    []
+  Name: Friend Icon 5
+  Enabled: false
+  Layers: 2
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 49c97aab-e92f-4018-b0a6-dac5b783f7d1
+    - !<own> e2989d22-b0d2-41b5-bc63-83a6ebe33ad5
+    - !<own> f0d6384c-4fc6-4a83-881d-a6bf940d3e8a
 - !<SceneObject/1617d635-f0ef-4b83-aafd-d40d6f7ef010>
   PrefabRemaps:
     []
@@ -1459,6 +1559,75 @@
     bottom: 0.000000
     right: 0.000000
     top: 0.000000
+- !<Image/213959a4-3a5d-427a-b4df-0c8249110a30>
+  PrefabRemaps:
+    []
+  Name: Image
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Fit
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 499fe772-681f-45ab-a849-a1b4072082d5
+  FlipX: false
+  FlipY: false
+  RotationAngle: 0
+  Pivot: {x: 0.000000, y: 0.000000}
+  ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
+- !<ScriptComponent/21617f15-9417-42c8-b449-e8225b523b15>
+  PrefabRemaps:
+    []
+  Name: Turn Based Player Info
+  Enabled: true
+  ScriptAsset: !<reference> 8a7bdc69-76bf-461f-853b-ff2dce8f38b3
+  ScriptInputsDefault:
+    bitmoji3DConfigInputs: true
+    useTextDisplay: true
+    textDisplayConfigInputs: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      turnBased: !<reference.ScriptComponent> 33d57d25-3ff1-4ea0-aefa-f600e9bd5620
+      targetUser:
+        type: Other
+      useBitmoji3D: false
+      bitmoji3DConfigInputs:
+        bitmojiComponent: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
+        autoLoadBitmoji3D: true
+        hideBitmoji3DIfNotFound: false
+      useBitmojiSticker: true
+      bitmojiStickerConfigInputs:
+        stickerType: StickerID
+        stickerId: !<string> 37197935
+        autoLoad: true
+        applyActionInputs:
+          outputType: Image
+          meshVisual: !<reference.MaterialMeshVisual> 00000000-0000-0000-0000-000000000000
+          image: !<reference.Image> d3071074-c4ed-436c-bcf5-23b81db8448f
+          material: !<reference.Material> 00000000-0000-0000-0000-000000000000
+          showAdvancedOptions: true
+          meshVisualCloneType: None
+          materialPropertyName: baseTex
+          meshVisualMaterialIndex: 0
+        fallbackSettings:
+          placeholderTexture: !<reference.Texture> dab0b757-3bf3-4dcf-845d-73f10d4fc965
+          loadingTexture: !<reference.Texture> dab0b757-3bf3-4dcf-845d-73f10d4fc965
+          missingUserTexture: !<reference.Texture> dab0b757-3bf3-4dcf-845d-73f10d4fc965
+      useTextDisplay: false
+      textDisplayConfigInputs:
+        fallbackText: ""
+        configurableSetTextInputs:
+          targetType: Text
+          text: !<reference.Text> 00000000-0000-0000-0000-000000000000
+          text3D: !<reference.Text3D> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    "":
+      {}
 - !<ScreenTransform/223eb23a-2860-4902-8fc0-ee635a946b5b>
   PrefabRemaps:
     []
@@ -1955,6 +2124,25 @@
     CapitalizationOverride: None
   DepthTest: false
   TwoSided: false
+- !<Image/29270222-b7ec-43b6-a441-d7ecd17265e6>
+  PrefabRemaps:
+    []
+  Name: Image
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Fit
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 499fe772-681f-45ab-a849-a1b4072082d5
+  FlipX: false
+  FlipY: false
+  RotationAngle: 0
+  Pivot: {x: 0.000000, y: 0.000000}
+  ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
 - !<ScriptComponent/292a944c-83d7-4234-a695-d05327fc2977>
   PrefabRemaps:
     []
@@ -1981,6 +2169,21 @@
         - !<reference> 93b83321-5de6-483f-b868-0aa8b94fc3f9
         - !<reference> 49a54351-37ca-497f-8618-467310c46ebe
       memoCycleDelay: !<float> 4.000000
+      friendIcons: !<reference.SceneObject[]>
+        - !<reference> 541cf1d2-799b-4934-9eb8-62a06ee6d7c5
+        - !<reference> 521306f2-1e5a-4bec-b7d7-d9b16bbe0944
+        - !<reference> 5ebfe630-cab4-46a0-9a93-52f28334da45
+        - !<reference> e215fd1e-2e0c-4e35-a620-f457bdf8eb74
+        - !<reference> c3b099c7-7212-4d45-9bd3-f304095f645d
+        - !<reference> 14f3d697-db65-4633-80a8-7e72403b99ef
+        - !<reference> 5a77fbaf-22e5-4a9a-97f6-1682cf3a660c
+        - !<reference> d77b243f-47d6-44aa-88fb-47ecb6f6239d
+        - !<reference> 31cc2195-a4b2-4c98-8530-a6d128f6e6ff
+        - !<reference> af74aab1-09ce-432d-bae4-8dcb413a3985
+        - !<reference> ceb5bf5f-9695-4f11-ae1b-25403d8b213f
+        - !<reference> 61f926ee-9b63-478d-bf58-5ccf2e7b5148
+        - !<reference> 68e7c6df-41d8-4e2e-a9e3-114742c52e65
+        - !<reference> a64be665-5169-454b-b585-9cc9566c0fe7
       printDebugStatements: true
   ScriptTypes:
     "":
@@ -2348,6 +2551,23 @@
     bottom: 0.000000
     right: 0.000000
     top: 0.000000
+- !<SceneObject/31cc2195-a4b2-4c98-8530-a6d128f6e6ff>
+  PrefabRemaps:
+    []
+  Name: Friend Icon 8
+  Enabled: false
+  Layers: 2
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 9ada10df-84b0-4de1-8d2d-b2503c41c30c
+    - !<own> 29270222-b7ec-43b6-a441-d7ecd17265e6
+    - !<own> 0631efaf-80db-4c70-8348-fe87920a930f
 - !<ScriptComponent/323975e2-2183-49af-bd14-f44e819c7f1e>
   PrefabRemaps:
     []
@@ -2558,6 +2778,56 @@
   ScriptInputs:
     "":
       {}
+  ScriptTypes:
+    "":
+      {}
+- !<ScriptComponent/337f20c6-4b80-40dc-a927-a00beec7e3ec>
+  PrefabRemaps:
+    []
+  Name: Turn Based Player Info
+  Enabled: true
+  ScriptAsset: !<reference> 8a7bdc69-76bf-461f-853b-ff2dce8f38b3
+  ScriptInputsDefault:
+    bitmoji3DConfigInputs: true
+    useTextDisplay: true
+    textDisplayConfigInputs: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      turnBased: !<reference.ScriptComponent> 33d57d25-3ff1-4ea0-aefa-f600e9bd5620
+      targetUser:
+        type: Other
+      useBitmoji3D: false
+      bitmoji3DConfigInputs:
+        bitmojiComponent: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
+        autoLoadBitmoji3D: true
+        hideBitmoji3DIfNotFound: false
+      useBitmojiSticker: true
+      bitmojiStickerConfigInputs:
+        stickerType: StickerID
+        stickerId: !<string> 35598153
+        autoLoad: true
+        applyActionInputs:
+          outputType: Image
+          meshVisual: !<reference.MaterialMeshVisual> 00000000-0000-0000-0000-000000000000
+          image: !<reference.Image> 6ee6892e-e311-4df9-a246-52bcf240cbaf
+          material: !<reference.Material> 00000000-0000-0000-0000-000000000000
+          showAdvancedOptions: true
+          meshVisualCloneType: None
+          materialPropertyName: baseTex
+          meshVisualMaterialIndex: 0
+        fallbackSettings:
+          placeholderTexture: !<reference.Texture> dab0b757-3bf3-4dcf-845d-73f10d4fc965
+          loadingTexture: !<reference.Texture> dab0b757-3bf3-4dcf-845d-73f10d4fc965
+          missingUserTexture: !<reference.Texture> dab0b757-3bf3-4dcf-845d-73f10d4fc965
+      useTextDisplay: false
+      textDisplayConfigInputs:
+        fallbackText: ""
+        configurableSetTextInputs:
+          targetType: Text
+          text: !<reference.Text> 00000000-0000-0000-0000-000000000000
+          text3D: !<reference.Text3D> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
     "":
       {}
@@ -3061,6 +3331,39 @@
     []
   Components:
     - !<own> f722781d-118e-4ef6-85d9-aaccafe9cf60
+- !<ScreenTransform/3cec95ad-93a4-40eb-9aba-f2b69efa56b0>
+  PrefabRemaps:
+    []
+  Name: Screen Transform
+  Enabled: true
+  IsAdvanced: false
+  Constraints:
+    pinToLeft: false
+    pinToTop: false
+    pinToRight: false
+    pinToBottom: false
+    fixedWidth: false
+    fixedHeight: false
+    deactivatedFixedSprite: false
+    deactivatedFixedPivot: false
+  Pivot: {x: 0.000000, y: 0.000000}
+  Transform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  RawMode: true
+  ForceBasic: true
+  Anchor:
+    left: -1.000000
+    bottom: -1.000000
+    right: 1.000000
+    top: 1.000000
+  Offset:
+    left: 0.000000
+    bottom: 0.000000
+    right: 0.000000
+    top: 0.000000
 - !<ScriptComponent/3d12eea9-a973-4c8e-812e-85ec453f26f2>
   PrefabRemaps:
     []
@@ -3549,6 +3852,39 @@
   Components:
     - !<own> 65410719-ab1c-406e-859e-db9d09d020b0
     - !<own> 6a19cd30-f6ab-4139-9a5b-5daaf9aaa64f
+- !<ScreenTransform/4531b2e3-6a20-455d-a4da-13a8016499d6>
+  PrefabRemaps:
+    []
+  Name: Screen Transform
+  Enabled: true
+  IsAdvanced: false
+  Constraints:
+    pinToLeft: false
+    pinToTop: false
+    pinToRight: false
+    pinToBottom: false
+    fixedWidth: false
+    fixedHeight: false
+    deactivatedFixedSprite: false
+    deactivatedFixedPivot: false
+  Pivot: {x: 0.000000, y: 0.000000}
+  Transform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  RawMode: true
+  ForceBasic: true
+  Anchor:
+    left: -1.000000
+    bottom: -1.000000
+    right: 1.000000
+    top: 1.000000
+  Offset:
+    left: 0.000000
+    bottom: 0.000000
+    right: 0.000000
+    top: 0.000000
 - !<SceneObject/4569c241-8a26-4d73-90b4-a04deab79484>
   PrefabRemaps:
     []
@@ -3978,6 +4314,25 @@
   MaskTexture: !<reference> 00000000-0000-0000-0000-000000000000
   RayTracing: !<reference> 00000000-0000-0000-0000-000000000000
   DevicePropertiesSource: !<reference> 00000000-0000-0000-0000-000000000000
+- !<Image/48fd1736-1a9d-4ac9-b95d-d8972fb3d205>
+  PrefabRemaps:
+    []
+  Name: Image
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Fit
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 499fe772-681f-45ab-a849-a1b4072082d5
+  FlipX: false
+  FlipY: false
+  RotationAngle: 0
+  Pivot: {x: 0.000000, y: 0.000000}
+  ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
 - !<Camera/490a082c-0f06-44f9-94b2-8eefe4f5d06c>
   PrefabRemaps:
     []
@@ -4107,6 +4462,39 @@
     CapitalizationOverride: None
   DepthTest: false
   TwoSided: false
+- !<ScreenTransform/49c97aab-e92f-4018-b0a6-dac5b783f7d1>
+  PrefabRemaps:
+    []
+  Name: Screen Transform
+  Enabled: true
+  IsAdvanced: false
+  Constraints:
+    pinToLeft: false
+    pinToTop: false
+    pinToRight: false
+    pinToBottom: false
+    fixedWidth: false
+    fixedHeight: false
+    deactivatedFixedSprite: false
+    deactivatedFixedPivot: false
+  Pivot: {x: 0.000000, y: 0.000000}
+  Transform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  RawMode: true
+  ForceBasic: true
+  Anchor:
+    left: -1.000000
+    bottom: -1.000000
+    right: 1.000000
+    top: 1.000000
+  Offset:
+    left: 0.000000
+    bottom: 0.000000
+    right: 0.000000
+    top: 0.000000
 - !<ScreenTransform/4a0f69db-f9f8-4ac6-b7fc-e4c8be26ebaa>
   PrefabRemaps:
     []
@@ -4397,6 +4785,23 @@
     - !<own> 6dd84dae-9845-4a59-b9b0-8fb743ef1b52
     - !<own> 69d172f8-ddc8-4a10-b4ba-3615fb431e0d
     - !<own> d1f3c9ce-16bc-4062-8a46-12830ebb54e3
+- !<SceneObject/521306f2-1e5a-4bec-b7d7-d9b16bbe0944>
+  PrefabRemaps:
+    []
+  Name: Friend Icon 1
+  Enabled: false
+  Layers: 2
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> c497d0a5-86af-4993-ac1a-56273caf654c
+    - !<own> d3071074-c4ed-436c-bcf5-23b81db8448f
+    - !<own> 21617f15-9417-42c8-b449-e8225b523b15
 - !<SceneObject/53ad502a-afd6-4b59-a4d7-6e7a50551995>
   PrefabRemaps:
     []
@@ -4450,8 +4855,8 @@
 - !<SceneObject/541cf1d2-799b-4934-9eb8-62a06ee6d7c5>
   PrefabRemaps:
     []
-  Name: Friend Icon
-  Enabled: true
+  Name: Friend Icon 0
+  Enabled: false
   Layers: 2
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -4480,6 +4885,39 @@
   Components:
     - !<own> 3a51457a-d745-4bb1-b1cb-28c508bd40fe
 - !<ScreenTransform/5580fd3c-573d-4526-b07b-7d54286420ed>
+  PrefabRemaps:
+    []
+  Name: Screen Transform
+  Enabled: true
+  IsAdvanced: false
+  Constraints:
+    pinToLeft: false
+    pinToTop: false
+    pinToRight: false
+    pinToBottom: false
+    fixedWidth: false
+    fixedHeight: false
+    deactivatedFixedSprite: false
+    deactivatedFixedPivot: false
+  Pivot: {x: 0.000000, y: 0.000000}
+  Transform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  RawMode: true
+  ForceBasic: true
+  Anchor:
+    left: -1.000000
+    bottom: -1.000000
+    right: 1.000000
+    top: 1.000000
+  Offset:
+    left: 0.000000
+    bottom: 0.000000
+    right: 0.000000
+    top: 0.000000
+- !<ScreenTransform/55d41a1a-33a1-467d-ad5b-f30b29175593>
   PrefabRemaps:
     []
   Name: Screen Transform
@@ -4639,6 +5077,106 @@
     - !<own> 76c3422c-5b2d-42a4-a79d-02040dc0a2b0
   Components:
     - !<own> fd4ffb60-1c17-4dae-8f32-f9d8893f6229
+- !<ScriptComponent/598acbcd-cf27-4e44-8a5b-4fb5272a8bb4>
+  PrefabRemaps:
+    []
+  Name: Turn Based Player Info
+  Enabled: true
+  ScriptAsset: !<reference> 8a7bdc69-76bf-461f-853b-ff2dce8f38b3
+  ScriptInputsDefault:
+    bitmoji3DConfigInputs: true
+    useTextDisplay: true
+    textDisplayConfigInputs: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      turnBased: !<reference.ScriptComponent> 33d57d25-3ff1-4ea0-aefa-f600e9bd5620
+      targetUser:
+        type: Other
+      useBitmoji3D: false
+      bitmoji3DConfigInputs:
+        bitmojiComponent: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
+        autoLoadBitmoji3D: true
+        hideBitmoji3DIfNotFound: false
+      useBitmojiSticker: true
+      bitmojiStickerConfigInputs:
+        stickerType: StickerID
+        stickerId: !<string> 36114626
+        autoLoad: true
+        applyActionInputs:
+          outputType: Image
+          meshVisual: !<reference.MaterialMeshVisual> 00000000-0000-0000-0000-000000000000
+          image: !<reference.Image> 213959a4-3a5d-427a-b4df-0c8249110a30
+          material: !<reference.Material> 00000000-0000-0000-0000-000000000000
+          showAdvancedOptions: true
+          meshVisualCloneType: None
+          materialPropertyName: baseTex
+          meshVisualMaterialIndex: 0
+        fallbackSettings:
+          placeholderTexture: !<reference.Texture> dab0b757-3bf3-4dcf-845d-73f10d4fc965
+          loadingTexture: !<reference.Texture> dab0b757-3bf3-4dcf-845d-73f10d4fc965
+          missingUserTexture: !<reference.Texture> dab0b757-3bf3-4dcf-845d-73f10d4fc965
+      useTextDisplay: false
+      textDisplayConfigInputs:
+        fallbackText: ""
+        configurableSetTextInputs:
+          targetType: Text
+          text: !<reference.Text> 00000000-0000-0000-0000-000000000000
+          text3D: !<reference.Text3D> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    "":
+      {}
+- !<ScriptComponent/59a56aeb-ddd2-4d86-898e-94f33914c2ba>
+  PrefabRemaps:
+    []
+  Name: Turn Based Player Info
+  Enabled: true
+  ScriptAsset: !<reference> 8a7bdc69-76bf-461f-853b-ff2dce8f38b3
+  ScriptInputsDefault:
+    bitmoji3DConfigInputs: true
+    useTextDisplay: true
+    textDisplayConfigInputs: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      turnBased: !<reference.ScriptComponent> 33d57d25-3ff1-4ea0-aefa-f600e9bd5620
+      targetUser:
+        type: Other
+      useBitmoji3D: false
+      bitmoji3DConfigInputs:
+        bitmojiComponent: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
+        autoLoadBitmoji3D: true
+        hideBitmoji3DIfNotFound: false
+      useBitmojiSticker: true
+      bitmojiStickerConfigInputs:
+        stickerType: StickerID
+        stickerId: !<string> 36714796
+        autoLoad: true
+        applyActionInputs:
+          outputType: Image
+          meshVisual: !<reference.MaterialMeshVisual> 00000000-0000-0000-0000-000000000000
+          image: !<reference.Image> 605fa57a-d98b-4655-a71b-60d17117d7ff
+          material: !<reference.Material> 00000000-0000-0000-0000-000000000000
+          showAdvancedOptions: true
+          meshVisualCloneType: None
+          materialPropertyName: baseTex
+          meshVisualMaterialIndex: 0
+        fallbackSettings:
+          placeholderTexture: !<reference.Texture> dab0b757-3bf3-4dcf-845d-73f10d4fc965
+          loadingTexture: !<reference.Texture> dab0b757-3bf3-4dcf-845d-73f10d4fc965
+          missingUserTexture: !<reference.Texture> dab0b757-3bf3-4dcf-845d-73f10d4fc965
+      useTextDisplay: false
+      textDisplayConfigInputs:
+        fallbackText: ""
+        configurableSetTextInputs:
+          targetType: Text
+          text: !<reference.Text> 00000000-0000-0000-0000-000000000000
+          text3D: !<reference.Text3D> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    "":
+      {}
 - !<SceneObject/5a615ba2-97b5-427f-96e6-ede89953d8f0>
   PrefabRemaps:
     []
@@ -4669,6 +5207,23 @@
     []
   Components:
     - !<own> aad3b520-3fd3-41e9-932c-1fcd0f6aff5f
+- !<SceneObject/5a77fbaf-22e5-4a9a-97f6-1682cf3a660c>
+  PrefabRemaps:
+    []
+  Name: Friend Icon 6
+  Enabled: false
+  Layers: 2
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> afefd03c-7203-4e88-8846-059b06d73f2e
+    - !<own> a921b89d-f12c-4f75-a9f2-e8ce33546903
+    - !<own> f5874ff7-6db1-4d73-8463-a53a0f4aee80
 - !<ScreenTransform/5b3132a1-c5c3-45f4-b3f3-83a10afc20f1>
   PrefabRemaps:
     []
@@ -4718,6 +5273,25 @@
   Components:
     - !<own> 3d70595e-213c-46ec-afea-2f5875bab4dc
     - !<own> e8dccbb2-8e91-43ca-af89-db7c75ea38e9
+- !<Image/5c51008c-88df-425a-998d-6379bfe67bb2>
+  PrefabRemaps:
+    []
+  Name: Image
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Fit
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 499fe772-681f-45ab-a849-a1b4072082d5
+  FlipX: false
+  FlipY: false
+  RotationAngle: 0
+  Pivot: {x: 0.000000, y: 0.000000}
+  ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
 - !<SceneObject/5d21f2fe-d83e-4129-bd57-369252754ba6>
   PrefabRemaps:
     []
@@ -4797,6 +5371,23 @@
     - !<own> f4c47c48-d390-41cc-8539-b773886fd9fd
   Components:
     - !<own> eda96a0f-6637-43c9-8e50-521444a0e70f
+- !<SceneObject/5ebfe630-cab4-46a0-9a93-52f28334da45>
+  PrefabRemaps:
+    []
+  Name: Friend Icon 2
+  Enabled: false
+  Layers: 2
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 94d204ae-13c9-435e-a8e4-83b582a00ee5
+    - !<own> 605fa57a-d98b-4655-a71b-60d17117d7ff
+    - !<own> 59a56aeb-ddd2-4d86-898e-94f33914c2ba
 - !<ScriptComponent/5ec2b3f7-a435-4e5c-845f-a8fcc8191d3f>
   PrefabRemaps:
     []
@@ -4964,6 +5555,25 @@
     CapitalizationOverride: None
   DepthTest: false
   TwoSided: false
+- !<Image/605fa57a-d98b-4655-a71b-60d17117d7ff>
+  PrefabRemaps:
+    []
+  Name: Image
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Fit
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 499fe772-681f-45ab-a849-a1b4072082d5
+  FlipX: false
+  FlipY: false
+  RotationAngle: 0
+  Pivot: {x: 0.000000, y: 0.000000}
+  ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
 - !<Text/60e42b97-4db5-4a7f-8ae8-bce4c2e89a48>
   PrefabRemaps:
     []
@@ -5047,6 +5657,23 @@
     CapitalizationOverride: None
   DepthTest: false
   TwoSided: false
+- !<SceneObject/61f926ee-9b63-478d-bf58-5ccf2e7b5148>
+  PrefabRemaps:
+    []
+  Name: Friend Icon 11
+  Enabled: false
+  Layers: 2
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> a27e2423-db10-4fd1-8116-fc4a64200786
+    - !<own> 6ee6892e-e311-4df9-a246-52bcf240cbaf
+    - !<own> 337f20c6-4b80-40dc-a927-a00beec7e3ec
 - !<Image/63a92702-7d26-48a0-85a3-4acc1509e79e>
   PrefabRemaps:
     []
@@ -5220,6 +5847,56 @@
     - !<own> 1388dc45-7e6e-4003-954d-7d755158f24b
   Components:
     - !<own> 46cc8d39-e632-4571-8d11-947e8a4038cf
+- !<ScriptComponent/678b31fa-b2d1-487f-b5ed-5fffe72d94cb>
+  PrefabRemaps:
+    []
+  Name: Turn Based Player Info
+  Enabled: true
+  ScriptAsset: !<reference> 8a7bdc69-76bf-461f-853b-ff2dce8f38b3
+  ScriptInputsDefault:
+    bitmoji3DConfigInputs: true
+    useTextDisplay: true
+    textDisplayConfigInputs: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      turnBased: !<reference.ScriptComponent> 33d57d25-3ff1-4ea0-aefa-f600e9bd5620
+      targetUser:
+        type: Other
+      useBitmoji3D: false
+      bitmoji3DConfigInputs:
+        bitmojiComponent: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
+        autoLoadBitmoji3D: true
+        hideBitmoji3DIfNotFound: false
+      useBitmojiSticker: true
+      bitmojiStickerConfigInputs:
+        stickerType: StickerID
+        stickerId: !<string> 36163706
+        autoLoad: true
+        applyActionInputs:
+          outputType: Image
+          meshVisual: !<reference.MaterialMeshVisual> 00000000-0000-0000-0000-000000000000
+          image: !<reference.Image> f3fd02b5-bdc6-406e-9145-886c3544f3f6
+          material: !<reference.Material> 00000000-0000-0000-0000-000000000000
+          showAdvancedOptions: true
+          meshVisualCloneType: None
+          materialPropertyName: baseTex
+          meshVisualMaterialIndex: 0
+        fallbackSettings:
+          placeholderTexture: !<reference.Texture> dab0b757-3bf3-4dcf-845d-73f10d4fc965
+          loadingTexture: !<reference.Texture> dab0b757-3bf3-4dcf-845d-73f10d4fc965
+          missingUserTexture: !<reference.Texture> dab0b757-3bf3-4dcf-845d-73f10d4fc965
+      useTextDisplay: false
+      textDisplayConfigInputs:
+        fallbackText: ""
+        configurableSetTextInputs:
+          targetType: Text
+          text: !<reference.Text> 00000000-0000-0000-0000-000000000000
+          text3D: !<reference.Text3D> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    "":
+      {}
 - !<SceneObject/68206c94-6c8e-476f-bd47-2d87640f3dbb>
   PrefabRemaps:
     []
@@ -5319,6 +5996,23 @@
     CapitalizationOverride: None
   DepthTest: false
   TwoSided: false
+- !<SceneObject/68e7c6df-41d8-4e2e-a9e3-114742c52e65>
+  PrefabRemaps:
+    []
+  Name: Friend Icon 12
+  Enabled: false
+  Layers: 2
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> b3238108-f536-4571-a598-b47065dc604b
+    - !<own> f3fd02b5-bdc6-406e-9145-886c3544f3f6
+    - !<own> 678b31fa-b2d1-487f-b5ed-5fffe72d94cb
 - !<ScreenTransform/696fb3c3-219b-4711-bd34-b02ccd1de4e4>
   PrefabRemaps:
     []
@@ -5625,6 +6319,56 @@
   BlendNormals: false
   BlendShapes:
     {}
+- !<ScriptComponent/6c818d1f-778e-4560-a889-9122febd1c4b>
+  PrefabRemaps:
+    []
+  Name: Turn Based Player Info
+  Enabled: true
+  ScriptAsset: !<reference> 8a7bdc69-76bf-461f-853b-ff2dce8f38b3
+  ScriptInputsDefault:
+    bitmoji3DConfigInputs: true
+    useTextDisplay: true
+    textDisplayConfigInputs: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      turnBased: !<reference.ScriptComponent> 33d57d25-3ff1-4ea0-aefa-f600e9bd5620
+      targetUser:
+        type: Other
+      useBitmoji3D: false
+      bitmoji3DConfigInputs:
+        bitmojiComponent: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
+        autoLoadBitmoji3D: true
+        hideBitmoji3DIfNotFound: false
+      useBitmojiSticker: true
+      bitmojiStickerConfigInputs:
+        stickerType: StickerID
+        stickerId: !<string> 34245794
+        autoLoad: true
+        applyActionInputs:
+          outputType: Image
+          meshVisual: !<reference.MaterialMeshVisual> 00000000-0000-0000-0000-000000000000
+          image: !<reference.Image> d2ed2f49-3988-46d2-ab14-4374482697bf
+          material: !<reference.Material> 00000000-0000-0000-0000-000000000000
+          showAdvancedOptions: true
+          meshVisualCloneType: None
+          materialPropertyName: baseTex
+          meshVisualMaterialIndex: 0
+        fallbackSettings:
+          placeholderTexture: !<reference.Texture> dab0b757-3bf3-4dcf-845d-73f10d4fc965
+          loadingTexture: !<reference.Texture> dab0b757-3bf3-4dcf-845d-73f10d4fc965
+          missingUserTexture: !<reference.Texture> dab0b757-3bf3-4dcf-845d-73f10d4fc965
+      useTextDisplay: false
+      textDisplayConfigInputs:
+        fallbackText: ""
+        configurableSetTextInputs:
+          targetType: Text
+          text: !<reference.Text> 00000000-0000-0000-0000-000000000000
+          text3D: !<reference.Text3D> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    "":
+      {}
 - !<SceneObject/6c87293b-0b4f-446f-9a80-0938079b0111>
   PrefabRemaps:
     []
@@ -5828,6 +6572,25 @@
   Enabled: true
   ScreenRegionType: FullFrame
   ResizeWithKeyboard: false
+- !<Image/6ee6892e-e311-4df9-a246-52bcf240cbaf>
+  PrefabRemaps:
+    []
+  Name: Image
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Fit
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 499fe772-681f-45ab-a849-a1b4072082d5
+  FlipX: false
+  FlipY: false
+  RotationAngle: 0
+  Pivot: {x: 0.000000, y: 0.000000}
+  ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
 - !<Image/715be329-ce4c-468d-8f72-66b373f0d6bc>
   PrefabRemaps:
     []
@@ -6922,7 +7685,7 @@
       useBitmojiSticker: true
       bitmojiStickerConfigInputs:
         stickerType: Selfie
-        stickerId: ""
+        stickerId: !<string> 33138216
         autoLoad: true
         applyActionInputs:
           outputType: Image
@@ -7816,6 +8579,56 @@
     CapitalizationOverride: None
   DepthTest: false
   TwoSided: false
+- !<ScriptComponent/93fd92f9-eb4e-4eb1-8623-960d0ce278c9>
+  PrefabRemaps:
+    []
+  Name: Turn Based Player Info
+  Enabled: true
+  ScriptAsset: !<reference> 8a7bdc69-76bf-461f-853b-ff2dce8f38b3
+  ScriptInputsDefault:
+    bitmoji3DConfigInputs: true
+    useTextDisplay: true
+    textDisplayConfigInputs: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      turnBased: !<reference.ScriptComponent> 33d57d25-3ff1-4ea0-aefa-f600e9bd5620
+      targetUser:
+        type: Other
+      useBitmoji3D: false
+      bitmoji3DConfigInputs:
+        bitmojiComponent: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
+        autoLoadBitmoji3D: true
+        hideBitmoji3DIfNotFound: false
+      useBitmojiSticker: true
+      bitmojiStickerConfigInputs:
+        stickerType: StickerID
+        stickerId: !<string> 38019452
+        autoLoad: true
+        applyActionInputs:
+          outputType: Image
+          meshVisual: !<reference.MaterialMeshVisual> 00000000-0000-0000-0000-000000000000
+          image: !<reference.Image> 48fd1736-1a9d-4ac9-b95d-d8972fb3d205
+          material: !<reference.Material> 00000000-0000-0000-0000-000000000000
+          showAdvancedOptions: true
+          meshVisualCloneType: None
+          materialPropertyName: baseTex
+          meshVisualMaterialIndex: 0
+        fallbackSettings:
+          placeholderTexture: !<reference.Texture> dab0b757-3bf3-4dcf-845d-73f10d4fc965
+          loadingTexture: !<reference.Texture> dab0b757-3bf3-4dcf-845d-73f10d4fc965
+          missingUserTexture: !<reference.Texture> dab0b757-3bf3-4dcf-845d-73f10d4fc965
+      useTextDisplay: false
+      textDisplayConfigInputs:
+        fallbackText: ""
+        configurableSetTextInputs:
+          targetType: Text
+          text: !<reference.Text> 00000000-0000-0000-0000-000000000000
+          text3D: !<reference.Text3D> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    "":
+      {}
 - !<SceneObject/9431827f-49f6-4b39-a3be-74a440707c30>
   PrefabRemaps:
     []
@@ -7877,6 +8690,39 @@
     bottom: -1.851802
     right: -0.271526
     top: 0.428043
+  Offset:
+    left: 0.000000
+    bottom: 0.000000
+    right: 0.000000
+    top: 0.000000
+- !<ScreenTransform/94d204ae-13c9-435e-a8e4-83b582a00ee5>
+  PrefabRemaps:
+    []
+  Name: Screen Transform
+  Enabled: true
+  IsAdvanced: false
+  Constraints:
+    pinToLeft: false
+    pinToTop: false
+    pinToRight: false
+    pinToBottom: false
+    fixedWidth: false
+    fixedHeight: false
+    deactivatedFixedSprite: false
+    deactivatedFixedPivot: false
+  Pivot: {x: 0.000000, y: 0.000000}
+  Transform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  RawMode: true
+  ForceBasic: true
+  Anchor:
+    left: -1.000000
+    bottom: -1.000000
+    right: 1.000000
+    top: 1.000000
   Offset:
     left: 0.000000
     bottom: 0.000000
@@ -8056,6 +8902,39 @@
     - !<own> e099cfb7-6859-4ae9-9ac2-79c9d1ba0bd5
   Components:
     []
+- !<ScreenTransform/9ada10df-84b0-4de1-8d2d-b2503c41c30c>
+  PrefabRemaps:
+    []
+  Name: Screen Transform
+  Enabled: true
+  IsAdvanced: false
+  Constraints:
+    pinToLeft: false
+    pinToTop: false
+    pinToRight: false
+    pinToBottom: false
+    fixedWidth: false
+    fixedHeight: false
+    deactivatedFixedSprite: false
+    deactivatedFixedPivot: false
+  Pivot: {x: 0.000000, y: 0.000000}
+  Transform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  RawMode: true
+  ForceBasic: true
+  Anchor:
+    left: -1.000000
+    bottom: -1.000000
+    right: 1.000000
+    top: 1.000000
+  Offset:
+    left: 0.000000
+    bottom: 0.000000
+    right: 0.000000
+    top: 0.000000
 - !<SceneObject/9c80aa3d-c28d-4c2e-abc8-70998996aa71>
   PrefabRemaps:
     []
@@ -8483,6 +9362,39 @@
   Components:
     - !<own> 8944e3c7-920a-4bd7-95a0-ca4e9d139e4a
     - !<own> 836e0150-77f3-4fe2-a1b7-f54101f1ff18
+- !<ScreenTransform/a27e2423-db10-4fd1-8116-fc4a64200786>
+  PrefabRemaps:
+    []
+  Name: Screen Transform
+  Enabled: true
+  IsAdvanced: false
+  Constraints:
+    pinToLeft: false
+    pinToTop: false
+    pinToRight: false
+    pinToBottom: false
+    fixedWidth: false
+    fixedHeight: false
+    deactivatedFixedSprite: false
+    deactivatedFixedPivot: false
+  Pivot: {x: 0.000000, y: 0.000000}
+  Transform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  RawMode: true
+  ForceBasic: true
+  Anchor:
+    left: -1.000000
+    bottom: -1.000000
+    right: 1.000000
+    top: 1.000000
+  Offset:
+    left: 0.000000
+    bottom: 0.000000
+    right: 0.000000
+    top: 0.000000
 - !<SceneObject/a28e94bf-d6c4-4951-ab49-160081d13b76>
   PrefabRemaps:
     []
@@ -8669,6 +9581,25 @@
     CapitalizationOverride: None
   DepthTest: false
   TwoSided: false
+- !<Image/a52dd3ba-757b-4a66-9699-bfbbe768715b>
+  PrefabRemaps:
+    []
+  Name: Image
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Fit
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 499fe772-681f-45ab-a849-a1b4072082d5
+  FlipX: false
+  FlipY: false
+  RotationAngle: 0
+  Pivot: {x: 0.000000, y: 0.000000}
+  ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
 - !<SceneObject/a5424b2b-925c-472a-815a-19a3cc1e3c08>
   PrefabRemaps:
     []
@@ -8697,7 +9628,7 @@
     HasSegmentScaleCompensation: false
   Children:
     - !<own> 66abfcba-3464-488d-938f-f05193af7556
-    - !<own> 541cf1d2-799b-4934-9eb8-62a06ee6d7c5
+    - !<own> bfc65695-cf75-4275-bc56-bdc8f9bf00e0
   Components:
     - !<own> 9f072752-9bb7-46a4-9d07-cee7373d8f05
     - !<own> 292a944c-83d7-4234-a695-d05327fc2977
@@ -8821,6 +9752,23 @@
     []
   Components:
     - !<own> 8239b531-b6d9-4a24-8197-bc872189b339
+- !<SceneObject/a64be665-5169-454b-b585-9cc9566c0fe7>
+  PrefabRemaps:
+    []
+  Name: Friend Icon 13
+  Enabled: false
+  Layers: 2
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> d23525de-d57d-48bb-a843-e67fb7f103d6
+    - !<own> 213959a4-3a5d-427a-b4df-0c8249110a30
+    - !<own> 598acbcd-cf27-4e44-8a5b-4fb5272a8bb4
 - !<SceneObject/a6f76802-6b48-42cd-af32-c3bd92d71c49>
   PrefabRemaps:
     []
@@ -8872,6 +9820,25 @@
     bottom: 0.000000
     right: 0.000000
     top: 0.000000
+- !<Image/a921b89d-f12c-4f75-a9f2-e8ce33546903>
+  PrefabRemaps:
+    []
+  Name: Image
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Fit
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 499fe772-681f-45ab-a849-a1b4072082d5
+  FlipX: false
+  FlipY: false
+  RotationAngle: 0
+  Pivot: {x: 0.000000, y: 0.000000}
+  ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
 - !<ScriptComponent/a9657441-2a5f-465a-ac53-25b3071d6911>
   PrefabRemaps:
     []
@@ -9114,6 +10081,25 @@
     InvertRotation: false
   SurfaceOptions: !<SurfaceOptions>
     EnhanceWithNativeAR: false
+- !<Image/acd3013e-b62b-4a60-8da6-72f881858916>
+  PrefabRemaps:
+    []
+  Name: Image
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Fit
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 499fe772-681f-45ab-a849-a1b4072082d5
+  FlipX: false
+  FlipY: false
+  RotationAngle: 0
+  Pivot: {x: 0.000000, y: 0.000000}
+  ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
 - !<ScreenTransform/acd72196-9b49-4229-91c0-8ef6a9d2eaad>
   PrefabRemaps:
     []
@@ -9268,6 +10254,56 @@
   ScriptTypes:
     "":
       {}
+- !<SceneObject/af74aab1-09ce-432d-bae4-8dcb413a3985>
+  PrefabRemaps:
+    []
+  Name: Friend Icon 9
+  Enabled: false
+  Layers: 2
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 3cec95ad-93a4-40eb-9aba-f2b69efa56b0
+    - !<own> 5c51008c-88df-425a-998d-6379bfe67bb2
+    - !<own> f8e72f68-b35a-4080-b8e6-bbb440bec679
+- !<ScreenTransform/afefd03c-7203-4e88-8846-059b06d73f2e>
+  PrefabRemaps:
+    []
+  Name: Screen Transform
+  Enabled: true
+  IsAdvanced: false
+  Constraints:
+    pinToLeft: false
+    pinToTop: false
+    pinToRight: false
+    pinToBottom: false
+    fixedWidth: false
+    fixedHeight: false
+    deactivatedFixedSprite: false
+    deactivatedFixedPivot: false
+  Pivot: {x: 0.000000, y: 0.000000}
+  Transform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  RawMode: true
+  ForceBasic: true
+  Anchor:
+    left: -1.000000
+    bottom: -1.000000
+    right: 1.000000
+    top: 1.000000
+  Offset:
+    left: 0.000000
+    bottom: 0.000000
+    right: 0.000000
+    top: 0.000000
 - !<SceneObject/affdae12-a77e-4602-9665-02075cae763b>
   PrefabRemaps:
     []
@@ -9509,6 +10545,39 @@
     bottom: 5.000000
     right: -10.000000
     top: -5.000000
+- !<ScreenTransform/b3238108-f536-4571-a598-b47065dc604b>
+  PrefabRemaps:
+    []
+  Name: Screen Transform
+  Enabled: true
+  IsAdvanced: false
+  Constraints:
+    pinToLeft: false
+    pinToTop: false
+    pinToRight: false
+    pinToBottom: false
+    fixedWidth: false
+    fixedHeight: false
+    deactivatedFixedSprite: false
+    deactivatedFixedPivot: false
+  Pivot: {x: 0.000000, y: 0.000000}
+  Transform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  RawMode: true
+  ForceBasic: true
+  Anchor:
+    left: -1.000000
+    bottom: -1.000000
+    right: 1.000000
+    top: 1.000000
+  Offset:
+    left: 0.000000
+    bottom: 0.000000
+    right: 0.000000
+    top: 0.000000
 - !<RenderMeshVisual/b38d005d-2b7c-49e8-a5bd-187c1ba76905>
   PrefabRemaps:
     []
@@ -9672,6 +10741,39 @@
     top: 0.400000
   Offset:
     left: 5.000011
+    bottom: 0.000000
+    right: 0.000000
+    top: 0.000000
+- !<ScreenTransform/b68c4fa2-0ec7-41fb-9a9c-9fee3c6ec45d>
+  PrefabRemaps:
+    []
+  Name: Screen Transform
+  Enabled: true
+  IsAdvanced: false
+  Constraints:
+    pinToLeft: false
+    pinToTop: false
+    pinToRight: false
+    pinToBottom: false
+    fixedWidth: false
+    fixedHeight: false
+    deactivatedFixedSprite: false
+    deactivatedFixedPivot: false
+  Pivot: {x: 0.000000, y: 0.000000}
+  Transform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  RawMode: true
+  ForceBasic: true
+  Anchor:
+    left: -1.000000
+    bottom: -1.000000
+    right: 1.000000
+    top: 1.000000
+  Offset:
+    left: 0.000000
     bottom: 0.000000
     right: 0.000000
     top: 0.000000
@@ -10121,6 +11223,34 @@
     bottom: 0.000000
     right: 0.000000
     top: 0.000000
+- !<SceneObject/bfc65695-cf75-4275-bc56-bdc8f9bf00e0>
+  PrefabRemaps:
+    []
+  Name: Friend Icons
+  Enabled: true
+  Layers: 2
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> 541cf1d2-799b-4934-9eb8-62a06ee6d7c5
+    - !<own> 521306f2-1e5a-4bec-b7d7-d9b16bbe0944
+    - !<own> 5ebfe630-cab4-46a0-9a93-52f28334da45
+    - !<own> e215fd1e-2e0c-4e35-a620-f457bdf8eb74
+    - !<own> c3b099c7-7212-4d45-9bd3-f304095f645d
+    - !<own> 14f3d697-db65-4633-80a8-7e72403b99ef
+    - !<own> 5a77fbaf-22e5-4a9a-97f6-1682cf3a660c
+    - !<own> d77b243f-47d6-44aa-88fb-47ecb6f6239d
+    - !<own> 31cc2195-a4b2-4c98-8530-a6d128f6e6ff
+    - !<own> af74aab1-09ce-432d-bae4-8dcb413a3985
+    - !<own> ceb5bf5f-9695-4f11-ae1b-25403d8b213f
+    - !<own> 61f926ee-9b63-478d-bf58-5ccf2e7b5148
+    - !<own> 68e7c6df-41d8-4e2e-a9e3-114742c52e65
+    - !<own> a64be665-5169-454b-b585-9cc9566c0fe7
+  Components:
+    - !<own> 0b89a562-47f6-4839-be42-052fd18cec33
 - !<SceneObject/c051abfb-4042-49c5-82ed-35ecd687eea2>
   PrefabRemaps:
     []
@@ -10274,6 +11404,39 @@
   ScriptTypes:
     "":
       {}
+- !<ScreenTransform/c1cf4c4b-9b48-4c4c-8f96-e78a6204e9d2>
+  PrefabRemaps:
+    []
+  Name: Screen Transform
+  Enabled: true
+  IsAdvanced: false
+  Constraints:
+    pinToLeft: false
+    pinToTop: false
+    pinToRight: false
+    pinToBottom: false
+    fixedWidth: false
+    fixedHeight: false
+    deactivatedFixedSprite: false
+    deactivatedFixedPivot: false
+  Pivot: {x: 0.000000, y: 0.000000}
+  Transform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  RawMode: true
+  ForceBasic: true
+  Anchor:
+    left: -1.000000
+    bottom: -1.000000
+    right: 1.000000
+    top: 1.000000
+  Offset:
+    left: 0.000000
+    bottom: 0.000000
+    right: 0.000000
+    top: 0.000000
 - !<ScriptComponent/c1d5b851-6789-41e7-b750-71720a23956e>
   PrefabRemaps:
     []
@@ -10316,6 +11479,23 @@
     - !<own> a2b5d56c-3ab8-4b9a-97a3-ee48583ec50f
   Components:
     - !<own> a5df6f0f-2241-4790-9f86-b4994909e234
+- !<SceneObject/c3b099c7-7212-4d45-9bd3-f304095f645d>
+  PrefabRemaps:
+    []
+  Name: Friend Icon 4
+  Enabled: false
+  Layers: 2
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> c1cf4c4b-9b48-4c4c-8f96-e78a6204e9d2
+    - !<own> 48fd1736-1a9d-4ac9-b95d-d8972fb3d205
+    - !<own> 93fd92f9-eb4e-4eb1-8623-960d0ce278c9
 - !<ScriptComponent/c45e32a7-63ac-4103-b4e8-030adbcdcddd>
   PrefabRemaps:
     []
@@ -10416,6 +11596,39 @@
   Components:
     - !<own> 5580fd3c-573d-4526-b07b-7d54286420ed
     - !<own> 86767419-38b1-4d90-8208-76539c39872f
+- !<ScreenTransform/c497d0a5-86af-4993-ac1a-56273caf654c>
+  PrefabRemaps:
+    []
+  Name: Screen Transform
+  Enabled: true
+  IsAdvanced: false
+  Constraints:
+    pinToLeft: false
+    pinToTop: false
+    pinToRight: false
+    pinToBottom: false
+    fixedWidth: false
+    fixedHeight: false
+    deactivatedFixedSprite: false
+    deactivatedFixedPivot: false
+  Pivot: {x: 0.000000, y: 0.000000}
+  Transform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  RawMode: true
+  ForceBasic: true
+  Anchor:
+    left: -1.000000
+    bottom: -1.000000
+    right: 1.000000
+    top: 1.000000
+  Offset:
+    left: 0.000000
+    bottom: 0.000000
+    right: 0.000000
+    top: 0.000000
 - !<Text/c5286440-2b2f-405b-a32b-63fddb2f28da>
   PrefabRemaps:
     []
@@ -11093,6 +12306,23 @@
   Components:
     - !<own> 5db308f0-4149-47ee-afd8-243f128e369d
     - !<own> bc587517-d9fc-465c-bd7d-dab21e4e94cf
+- !<SceneObject/ceb5bf5f-9695-4f11-ae1b-25403d8b213f>
+  PrefabRemaps:
+    []
+  Name: Friend Icon 10
+  Enabled: false
+  Layers: 2
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 55d41a1a-33a1-467d-ad5b-f30b29175593
+    - !<own> a52dd3ba-757b-4a66-9699-bfbbe768715b
+    - !<own> f3dcb8d0-43b4-4124-8c6c-5a6f1dec6165
 - !<ScriptComponent/cf523004-bc1f-4cec-a232-6780b7f35220>
   PrefabRemaps:
     []
@@ -11251,6 +12481,39 @@
   ScriptTypes:
     "":
       {}
+- !<ScreenTransform/d23525de-d57d-48bb-a843-e67fb7f103d6>
+  PrefabRemaps:
+    []
+  Name: Screen Transform
+  Enabled: true
+  IsAdvanced: false
+  Constraints:
+    pinToLeft: false
+    pinToTop: false
+    pinToRight: false
+    pinToBottom: false
+    fixedWidth: false
+    fixedHeight: false
+    deactivatedFixedSprite: false
+    deactivatedFixedPivot: false
+  Pivot: {x: 0.000000, y: 0.000000}
+  Transform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  RawMode: true
+  ForceBasic: true
+  Anchor:
+    left: -1.000000
+    bottom: -1.000000
+    right: 1.000000
+    top: 1.000000
+  Offset:
+    left: 0.000000
+    bottom: 0.000000
+    right: 0.000000
+    top: 0.000000
 - !<ScreenTransform/d2e3a880-6bdd-4df4-bbc0-65c5807f342e>
   PrefabRemaps:
     []
@@ -11284,6 +12547,44 @@
     bottom: 5.000000
     right: -10.000000
     top: -5.000000
+- !<Image/d2ed2f49-3988-46d2-ab14-4374482697bf>
+  PrefabRemaps:
+    []
+  Name: Image
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Fit
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 499fe772-681f-45ab-a849-a1b4072082d5
+  FlipX: false
+  FlipY: false
+  RotationAngle: 0
+  Pivot: {x: 0.000000, y: 0.000000}
+  ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
+- !<Image/d3071074-c4ed-436c-bcf5-23b81db8448f>
+  PrefabRemaps:
+    []
+  Name: Image
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Fit
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 499fe772-681f-45ab-a849-a1b4072082d5
+  FlipX: false
+  FlipY: false
+  RotationAngle: 0
+  Pivot: {x: 0.000000, y: 0.000000}
+  ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
 - !<Text/d324f04d-cf48-4433-bd6e-84e8fd77ccd0>
   PrefabRemaps:
     []
@@ -11569,6 +12870,23 @@
   RotationAngle: 0
   Pivot: {x: 0.000000, y: 0.000000}
   ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
+- !<SceneObject/d77b243f-47d6-44aa-88fb-47ecb6f6239d>
+  PrefabRemaps:
+    []
+  Name: Friend Icon 7
+  Enabled: false
+  Layers: 2
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> b68c4fa2-0ec7-41fb-9a9c-9fee3c6ec45d
+    - !<own> acd3013e-b62b-4a60-8da6-72f881858916
+    - !<own> f997c712-0e98-4796-aa41-a0d3ba2ff8f9
 - !<Text/d785333d-459f-4988-9373-634c74860339>
   PrefabRemaps:
     []
@@ -12047,6 +13365,42 @@
   Components:
     - !<own> 97c9d8af-79b7-4f25-90e9-5cdc25241f64
     - !<own> 2bd2b3b9-b046-453e-906f-32deff6c65e7
+- !<SceneObject/e215fd1e-2e0c-4e35-a620-f457bdf8eb74>
+  PrefabRemaps:
+    []
+  Name: Friend Icon 3
+  Enabled: false
+  Layers: 2
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> 4531b2e3-6a20-455d-a4da-13a8016499d6
+    - !<own> d2ed2f49-3988-46d2-ab14-4374482697bf
+    - !<own> 6c818d1f-778e-4560-a889-9122febd1c4b
+- !<Image/e2989d22-b0d2-41b5-bc63-83a6ebe33ad5>
+  PrefabRemaps:
+    []
+  Name: Image
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Fit
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 499fe772-681f-45ab-a849-a1b4072082d5
+  FlipX: false
+  FlipY: false
+  RotationAngle: 0
+  Pivot: {x: 0.000000, y: 0.000000}
+  ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
 - !<ScreenTransform/e2c38a95-5a29-4f63-ade6-a117d06bfdf4>
   PrefabRemaps:
     []
@@ -12785,10 +14139,10 @@
   Constraints:
     pinToLeft: false
     pinToTop: false
-    pinToRight: true
+    pinToRight: false
     pinToBottom: false
-    fixedWidth: true
-    fixedHeight: true
+    fixedWidth: false
+    fixedHeight: false
     deactivatedFixedSprite: false
     deactivatedFixedPivot: false
   Pivot: {x: 0.000000, y: 0.000000}
@@ -12800,15 +14154,15 @@
   RawMode: true
   ForceBasic: true
   Anchor:
-    left: 1.000000
-    bottom: 0.000000
+    left: -1.000000
+    bottom: -1.000000
     right: 1.000000
-    top: 0.000000
+    top: 1.000000
   Offset:
-    left: -116.999992
-    bottom: -48.500000
-    right: -20.000013
-    top: 48.500000
+    left: 0.000000
+    bottom: 0.000000
+    right: 0.000000
+    top: 0.000000
 - !<ScriptComponent/edefc296-22b0-4220-a286-2e9c078772ba>
   PrefabRemaps:
     []
@@ -13112,6 +14466,56 @@
     bottom: 0.000000
     right: 0.000000
     top: 0.000000
+- !<ScriptComponent/f0d6384c-4fc6-4a83-881d-a6bf940d3e8a>
+  PrefabRemaps:
+    []
+  Name: Turn Based Player Info
+  Enabled: true
+  ScriptAsset: !<reference> 8a7bdc69-76bf-461f-853b-ff2dce8f38b3
+  ScriptInputsDefault:
+    bitmoji3DConfigInputs: true
+    useTextDisplay: true
+    textDisplayConfigInputs: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      turnBased: !<reference.ScriptComponent> 33d57d25-3ff1-4ea0-aefa-f600e9bd5620
+      targetUser:
+        type: Other
+      useBitmoji3D: false
+      bitmoji3DConfigInputs:
+        bitmojiComponent: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
+        autoLoadBitmoji3D: true
+        hideBitmoji3DIfNotFound: false
+      useBitmojiSticker: true
+      bitmojiStickerConfigInputs:
+        stickerType: StickerID
+        stickerId: !<string> 34860673
+        autoLoad: true
+        applyActionInputs:
+          outputType: Image
+          meshVisual: !<reference.MaterialMeshVisual> 00000000-0000-0000-0000-000000000000
+          image: !<reference.Image> e2989d22-b0d2-41b5-bc63-83a6ebe33ad5
+          material: !<reference.Material> 00000000-0000-0000-0000-000000000000
+          showAdvancedOptions: true
+          meshVisualCloneType: None
+          materialPropertyName: baseTex
+          meshVisualMaterialIndex: 0
+        fallbackSettings:
+          placeholderTexture: !<reference.Texture> dab0b757-3bf3-4dcf-845d-73f10d4fc965
+          loadingTexture: !<reference.Texture> dab0b757-3bf3-4dcf-845d-73f10d4fc965
+          missingUserTexture: !<reference.Texture> dab0b757-3bf3-4dcf-845d-73f10d4fc965
+      useTextDisplay: false
+      textDisplayConfigInputs:
+        fallbackText: ""
+        configurableSetTextInputs:
+          targetType: Text
+          text: !<reference.Text> 00000000-0000-0000-0000-000000000000
+          text3D: !<reference.Text3D> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    "":
+      {}
 - !<Image/f14bb2ff-5e9d-45ca-9fe8-69b13b0c08a2>
   PrefabRemaps:
     []
@@ -13287,6 +14691,56 @@
     - !<own> 11c70b15-b2d3-4119-a3f1-717f42a865b4
   Components:
     - !<own> e59a338d-b5bf-4b96-846f-4c2cdaabe020
+- !<ScriptComponent/f3dcb8d0-43b4-4124-8c6c-5a6f1dec6165>
+  PrefabRemaps:
+    []
+  Name: Turn Based Player Info
+  Enabled: true
+  ScriptAsset: !<reference> 8a7bdc69-76bf-461f-853b-ff2dce8f38b3
+  ScriptInputsDefault:
+    bitmoji3DConfigInputs: true
+    useTextDisplay: true
+    textDisplayConfigInputs: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      turnBased: !<reference.ScriptComponent> 33d57d25-3ff1-4ea0-aefa-f600e9bd5620
+      targetUser:
+        type: Other
+      useBitmoji3D: false
+      bitmoji3DConfigInputs:
+        bitmojiComponent: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
+        autoLoadBitmoji3D: true
+        hideBitmoji3DIfNotFound: false
+      useBitmojiSticker: true
+      bitmojiStickerConfigInputs:
+        stickerType: StickerID
+        stickerId: !<string> 33138216
+        autoLoad: true
+        applyActionInputs:
+          outputType: Image
+          meshVisual: !<reference.MaterialMeshVisual> 00000000-0000-0000-0000-000000000000
+          image: !<reference.Image> a52dd3ba-757b-4a66-9699-bfbbe768715b
+          material: !<reference.Material> 00000000-0000-0000-0000-000000000000
+          showAdvancedOptions: true
+          meshVisualCloneType: None
+          materialPropertyName: baseTex
+          meshVisualMaterialIndex: 0
+        fallbackSettings:
+          placeholderTexture: !<reference.Texture> dab0b757-3bf3-4dcf-845d-73f10d4fc965
+          loadingTexture: !<reference.Texture> dab0b757-3bf3-4dcf-845d-73f10d4fc965
+          missingUserTexture: !<reference.Texture> dab0b757-3bf3-4dcf-845d-73f10d4fc965
+      useTextDisplay: false
+      textDisplayConfigInputs:
+        fallbackText: ""
+        configurableSetTextInputs:
+          targetType: Text
+          text: !<reference.Text> 00000000-0000-0000-0000-000000000000
+          text3D: !<reference.Text3D> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    "":
+      {}
 - !<Canvas/f3e7419f-58d6-4984-98df-6440f6424292>
   PrefabRemaps:
     []
@@ -13332,6 +14786,25 @@
     bottom: 0.000000
     right: 0.000000
     top: 0.000000
+- !<Image/f3fd02b5-bdc6-406e-9145-886c3544f3f6>
+  PrefabRemaps:
+    []
+  Name: Image
+  Enabled: true
+  RenderOrder: 0
+  StretchMode: Fit
+  VerticalAlignment: Center
+  HorizontalAlignment: Center
+  MeshShadowMode: None
+  ShadowColor: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
+  ShadowDensity: 1.000000
+  Materials:
+    - !<reference> 499fe772-681f-45ab-a849-a1b4072082d5
+  FlipX: false
+  FlipY: false
+  RotationAngle: 0
+  Pivot: {x: 0.000000, y: 0.000000}
+  ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
 - !<ScriptComponent/f41c894e-dfce-43d2-8043-8a5618ddbe70>
   PrefabRemaps:
     []
@@ -13509,6 +14982,56 @@
   Components:
     - !<own> 18363256-2ed6-4da3-838a-3cbcf8d406e5
     - !<own> 728726b3-a94d-48d9-8ed2-a488acdfc123
+- !<ScriptComponent/f5874ff7-6db1-4d73-8463-a53a0f4aee80>
+  PrefabRemaps:
+    []
+  Name: Turn Based Player Info
+  Enabled: true
+  ScriptAsset: !<reference> 8a7bdc69-76bf-461f-853b-ff2dce8f38b3
+  ScriptInputsDefault:
+    bitmoji3DConfigInputs: true
+    useTextDisplay: true
+    textDisplayConfigInputs: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      turnBased: !<reference.ScriptComponent> 33d57d25-3ff1-4ea0-aefa-f600e9bd5620
+      targetUser:
+        type: Other
+      useBitmoji3D: false
+      bitmoji3DConfigInputs:
+        bitmojiComponent: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
+        autoLoadBitmoji3D: true
+        hideBitmoji3DIfNotFound: false
+      useBitmojiSticker: true
+      bitmojiStickerConfigInputs:
+        stickerType: StickerID
+        stickerId: !<string> 38202224
+        autoLoad: true
+        applyActionInputs:
+          outputType: Image
+          meshVisual: !<reference.MaterialMeshVisual> 00000000-0000-0000-0000-000000000000
+          image: !<reference.Image> a921b89d-f12c-4f75-a9f2-e8ce33546903
+          material: !<reference.Material> 00000000-0000-0000-0000-000000000000
+          showAdvancedOptions: true
+          meshVisualCloneType: None
+          materialPropertyName: baseTex
+          meshVisualMaterialIndex: 0
+        fallbackSettings:
+          placeholderTexture: !<reference.Texture> dab0b757-3bf3-4dcf-845d-73f10d4fc965
+          loadingTexture: !<reference.Texture> dab0b757-3bf3-4dcf-845d-73f10d4fc965
+          missingUserTexture: !<reference.Texture> dab0b757-3bf3-4dcf-845d-73f10d4fc965
+      useTextDisplay: false
+      textDisplayConfigInputs:
+        fallbackText: ""
+        configurableSetTextInputs:
+          targetType: Text
+          text: !<reference.Text> 00000000-0000-0000-0000-000000000000
+          text3D: !<reference.Text3D> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    "":
+      {}
 - !<ScreenTransform/f5915ebe-e3b5-4286-ab61-ac5805e36ee1>
   PrefabRemaps:
     []
@@ -13786,6 +15309,56 @@
     bottom: 0.000000
     right: 0.000000
     top: 0.000000
+- !<ScriptComponent/f8e72f68-b35a-4080-b8e6-bbb440bec679>
+  PrefabRemaps:
+    []
+  Name: Turn Based Player Info
+  Enabled: true
+  ScriptAsset: !<reference> 8a7bdc69-76bf-461f-853b-ff2dce8f38b3
+  ScriptInputsDefault:
+    bitmoji3DConfigInputs: true
+    useTextDisplay: true
+    textDisplayConfigInputs: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      turnBased: !<reference.ScriptComponent> 33d57d25-3ff1-4ea0-aefa-f600e9bd5620
+      targetUser:
+        type: Other
+      useBitmoji3D: false
+      bitmoji3DConfigInputs:
+        bitmojiComponent: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
+        autoLoadBitmoji3D: true
+        hideBitmoji3DIfNotFound: false
+      useBitmojiSticker: true
+      bitmojiStickerConfigInputs:
+        stickerType: StickerID
+        stickerId: !<string> 39839367
+        autoLoad: true
+        applyActionInputs:
+          outputType: Image
+          meshVisual: !<reference.MaterialMeshVisual> 00000000-0000-0000-0000-000000000000
+          image: !<reference.Image> 5c51008c-88df-425a-998d-6379bfe67bb2
+          material: !<reference.Material> 00000000-0000-0000-0000-000000000000
+          showAdvancedOptions: true
+          meshVisualCloneType: None
+          materialPropertyName: baseTex
+          meshVisualMaterialIndex: 0
+        fallbackSettings:
+          placeholderTexture: !<reference.Texture> dab0b757-3bf3-4dcf-845d-73f10d4fc965
+          loadingTexture: !<reference.Texture> dab0b757-3bf3-4dcf-845d-73f10d4fc965
+          missingUserTexture: !<reference.Texture> dab0b757-3bf3-4dcf-845d-73f10d4fc965
+      useTextDisplay: false
+      textDisplayConfigInputs:
+        fallbackText: ""
+        configurableSetTextInputs:
+          targetType: Text
+          text: !<reference.Text> 00000000-0000-0000-0000-000000000000
+          text3D: !<reference.Text3D> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    "":
+      {}
 - !<SceneObject/f981d0ca-6a22-44b2-a497-29b31b1633e7>
   PrefabRemaps:
     []
@@ -13821,6 +15394,56 @@
   RotationAngle: 0
   Pivot: {x: 0.000000, y: 0.000000}
   ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
+- !<ScriptComponent/f997c712-0e98-4796-aa41-a0d3ba2ff8f9>
+  PrefabRemaps:
+    []
+  Name: Turn Based Player Info
+  Enabled: true
+  ScriptAsset: !<reference> 8a7bdc69-76bf-461f-853b-ff2dce8f38b3
+  ScriptInputsDefault:
+    bitmoji3DConfigInputs: true
+    useTextDisplay: true
+    textDisplayConfigInputs: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      turnBased: !<reference.ScriptComponent> 33d57d25-3ff1-4ea0-aefa-f600e9bd5620
+      targetUser:
+        type: Other
+      useBitmoji3D: false
+      bitmoji3DConfigInputs:
+        bitmojiComponent: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
+        autoLoadBitmoji3D: true
+        hideBitmoji3DIfNotFound: false
+      useBitmojiSticker: true
+      bitmojiStickerConfigInputs:
+        stickerType: StickerID
+        stickerId: !<string> 37850924
+        autoLoad: true
+        applyActionInputs:
+          outputType: Image
+          meshVisual: !<reference.MaterialMeshVisual> 00000000-0000-0000-0000-000000000000
+          image: !<reference.Image> acd3013e-b62b-4a60-8da6-72f881858916
+          material: !<reference.Material> 00000000-0000-0000-0000-000000000000
+          showAdvancedOptions: true
+          meshVisualCloneType: None
+          materialPropertyName: baseTex
+          meshVisualMaterialIndex: 0
+        fallbackSettings:
+          placeholderTexture: !<reference.Texture> dab0b757-3bf3-4dcf-845d-73f10d4fc965
+          loadingTexture: !<reference.Texture> dab0b757-3bf3-4dcf-845d-73f10d4fc965
+          missingUserTexture: !<reference.Texture> dab0b757-3bf3-4dcf-845d-73f10d4fc965
+      useTextDisplay: false
+      textDisplayConfigInputs:
+        fallbackText: ""
+        configurableSetTextInputs:
+          targetType: Text
+          text: !<reference.Text> 00000000-0000-0000-0000-000000000000
+          text3D: !<reference.Text3D> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    "":
+      {}
 - !<ScreenTransform/fa57c9a6-ff5f-4614-ad67-ba73f7c1c336>
   PrefabRemaps:
     []

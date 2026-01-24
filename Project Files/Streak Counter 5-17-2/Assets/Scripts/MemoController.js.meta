@@ -26,6 +26,7 @@
   ExportUid: 00000000-0000-0000-0000-000000000000
   PackagePolicy: CanBeUnpacked
   ScriptInputsHidden:
+    friendIcons: false
     memoCycleDelay: false
     memoTextComponents: false
     printDebugStatements: false
@@ -43,6 +44,8 @@
       memoTextComponents: !<reference.Text[]>
         []
       memoCycleDelay: !<float> 3.000000
+      friendIcons: !<reference.SceneObject[]>
+        []
       printDebugStatements: false
   ScriptTypes:
     -

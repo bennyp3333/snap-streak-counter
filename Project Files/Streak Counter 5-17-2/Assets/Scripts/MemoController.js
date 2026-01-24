@@ -9,6 +9,8 @@
 // @input Component.ScriptComponent streakController {"label": "Streak Controller"}
 // @input Component.Text[] memoTextComponents {"label": "Memo Text Components", "hint": "Array of text components, index 0 = highest priority"}
 // @input float memoCycleDelay = 3.0 {"label": "Memo Cycle Delay (sec)"}
+// @ui {"widget": "separator"}
+//@input SceneObject[] friendIcons
 
 // @ui {"widget": "separator"}
 // @ui {"widget": "label", "label": "Debug"}
@@ -81,6 +83,9 @@ script.createEvent('OnStartEvent').bind(function() {
         printDebug('Streak changed, refreshing memos');
         refreshMemos();
     });
+
+    //enable one friend icon
+    script.friendIcons[Math.floor(Math.random() * script.friendIcons.length)].enabled = true;
     
     printDebug('Initialized');
 });
