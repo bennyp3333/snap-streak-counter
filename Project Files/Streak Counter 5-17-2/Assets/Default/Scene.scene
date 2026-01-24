@@ -151,7 +151,7 @@
     []
   Name: Flame
   Enabled: true
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -167,7 +167,7 @@
     []
   Name: Bitmoji 1
   Enabled: true
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -203,7 +203,7 @@
     []
   Name: Padding
   Enabled: true
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -292,7 +292,7 @@
     []
   Name: Extents
   Enabled: true
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -391,7 +391,7 @@
     []
   Name: Bitmoji 6
   Enabled: false
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -423,7 +423,7 @@
     []
   Name: Bitmoji 4
   Enabled: false
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -440,7 +440,7 @@
     []
   Name: Bottom
   Enabled: true
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -632,7 +632,7 @@
     []
   Name: Backgroud
   Enabled: true
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -708,7 +708,7 @@
     []
   Name: Bitmoji 7
   Enabled: false
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -725,7 +725,7 @@
     []
   Name: Padding
   Enabled: true
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -757,7 +757,7 @@
     []
   Name: Units 2
   Enabled: true
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -956,7 +956,7 @@
     []
   Name: Offset
   Enabled: true
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -1089,7 +1089,7 @@
     []
   Name: Bitmoji 3
   Enabled: false
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -1113,7 +1113,7 @@
     Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
     HasSegmentScaleCompensation: false
   Children:
-    - !<own> 25393d83-fa51-4de0-b993-5a6bb66f1ed8
+    - !<own> de159b29-57e3-493c-bfac-7a63e7f12619
     - !<own> 2fe700f6-f7d0-4ed0-ba5a-e727e1446493
   Components:
     - !<own> 490a082c-0f06-44f9-94b2-8eefe4f5d06c
@@ -1227,7 +1227,7 @@
     []
   Name: Extents
   Enabled: true
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -1426,7 +1426,7 @@
     []
   Name: Units 1
   Enabled: true
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -1585,6 +1585,7 @@
     HasSegmentScaleCompensation: false
   Children:
     - !<own> a6f76802-6b48-42cd-af32-c3bd92d71c49
+    - !<own> 25393d83-fa51-4de0-b993-5a6bb66f1ed8
   Components:
     - !<own> 75e87103-573e-494d-9429-27da52fb0339
     - !<own> f3e7419f-58d6-4984-98df-6440f6424292
@@ -1626,7 +1627,7 @@
     []
   Name: Background
   Enabled: true
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -1673,9 +1674,9 @@
 - !<SceneObject/25393d83-fa51-4de0-b993-5a6bb66f1ed8>
   PrefabRemaps:
     []
-  Name: Full Frame Region
+  Name: Menu Region
   Enabled: true
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -1683,7 +1684,6 @@
     HasSegmentScaleCompensation: false
   Children:
     - !<own> a3e7b081-ec72-4d92-9d88-6c8085ad4b63
-    - !<own> 0d74f963-00cf-419e-8317-612d5514b2f3
   Components:
     - !<own> 79236f43-92c0-4670-acce-95c9a396132b
     - !<own> ccda0879-fb93-439e-b3d1-9785401f950d
@@ -1725,7 +1725,7 @@
     []
   Name: Unmasked Container
   Enabled: true
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -2150,7 +2150,7 @@
 - !<SceneObject/2fe700f6-f7d0-4ed0-ba5a-e727e1446493>
   PrefabRemaps:
     []
-  Name: Safe Render Region
+  Name: Bottom Bar Region
   Enabled: true
   Layers: 2
   LocalTransform: !<TransformEntity>
@@ -2449,7 +2449,7 @@
     []
   Name: Right
   Enabled: true
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -2572,12 +2572,19 @@
   ScriptTypes:
     "":
       {}
+- !<ScreenRegionComponent/378b00fe-baad-4129-b32c-4d593e34beba>
+  PrefabRemaps:
+    []
+  Name: Screen Region
+  Enabled: true
+  ScreenRegionType: FullFrame
+  ResizeWithKeyboard: false
 - !<SceneObject/38c6734a-0e97-4de2-ab48-0d64b8595037>
   PrefabRemaps:
     []
   Name: Badge
   Enabled: false
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -3073,7 +3080,7 @@
     []
   Name: Text
   Enabled: true
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -3430,7 +3437,7 @@
     []
   Name: Time
   Enabled: true
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -3446,7 +3453,7 @@
     []
   Name: Background
   Enabled: true
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -3462,7 +3469,7 @@
     []
   Name: Padding
   Enabled: true
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -3915,6 +3922,39 @@
     CapitalizationOverride: None
   DepthTest: false
   TwoSided: false
+- !<ScreenTransform/4a0f69db-f9f8-4ac6-b7fc-e4c8be26ebaa>
+  PrefabRemaps:
+    []
+  Name: Screen Transform
+  Enabled: true
+  IsAdvanced: false
+  Constraints:
+    pinToLeft: false
+    pinToTop: false
+    pinToRight: false
+    pinToBottom: false
+    fixedWidth: false
+    fixedHeight: false
+    deactivatedFixedSprite: false
+    deactivatedFixedPivot: false
+  Pivot: {x: 0.000000, y: 0.000000}
+  Transform:
+    position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    hasSegmentScaleCompensation: false
+  RawMode: true
+  ForceBasic: true
+  Anchor:
+    left: -1.000000
+    bottom: -1.000000
+    right: 1.000000
+    top: 1.000000
+  Offset:
+    left: 0.000000
+    bottom: 0.000000
+    right: 0.000000
+    top: 0.000000
 - !<ScreenTransform/4a28ab98-5330-4393-8df1-52da12419f64>
   PrefabRemaps:
     []
@@ -4059,7 +4099,7 @@
     []
   Name: Section 1-2
   Enabled: true
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -4219,7 +4259,7 @@
     []
   Name: Time 1
   Enabled: true
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -4445,7 +4485,7 @@
     []
   Name: Right
   Enabled: true
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -4461,7 +4501,7 @@
     []
   Name: Extents
   Enabled: true
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -4509,7 +4549,7 @@
     []
   Name: Badge Name
   Enabled: true
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -4525,7 +4565,7 @@
     []
   Name: Masked Container
   Enabled: true
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -4574,7 +4614,7 @@
     []
   Name: Extents
   Enabled: true
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -4954,7 +4994,7 @@
     []
   Name: Bitmoji 2
   Enabled: false
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -4997,7 +5037,7 @@
     []
   Name: Section 5
   Enabled: true
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -5012,7 +5052,7 @@
     []
   Name: Section
   Enabled: true
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -5743,7 +5783,7 @@
     []
   Name: Close Button
   Enabled: true
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -5809,7 +5849,7 @@
     []
   Name: Bitmoji 3
   Enabled: false
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -5928,7 +5968,7 @@
     []
   Name: Score
   Enabled: true
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -5977,7 +6017,7 @@
     []
   Name: Padding
   Enabled: true
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -6012,7 +6052,7 @@
     []
   Name: Section 2
   Enabled: true
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -6079,7 +6119,7 @@
     []
   Name: Bitmoji 6
   Enabled: false
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -6550,7 +6590,7 @@
     []
   Name: Bitmoji 1
   Enabled: false
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -6603,7 +6643,7 @@
     []
   Name: Badge End
   Enabled: true
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -6618,7 +6658,7 @@
     []
   Name: Bitmoji 4
   Enabled: false
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -6654,7 +6694,7 @@
     []
   Name: Bitmoji 2
   Enabled: true
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -7026,7 +7066,7 @@
     []
   Name: Right
   Enabled: true
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -7358,7 +7398,7 @@
     []
   Name: Section 3
   Enabled: true
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -7510,7 +7550,7 @@
     []
   Name: Units
   Enabled: true
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -7742,7 +7782,7 @@
     []
   Name: Bitmoji 5
   Enabled: false
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -7759,7 +7799,7 @@
     []
   Name: Background
   Enabled: true
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -7799,7 +7839,7 @@
     []
   Name: Left
   Enabled: true
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -8077,7 +8117,7 @@
     []
   Name: Section 4
   Enabled: true
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -8212,7 +8252,7 @@
     []
   Name: Time 2
   Enabled: true
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -8228,7 +8268,7 @@
     []
   Name: Left
   Enabled: true
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -8308,7 +8348,7 @@
     []
   Name: Menu
   Enabled: true
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -8446,7 +8486,7 @@
     []
   Name: Text
   Enabled: true
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -8564,7 +8604,7 @@
 - !<SceneObject/a6f76802-6b48-42cd-af32-c3bd92d71c49>
   PrefabRemaps:
     []
-  Name: Full Frame Region
+  Name: Edge Region
   Enabled: true
   Layers: 1048576
   LocalTransform: !<TransformEntity>
@@ -8950,7 +8990,7 @@
     []
   Name: Score
   Enabled: true
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -9036,7 +9076,7 @@
     []
   Name: Bitmoji 7
   Enabled: false
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -9211,7 +9251,7 @@
     []
   Name: Chaticons
   Enabled: true
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -9556,7 +9596,7 @@
     []
   Name: Padding
   Enabled: true
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -9574,7 +9614,7 @@
     []
   Name: Badges
   Enabled: true
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -9592,7 +9632,7 @@
     []
   Name: Text
   Enabled: true
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -9662,7 +9702,7 @@
     []
   Name: Bitmoji 2
   Enabled: false
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -10064,7 +10104,7 @@
     []
   Name: Background
   Enabled: true
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -10228,7 +10268,7 @@
     []
   Name: Padding
   Enabled: true
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -10245,7 +10285,7 @@
     []
   Name: Top
   Enabled: true
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -10496,7 +10536,7 @@
     []
   Name: Fill Section
   Enabled: true
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -10721,7 +10761,7 @@
     []
   Name: Flame
   Enabled: true
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -11448,6 +11488,22 @@
   ScriptTypes:
     "":
       {}
+- !<SceneObject/de159b29-57e3-493c-bfac-7a63e7f12619>
+  PrefabRemaps:
+    []
+  Name: Popup Region
+  Enabled: true
+  Layers: 2
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    - !<own> 0d74f963-00cf-419e-8317-612d5514b2f3
+  Components:
+    - !<own> 4a0f69db-f9f8-4ac6-b7fc-e4c8be26ebaa
+    - !<own> 378b00fe-baad-4129-b32c-4d593e34beba
 - !<ScreenTransform/df41be59-9baa-471a-8e57-c487de7ae695>
   PrefabRemaps:
     []
@@ -11486,7 +11542,7 @@
     []
   Name: Text
   Enabled: true
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -11557,7 +11613,7 @@
     []
   Name: Blank
   Enabled: true
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -11657,7 +11713,7 @@
     []
   Name: Overlay
   Enabled: true
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -11712,7 +11768,7 @@
     []
   Name: Section 1-1
   Enabled: true
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -11952,7 +12008,7 @@
     []
   Name: Section 1
   Enabled: true
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -11985,7 +12041,7 @@
     []
   Name: Offset
   Enabled: true
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -12051,7 +12107,7 @@
     []
   Name: Background
   Enabled: true
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -12067,7 +12123,7 @@
     []
   Name: Text
   Enabled: true
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -12405,7 +12461,7 @@
     []
   Name: Bitmoji 1
   Enabled: false
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -12792,7 +12848,7 @@
     []
   Name: Left
   Enabled: true
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -13004,7 +13060,7 @@
     []
   Name: Offset
   Enabled: true
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -13019,7 +13075,7 @@
     []
   Name: Score
   Enabled: true
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -13229,7 +13285,7 @@
     []
   Name: Text
   Enabled: true
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -13311,7 +13367,7 @@
     []
   Name: Background
   Enabled: true
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
@@ -13379,7 +13435,7 @@
     []
   Name: Bitmoji 5
   Enabled: false
-  Layers: 2
+  Layers: 1048576
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
