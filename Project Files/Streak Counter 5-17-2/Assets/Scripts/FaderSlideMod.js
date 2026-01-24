@@ -587,8 +587,8 @@ Fader.prototype._setAlpha = function(obj, alpha, recursive, parameter) {
             var outlineColor = this._componentCache.texts[j].outlineSettings.fill.color;
             this._componentCache.texts[j].outlineSettings.fill.color = new vec4(outlineColor.r, outlineColor.g, outlineColor.b, alpha);
             
-            var shadowColor = this._componentCache.texts[j].shadowColor;
-            this._componentCache.texts[j].shadowColor = new vec4(shadowColor.r, shadowColor.g, shadowColor.b, alpha);
+            var shadowColor = this._componentCache.texts[j].dropshadowSettings.fill.color;
+            this._componentCache.texts[j].dropshadowSettings.fill.color = new vec4(shadowColor.r, shadowColor.g, shadowColor.b, alpha * 0.2);
         }
     } else {
         // For child objects during recursion, use normal getComponents

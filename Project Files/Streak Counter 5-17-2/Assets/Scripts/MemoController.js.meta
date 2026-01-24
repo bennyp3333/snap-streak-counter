@@ -1,0 +1,49 @@
+- !<AssetImportMetadata/8c1b33ce-cd8a-45ae-aa54-f0332752e71f>
+  ImportedAssetIds:
+    JavaScriptAsset: !<reference> 4f588529-d7a1-4792-958f-102377930869
+  ImporterName: JavaScriptAssetImporter
+  PrimaryAsset: !<reference> 4f588529-d7a1-4792-958f-102377930869
+  PackageType: NotAPackage
+  LegacyPackagePolicy: ~
+  ExtraData:
+    {}
+  AssetDataMap:
+    JavaScriptAsset: !<own> 9b04d702-b582-495c-a553-c2671f17a5b0
+  DependentFiles:
+    []
+  ImporterSettings: !<AssetImporterSettings>
+    {}
+  CompressionSettings: !<own> 00000000-0000-0000-0000-000000000000
+- !<ScriptAssetData/9b04d702-b582-495c-a553-c2671f17a5b0>
+  SvgIcon: ""
+  SetupScript:
+    code: ""
+  Description: ""
+  VersionMajor: 0
+  VersionMinor: 0
+  VersionPatch: 0
+  ComponentUid: ee1faf7e-f462-4bb9-8f34-36196f75271a
+  ExportUid: 00000000-0000-0000-0000-000000000000
+  PackagePolicy: CanBeUnpacked
+  ScriptInputsHidden:
+    memoCycleDelay: false
+    memoTextComponents: false
+    printDebugStatements: false
+    streakController: false
+  ScriptTypesHidden:
+    {}
+  ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
+  DeclarationFile: !<reference> 00000000-0000-0000-0000-000000000000
+  Tags:
+    []
+  Attachments:
+    []
+  DefaultScriptInputs:
+    - streakController: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
+      memoTextComponents: !<reference.Text[]>
+        []
+      memoCycleDelay: !<float> 3.000000
+      printDebugStatements: false
+  ScriptTypes:
+    -
+      {}

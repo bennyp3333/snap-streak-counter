@@ -408,11 +408,11 @@ async function processTurn() {
     }
 
     // Update response time stats for current user
-    updateResponseTimeStats(timeSinceLastSnap);
+    updateResponseTimeStats(timeSinceLastSnap);//TODO: check this
 
     // Check if this completes a round (both users have sent)
     if (turnCount > 0) {
-        checkAndIncrementStreak(now);
+        checkAndIncrementStreak(now);//TODO: check this
     }
 }
 
