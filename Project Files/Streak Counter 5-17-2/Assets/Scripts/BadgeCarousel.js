@@ -10,6 +10,7 @@
 //@input float swipeMultiplier = 1
 //@ui {"widget":"separator"}
 //@input Component.Image popupBadge
+//@input Asset.AudioTrackAsset awardTrack
 //@ui {"widget":"separator"}
 //@input bool debug
 //@input string debugName = "" {"showIf":"debug"}
@@ -50,8 +51,12 @@ var badges = [
     {id: "streakBroken", name: "Streak Broken", group: 2, priority: 8}
 ];
 
+global.BaseTools(script);
+
 var self = script.getSceneObject();
 var selfScreenTransform = self.getComponent("Component.ScreenTransform");
+
+var awardAC = script.createAudioComp(script.awardTrack);
 
 // Persistent storage
 var store = global.persistentStorageSystem.store;
@@ -390,6 +395,7 @@ function processUnlockQueue() {
 }
 
 function unlockAnim(badgeTexture, callback){
+    awardAC.play(1);
     script.popupBadge.mainPass.baseTex = badgeTexture;
     global.faderManager.show("Badge Popup");
     global.faderManager.hide("Badge Popup", {delay: 3, cancel: "none"});

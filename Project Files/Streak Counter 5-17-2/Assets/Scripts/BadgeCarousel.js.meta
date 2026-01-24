@@ -26,6 +26,7 @@
   ExportUid: 00000000-0000-0000-0000-000000000000
   PackagePolicy: CanBeUnpacked
   ScriptInputsHidden:
+    awardTrack: false
     badgeEnd: false
     badgeNameText: false
     badgeTemplate: false
@@ -57,6 +58,7 @@
       padding: 0.050000
       swipeMultiplier: 0.002000
       popupBadge: !<reference.Image> 00000000-0000-0000-0000-000000000000
+      awardTrack: !<reference.AudioTrackAsset> 00000000-0000-0000-0000-000000000000
       debug: false
       debugName: ""
       debugText: !<reference.Text> 00000000-0000-0000-0000-000000000000

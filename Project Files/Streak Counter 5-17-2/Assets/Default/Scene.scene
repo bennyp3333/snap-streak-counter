@@ -2927,8 +2927,6 @@
     colorOnPress: true
     defaultColor: true
     pressedColor: true
-    useAudio: true
-    tapAudioTrack: true
     editAdvancedOptions: true
     touchBlockingEnabled: true
     printDebugStatements: true
@@ -2955,8 +2953,8 @@
       colorOnPress: false
       defaultColor: !<Vec3> {x: 1.000000, y: 1.000000, z: 1.000000}
       pressedColor: !<Vec3> {x: 0.800000, y: 0.800000, z: 0.800000}
-      useAudio: false
-      tapAudioTrack: !<reference.AudioTrackAsset> 00000000-0000-0000-0000-000000000000
+      useAudio: true
+      tapAudioTrack: !<reference.AudioTrackAsset> ac0b8134-3bc9-4f5f-adbb-e03d97291938
       editAdvancedOptions: false
       touchBlockingEnabled: true
       printDebugStatements: false
@@ -3236,8 +3234,6 @@
     colorOnPress: true
     defaultColor: true
     pressedColor: true
-    useAudio: true
-    tapAudioTrack: true
     editAdvancedOptions: true
     touchBlockingEnabled: true
     printDebugStatements: true
@@ -3264,8 +3260,8 @@
       colorOnPress: false
       defaultColor: !<Vec3> {x: 1.000000, y: 1.000000, z: 1.000000}
       pressedColor: !<Vec3> {x: 0.800000, y: 0.800000, z: 0.800000}
-      useAudio: false
-      tapAudioTrack: !<reference.AudioTrackAsset> 00000000-0000-0000-0000-000000000000
+      useAudio: true
+      tapAudioTrack: !<reference.AudioTrackAsset> f76c1469-e1c1-434b-ba73-f7a5ec82a427
       editAdvancedOptions: false
       touchBlockingEnabled: true
       printDebugStatements: false
@@ -8133,8 +8129,6 @@
     colorOnPress: true
     defaultColor: true
     pressedColor: true
-    useAudio: true
-    tapAudioTrack: true
     editAdvancedOptions: true
     touchBlockingEnabled: true
     printDebugStatements: true
@@ -8161,8 +8155,8 @@
       colorOnPress: false
       defaultColor: !<Vec3> {x: 1.000000, y: 1.000000, z: 1.000000}
       pressedColor: !<Vec3> {x: 0.800000, y: 0.800000, z: 0.800000}
-      useAudio: false
-      tapAudioTrack: !<reference.AudioTrackAsset> 00000000-0000-0000-0000-000000000000
+      useAudio: true
+      tapAudioTrack: !<reference.AudioTrackAsset> 4cc2985a-879d-42b8-b0f3-8a5238c40152
       editAdvancedOptions: false
       touchBlockingEnabled: true
       printDebugStatements: false
@@ -11740,8 +11734,6 @@
   ScriptInputsDefault:
     streakWindowHours: true
     graceWindowHours: true
-    enableTestingMode: true
-    forceStreakValue: true
     forceStreakBroken: true
     forceStats: true
     forcedLongestStreak: true
@@ -11757,9 +11749,9 @@
       streakWindowHours: !<float> 24.000000
       graceWindowHours: !<float> 4.000000
       printDebugStatements: true
-      enableTestingMode: false
-      forceStreakValue: false
-      forcedStreak: 69
+      enableTestingMode: true
+      forceStreakValue: true
+      forcedStreak: 14
       forceStreakBroken: false
       brokenByUserIndex: 1
       forceStats: false
@@ -13604,6 +13596,7 @@
       padding: !<float> 0.000000
       swipeMultiplier: 3.250000
       popupBadge: !<reference.Image> adfa2f3f-551f-44c2-9afe-4d955bf74b26
+      awardTrack: !<reference.AudioTrackAsset> 1dd167ca-c73b-4c83-857c-76cab6cbe7c1
       debug: true
       debugName: ""
       debugText: !<reference.Text> 00000000-0000-0000-0000-000000000000
