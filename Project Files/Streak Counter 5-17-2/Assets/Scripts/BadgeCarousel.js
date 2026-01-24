@@ -234,6 +234,7 @@ function onUpdate() {
 function onBadgePressed(badgeId){
     //debugPrint("Badge tapped: " + badgeId);
     expandBadge(badgeId);
+    global.faderManager.hide("Tap Hint 2");
 }
 
 function expandBadge(badgeId){

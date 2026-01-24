@@ -183,7 +183,8 @@ function fireStreakReadyCallbacks() {
         currentStreak: cachedStreakStats.currentStreak,
         longestStreak: cachedStreakStats.longestStreak,
         streakBroken: streakBrokenThisTurn,
-        currentUserIndex: currentUserIndex
+        currentUserIndex: currentUserIndex,
+        totalSnaps: cachedStreakStats.totalSnaps
     };
     
     for (var i = 0; i < onStreakReadyCallbacks.length; i++) {

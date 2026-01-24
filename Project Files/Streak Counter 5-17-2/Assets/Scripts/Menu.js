@@ -46,6 +46,14 @@ function init(){
     for(var i = 0; i < script.section3Bitmoji.length; i++){
         script.section3Bitmoji[i].enabled = (i == randomSection3Bitmoji);
     }
+
+    script.streakController.onReady(function(data) {
+        debugPrint('Streak ready, showing hints');
+        if(data.totalSnaps < 2){
+            global.faderManager.show("Tap Hint 1");
+            global.faderManager.show("Tap Hint 2");
+        }
+    });
     
     debugPrint("Initilized!");
 }
@@ -53,6 +61,8 @@ function init(){
 function toggle(){
     if(isAnimating) return;
     isAnimating = true;
+
+    
     
     if(isOpen){
         global.faderManager.hide(self, function(){
@@ -60,6 +70,7 @@ function toggle(){
         });
         global.faderManager.hide("Arrow In");
         global.faderManager.show("Arrow Out");
+        //global.faderManager.hide("Tap Hint 2");
     }else{
         loadStats();
         global.faderManager.show(self, function(){
@@ -67,6 +78,7 @@ function toggle(){
         });
         global.faderManager.show("Arrow In");
         global.faderManager.hide("Arrow Out");
+        global.faderManager.hide("Tap Hint 1");
     }
     isOpen = !isOpen;
 }
