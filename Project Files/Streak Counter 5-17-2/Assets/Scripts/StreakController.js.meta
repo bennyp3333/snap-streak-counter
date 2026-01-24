@@ -26,7 +26,6 @@
   ExportUid: 00000000-0000-0000-0000-000000000000
   PackagePolicy: CanBeUnpacked
   ScriptInputsHidden:
-    badgeCarousel: false
     brokenByUserIndex: false
     enableTestingMode: false
     forceStats: false
@@ -53,7 +52,6 @@
     []
   DefaultScriptInputs:
     - turnBased: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
-      badgeCarousel: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
       streakWindowHours: !<float> 24.000000
       graceWindowHours: !<float> 4.000000
       printDebugStatements: false

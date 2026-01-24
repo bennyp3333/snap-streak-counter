@@ -22,31 +22,32 @@ var badges = [
     {id: "7", name: "Lucky Number 7", group: 0, priority: 5},
     {id: "8", name: "Infinity Vibes", group: 0, priority: 6},
     {id: "10", name: "Ten Days", group: 0, priority: 7},
-    {id: "14", name: "Routine", group: 0, priority: 8},
-    {id: "30", name: "One Month", group: 0, priority: 9},
-    {id: "50", name: "Fifty Days", group: 0, priority: 10},
-    {id: "69", name: "Nice", group: 0, priority: 12},
-    {id: "100", name: "One Hundred Days", group: 0, priority: 13},
-    {id: "365", name: "A Whole Year", group: 0, priority: 24},
-    {id: "420", name: "Weed Number", group: 0, priority: 25},
-    {id: "666", name: "Cursed Streak", group: 0, priority: 26},
-    {id: "777", name: "Jackpot", group: 0, priority: 27},
-    {id: "999", name: "Almost There", group: 0, priority: 28},
-    {id: "1000", name: "One Thousand Days!", group: 0, priority: 29},
+    {id: "14", name: "Routine", group: 0, priority: 9},
+    {id: "30", name: "One Month", group: 0, priority: 10},
+    {id: "50", name: "Fifty Days", group: 0, priority: 11},
+    {id: "69", name: "Nice", group: 0, priority: 13},
+    {id: "100", name: "One Hundred Days", group: 0, priority: 14},
+    {id: "365", name: "A Whole Year", group: 0, priority: 25},
+    {id: "420", name: "Weed Number", group: 0, priority: 26},
+    {id: "666", name: "Cursed Streak", group: 0, priority: 27},
+    {id: "777", name: "Jackpot", group: 0, priority: 28},
+    {id: "999", name: "Almost There", group: 0, priority: 29},
+    {id: "1000", name: "One Thousand Days!", group: 0, priority: 30},
     {id: "christmas", name: "Christmas", group: 1, priority: 4},
-    {id: "easter", name: "Easter", group: 1, priority: 22},
-    {id: "halloween", name: "Halloween", group: 1, priority: 23},
-    {id: "july4th", name: "4th Of July", group: 1, priority: 21},
-    {id: "newYears", name: "New Years Eve", group: 1, priority: 20},
-    {id: "stPatricks", name: "Saint Patrick's Day", group: 1, priority: 17},
-    {id: "thanksgiving", name: "Thanksgiving", group: 1, priority: 18},
-    {id: "valentines", name: "Valentine's Day", group: 1, priority: 19},
-    {id: "freshStart", name: "A Fresh Start", group: 2, priority: 14},
-    {id: "makeAWish", name: "Make A Wish", group: 2, priority: 15},
+    {id: "easter", name: "Easter", group: 1, priority: 23},
+    {id: "halloween", name: "Halloween", group: 1, priority: 24},
+    {id: "july4th", name: "4th Of July", group: 1, priority: 22},
+    {id: "newYears", name: "New Years Eve", group: 1, priority: 21},
+    {id: "stPatricks", name: "Saint Patrick's Day", group: 1, priority: 18},
+    {id: "thanksgiving", name: "Thanksgiving", group: 1, priority: 19},
+    {id: "valentines", name: "Valentine's Day", group: 1, priority: 20},
+    {id: "freshStart", name: "A Fresh Start", group: 2, priority: 15},
+    {id: "makeAWish", name: "Make A Wish", group: 2, priority: 16},
     {id: "noSleepClub", name: "No Sleep Club", group: 2, priority: 3},
-    {id: "secretBadge", name: "Secret", group: 2, priority: 30},
-    {id: "unstableEnergy", name: "Unstable Energy", group: 2, priority: 16},
-    {id: "wheredYouGo", name: "Where'd You Go?", group: 2, priority: 11},
+    {id: "secretBadge", name: "Secret", group: 2, priority: 31},
+    {id: "unstableEnergy", name: "Unstable Energy", group: 2, priority: 17},
+    {id: "wheredYouGo", name: "Where'd You Go?", group: 2, priority: 12},
+    {id: "streakBroken", name: "Streak Broken", group: 2, priority: 8}
 ];
 
 var self = script.getSceneObject();
@@ -76,6 +77,10 @@ var expanded = false;
 var closeReady = false;
 var startAnchors = null;
 var expandedBadgeId = null;
+
+// Unlock queue
+var unlockQueue = [];
+var isUnlockAnimPlaying = false;
 
 function init() {
     loadUnlockedBadges();
@@ -313,24 +318,75 @@ function unlockRandomBadge(){
 }
 
 function unlockBadge(badgeId, callback) {
+    // Check if badge exists and isn't already unlocked
+    var badgeData = null;
     for (var i = 0; i < spawnedBadges.length; i++) {
-        if (spawnedBadges[i].id !== badgeId) continue;
-        if (spawnedBadges[i].unlocked) return true; // Already unlocked
-        
-        spawnedBadges[i].unlocked = true;
-        spawnedBadges[i].script.unlock();
-        
-        if (unlockedIds.indexOf(badgeId) === -1) {
-            unlockedIds.push(badgeId);
-            saveUnlockedBadges();
+        if (spawnedBadges[i].id === badgeId) {
+            badgeData = spawnedBadges[i];
+            break;
         }
-
-        unlockAnim(spawnedBadges[i].texture, callback);
-        
-        sortAndLayout();
+    }
+    
+    if (!badgeData) {
+        debugPrint("Badge not found: " + badgeId);
+        return false;
+    }
+    
+    if (badgeData.unlocked) {
+        debugPrint("Badge already unlocked: " + badgeId);
+        if (callback) callback();
         return true;
     }
-    return false;
+    
+    // Mark as unlocked immediately (data state)
+    badgeData.unlocked = true;
+    badgeData.script.unlock();
+    
+    if (unlockedIds.indexOf(badgeId) === -1) {
+        unlockedIds.push(badgeId);
+        saveUnlockedBadges();
+    }
+    
+    sortAndLayout();
+    
+    // Queue the animation
+    unlockQueue.push({
+        texture: badgeData.texture,
+        callback: callback
+    });
+    
+    debugPrint("Queued unlock animation for: " + badgeId + " (queue length: " + unlockQueue.length + ")");
+    
+    // Start processing queue if not already running
+    processUnlockQueue();
+    
+    return true;
+}
+
+function processUnlockQueue() {
+    // If already playing or queue is empty, do nothing
+    if (isUnlockAnimPlaying || unlockQueue.length === 0) {
+        return;
+    }
+    
+    isUnlockAnimPlaying = true;
+    
+    // Get next item from queue
+    var queueItem = unlockQueue.shift();
+    
+    debugPrint("Playing unlock animation (remaining in queue: " + unlockQueue.length + ")");
+    
+    // Play the animation
+    unlockAnim(queueItem.texture, function() {
+        // Call the original callback if provided
+        if (queueItem.callback) {
+            queueItem.callback();
+        }
+        
+        // Mark animation as complete and process next
+        isUnlockAnimPlaying = false;
+        processUnlockQueue();
+    });
 }
 
 function unlockAnim(badgeTexture, callback){
@@ -391,6 +447,17 @@ function clearAllUnlocks() {
     debugPrint("All unlocks cleared");
 }
 
+// Clear any pending unlock animations
+function clearUnlockQueue() {
+    unlockQueue = [];
+    debugPrint("Unlock queue cleared");
+}
+
+// Get number of pending unlocks in queue
+function getUnlockQueueLength() {
+    return unlockQueue.length;
+}
+
 script.createEvent("OnStartEvent").bind(init);
 script.createEvent("UpdateEvent").bind(onUpdate);
 
@@ -400,6 +467,8 @@ script.isUnlocked = isUnlocked;
 script.getBadge = getBadge;
 script.clearAllUnlocks = clearAllUnlocks;
 script.onClosePressed = onClosePressed;
+script.clearUnlockQueue = clearUnlockQueue;
+script.getUnlockQueueLength = getUnlockQueueLength;
 
 function lerpRect(rectA, rectB, t) {
     return Rect.create(

@@ -26,9 +26,11 @@
   ExportUid: 00000000-0000-0000-0000-000000000000
   PackagePolicy: CanBeUnpacked
   ScriptInputsHidden:
+    badgeCarousel: false
     debug: false
     debugName: false
     debugText: false
+    streakController: false
   ScriptTypesHidden:
     {}
   ReadMe: !<reference> 00000000-0000-0000-0000-000000000000
@@ -38,7 +40,9 @@
   Attachments:
     []
   DefaultScriptInputs:
-    - debug: false
+    - streakController: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
+      badgeCarousel: !<reference.ScriptComponent> 00000000-0000-0000-0000-000000000000
+      debug: false
       debugName: ""
       debugText: !<reference.Text> 00000000-0000-0000-0000-000000000000
   ScriptTypes:

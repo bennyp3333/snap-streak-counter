@@ -4,7 +4,10 @@
     - !<own> 2bbb75f5-9acf-4f0d-a837-2aef299267f7
     - !<own> a644bcd7-d965-4595-8738-a24c73b0ee02
     - !<own> 112b2cdc-d993-4a74-ba00-77f8d1fcd8da
+    - !<own> 5a72f1a6-a834-49f1-b973-a73eb394a72a
+    - !<own> 1617d635-f0ef-4b83-aafd-d40d6f7ef010
     - !<own> ac1acfad-7021-4ed6-974b-bd4b939992df
+    - !<own> 5d21f2fe-d83e-4129-bd57-369252754ba6
     - !<own> c92a90f5-cce2-42ae-9eb7-8c10b632967a
     - !<own> e39e644b-da89-4ddf-acca-7e2bea22fa62
     - !<own> 24711e1a-b841-4818-8a76-8fe1b02f17c8
@@ -802,6 +805,21 @@
     []
   Components:
     - !<own> d9126006-0cca-417b-a89e-343b81d508d2
+- !<SceneObject/1617d635-f0ef-4b83-aafd-d40d6f7ef010>
+  PrefabRemaps:
+    []
+  Name: Enabler
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> ac0d7c92-0406-4d45-b8d1-a42e84ad1605
 - !<ScreenTransform/1656bd63-50bd-45c5-8dcb-5853a0286a0e>
   PrefabRemaps:
     []
@@ -4242,29 +4260,6 @@
     CapitalizationOverride: None
   DepthTest: false
   TwoSided: false
-- !<ScriptComponent/4ce194ff-709d-4256-8c7b-e84e027c7803>
-  PrefabRemaps:
-    []
-  Name: FaceSwitcher
-  Enabled: true
-  ScriptAsset: !<reference> 1d257b8d-0de7-422b-a71d-486780b09c85
-  ScriptInputsDefault:
-    debugName: true
-    debugText: true
-  ScriptTypesDefault:
-    {}
-  ScriptInputs:
-    "":
-      faceObjects: !<reference.SceneObject[]>
-        - !<reference> 38f9cc9e-8e97-4e9c-9038-c09878d62b13
-      noFaceObjects: !<reference.SceneObject[]>
-        - !<reference> c92a90f5-cce2-42ae-9eb7-8c10b632967a
-      debug: true
-      debugName: ""
-      debugText: !<reference.Text> 00000000-0000-0000-0000-000000000000
-  ScriptTypes:
-    "":
-      {}
 - !<SceneObject/4cf9d2e6-62ab-4fd5-bfc9-40d664e7fefe>
   PrefabRemaps:
     []
@@ -4389,25 +4384,6 @@
   RotationAngle: 0
   Pivot: {x: 0.000000, y: 0.000000}
   ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
-- !<ScriptComponent/4fa85d93-b3e1-48f9-b25e-a823b54aa979>
-  PrefabRemaps:
-    []
-  Name: EnableObjectsOnStart
-  Enabled: true
-  ScriptAsset: !<reference> 740a11f9-17d7-4558-8413-22a84fd4cfcf
-  ScriptInputsDefault:
-    delay: true
-  ScriptTypesDefault:
-    {}
-  ScriptInputs:
-    "":
-      objectsToEnable: !<reference.SceneObject[]>
-        - !<reference> 24711e1a-b841-4818-8a76-8fe1b02f17c8
-        - !<reference> 1a299841-ff11-411e-b68b-4c8032526171
-      delay: !<float> 0.000000
-  ScriptTypes:
-    "":
-      {}
 - !<SceneObject/504c724f-d6a4-40f5-8f28-f03e42fcdcc1>
   PrefabRemaps:
     []
@@ -4682,6 +4658,21 @@
     - !<own> ea83a1f8-4120-47ea-bcab-9476c14f198d
   Components:
     - !<own> 1656bd63-50bd-45c5-8dcb-5853a0286a0e
+- !<SceneObject/5a72f1a6-a834-49f1-b973-a73eb394a72a>
+  PrefabRemaps:
+    []
+  Name: Face Switcher
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> aad3b520-3fd3-41e9-932c-1fcd0f6aff5f
 - !<ScreenTransform/5b3132a1-c5c3-45f4-b3f3-83a10afc20f1>
   PrefabRemaps:
     []
@@ -4731,6 +4722,21 @@
   Components:
     - !<own> 3d70595e-213c-46ec-afea-2f5875bab4dc
     - !<own> e8dccbb2-8e91-43ca-af89-db7c75ea38e9
+- !<SceneObject/5d21f2fe-d83e-4129-bd57-369252754ba6>
+  PrefabRemaps:
+    []
+  Name: Badge Unlocker
+  Enabled: true
+  Layers: 1
+  LocalTransform: !<TransformEntity>
+    Position: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
+    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    HasSegmentScaleCompensation: false
+  Children:
+    []
+  Components:
+    - !<own> a9657441-2a5f-465a-ac53-25b3071d6911
 - !<SceneObject/5d4838bb-d425-4b58-8462-239413c34005>
   PrefabRemaps:
     []
@@ -8872,6 +8878,27 @@
     bottom: 0.000000
     right: 0.000000
     top: 0.000000
+- !<ScriptComponent/a9657441-2a5f-465a-ac53-25b3071d6911>
+  PrefabRemaps:
+    []
+  Name: BadgeUnlocker
+  Enabled: true
+  ScriptAsset: !<reference> e79b3a6f-7443-4f7c-9e7c-a46f404fe846
+  ScriptInputsDefault:
+    debugName: true
+    debugText: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      streakController: !<reference.ScriptComponent> d99c5880-55b6-4c85-9a5d-501f988df960
+      badgeCarousel: !<reference.ScriptComponent> f6f42258-8724-42d6-998a-995aade3f913
+      debug: true
+      debugName: ""
+      debugText: !<reference.Text> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    "":
+      {}
 - !<ScreenTransform/a9ee0fe6-08ab-43b8-b64e-c5ec907c1d7e>
   PrefabRemaps:
     []
@@ -8938,6 +8965,29 @@
     bottom: 5.000000
     right: -10.000000
     top: -5.000000
+- !<ScriptComponent/aad3b520-3fd3-41e9-932c-1fcd0f6aff5f>
+  PrefabRemaps:
+    []
+  Name: FaceSwitcher
+  Enabled: true
+  ScriptAsset: !<reference> 1d257b8d-0de7-422b-a71d-486780b09c85
+  ScriptInputsDefault:
+    debugName: true
+    debugText: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      faceObjects: !<reference.SceneObject[]>
+        - !<reference> 38f9cc9e-8e97-4e9c-9038-c09878d62b13
+      noFaceObjects: !<reference.SceneObject[]>
+        - !<reference> c92a90f5-cce2-42ae-9eb7-8c10b632967a
+      debug: true
+      debugName: ""
+      debugText: !<reference.Text> 00000000-0000-0000-0000-000000000000
+  ScriptTypes:
+    "":
+      {}
 - !<RenderMeshVisual/ab64a234-8337-497d-8b88-a41623281197>
   PrefabRemaps:
     []
@@ -8991,6 +9041,25 @@
     bottom: 0.000000
     right: 0.000000
     top: 0.000000
+- !<ScriptComponent/ac0d7c92-0406-4d45-b8d1-a42e84ad1605>
+  PrefabRemaps:
+    []
+  Name: EnableObjectsOnStart
+  Enabled: true
+  ScriptAsset: !<reference> 740a11f9-17d7-4558-8413-22a84fd4cfcf
+  ScriptInputsDefault:
+    delay: true
+  ScriptTypesDefault:
+    {}
+  ScriptInputs:
+    "":
+      objectsToEnable: !<reference.SceneObject[]>
+        - !<reference> 24711e1a-b841-4818-8a76-8fe1b02f17c8
+        - !<reference> 1a299841-ff11-411e-b68b-4c8032526171
+      delay: !<float> 0.000000
+  ScriptTypes:
+    "":
+      {}
 - !<SceneObject/ac1acfad-7021-4ed6-974b-bd4b939992df>
   PrefabRemaps:
     []
@@ -9005,8 +9074,6 @@
   Children:
     []
   Components:
-    - !<own> 4ce194ff-709d-4256-8c7b-e84e027c7803
-    - !<own> 4fa85d93-b3e1-48f9-b25e-a823b54aa979
     - !<own> d99c5880-55b6-4c85-9a5d-501f988df960
 - !<RenderMeshVisual/ac6fb6e8-0eb4-4120-89f4-b1b7603af066>
   PrefabRemaps:
@@ -11687,13 +11754,12 @@
   ScriptInputs:
     "":
       turnBased: !<reference.ScriptComponent> 33d57d25-3ff1-4ea0-aefa-f600e9bd5620
-      badgeCarousel: !<reference.ScriptComponent> f6f42258-8724-42d6-998a-995aade3f913
       streakWindowHours: !<float> 24.000000
       graceWindowHours: !<float> 4.000000
       printDebugStatements: true
       enableTestingMode: false
       forceStreakValue: false
-      forcedStreak: 666
+      forcedStreak: 69
       forceStreakBroken: false
       brokenByUserIndex: 1
       forceStats: false
@@ -13534,6 +13600,7 @@
         - !<reference> a17ce6b4-55d5-4f36-9daa-444ba1d5c7a9
         - !<reference> 5e466f63-24ed-446b-93c0-bde2d5adb68c
         - !<reference> 81590e93-ee9e-4148-91f1-6294ce328179
+        - !<reference> 2010e70a-75f3-4bb5-964a-053c96bbe469
       padding: !<float> 0.000000
       swipeMultiplier: 3.250000
       popupBadge: !<reference.Image> adfa2f3f-551f-44c2-9afe-4d955bf74b26

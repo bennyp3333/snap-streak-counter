@@ -7,7 +7,6 @@
 //
 
 // @input Component.ScriptComponent turnBased {"label": "Turn Based Component"}
-// @input Component.ScriptComponent badgeCarousel {"label": "Badge Carousel", "hint": "Optional - for unlocking streak badges"}
 
 // @ui {"widget": "separator"}
 // @ui {"widget": "label", "label": "Timing Configuration"}
@@ -104,9 +103,6 @@ function applyTestingOverrides() {
         if (cachedStreakStats.currentStreak > cachedStreakStats.longestStreak) {
             cachedStreakStats.longestStreak = cachedStreakStats.currentStreak;
         }
-        
-        // Trigger badge check for forced value
-        checkStreakBadges(cachedStreakStats.currentStreak);
         
         // Fire streak changed callback
         if (oldStreak !== cachedStreakStats.currentStreak) {
@@ -478,9 +474,6 @@ function checkAndIncrementStreak(now) {
         }
 
         printDebug('Streak incremented to ' + cachedStreakStats.currentStreak + (bypassDailyLimit ? ' (testing mode)' : ''));
-
-        // Trigger badge unlock for streak milestones
-        checkStreakBadges(cachedStreakStats.currentStreak);
         
         // Fire streak changed callback
         fireStreakChangedCallbacks(cachedStreakStats.currentStreak, oldStreak);
@@ -501,14 +494,6 @@ function updateResponseTimeStats(responseTimeMs) {
     }
 
     saveUserStats(currentUserIndex, cachedCurrentUserStats);
-}
-
-function checkStreakBadges(streak) {
-    if (!script.badgeCarousel) return;
-
-    // Just pass in the streak number - badgeCarousel.unlockBadge filters if badge exists
-    script.badgeCarousel.unlockBadge(streak.toString());
-    printDebug('Attempted badge unlock for streak: ' + streak);
 }
 
 // ===== Utility Functions =====
@@ -585,7 +570,7 @@ script.STAGE_CAPTURE = STAGE_CAPTURE;
 script.onStreakChanged = function(callback) {
     if (typeof callback === 'function') {
         onStreakChangedCallbacks.push(callback);
-        printDebug('Registered onStreakChanged callback');
+        //printDebug('Registered onStreakChanged callback');
         
         // If already initialized, fire immediately with current state
         if (isInitialized && cachedStreakStats) {
@@ -606,7 +591,7 @@ script.onStreakChanged = function(callback) {
 script.onStreakBroken = function(callback) {
     if (typeof callback === 'function') {
         onStreakBrokenCallbacks.push(callback);
-        printDebug('Registered onStreakBroken callback');
+        //printDebug('Registered onStreakBroken callback');
         
         // If already initialized and streak was broken this turn, fire immediately
         if (isInitialized && streakBrokenThisTurn) {
@@ -627,7 +612,7 @@ script.onStreakBroken = function(callback) {
 script.onReady = function(callback) {
     if (typeof callback === 'function') {
         onStreakReadyCallbacks.push(callback);
-        printDebug('Registered onReady callback');
+        //printDebug('Registered onReady callback');
         
         // If already initialized, fire immediately
         if (isInitialized) {
@@ -891,7 +876,6 @@ script.testSetStreak = function(value) {
         cachedStreakStats.longestStreak = value;
     }
     saveGlobalStats();
-    checkStreakBadges(value);
     
     if (oldStreak !== value) {
         fireStreakChangedCallbacks(value, oldStreak);
@@ -915,7 +899,6 @@ script.testIncrementStreak = function() {
     }
     pendingStreakIncrement = true;
     saveGlobalStats();
-    checkStreakBadges(cachedStreakStats.currentStreak);
     
     fireStreakChangedCallbacks(cachedStreakStats.currentStreak, oldStreak);
     
@@ -1010,7 +993,6 @@ script.testSimulateRounds = function(numRounds) {
         cachedStreakStats.currentStreak++;
         cachedStreakStats.totalSnaps += 2; // Both users send
         cachedStreakStats.roundsCompletedToday++;
-        checkStreakBadges(cachedStreakStats.currentStreak);
     }
     
     if (cachedStreakStats.currentStreak > cachedStreakStats.longestStreak) {

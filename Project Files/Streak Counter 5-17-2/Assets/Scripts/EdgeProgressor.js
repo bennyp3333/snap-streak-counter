@@ -7,10 +7,7 @@
 //@input string debugName = "" {"showIf":"debug"}
 //@input Component.Text debugText {"showIf":"debug"}
 
-global.BaseTools(script);
-
 var self = script.getSceneObject();
-var selfTransform = self.getTransform();
 
 function init() {
     script.streakController.onReady(function(data) {
