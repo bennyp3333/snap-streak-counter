@@ -2885,6 +2885,7 @@
     _onGameOverResponses: true
     printLogsInput: true
     loggerConfig: true
+    showDebugView: true
     _advancedOptions: true
     defaultTurnVariables: true
     remoteServiceModule: true
@@ -2938,7 +2939,7 @@
         printErrors: true
         printWarnings: true
         printInfoLogs: false
-      showDebugView: true
+      showDebugView: false
       _advancedOptions: false
       defaultTurnVariables:
         []

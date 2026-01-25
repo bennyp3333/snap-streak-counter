@@ -227,6 +227,12 @@ function applyPositions() {
         var st = spawnedBadges[i].obj.getComponent("Component.ScreenTransform");
         var x = badgePositions[i] + combinedOffset;
         st.anchors.setCenter(new vec2(x, 0));
+
+        if(x < 1 && x > -1){
+            spawnedBadges[i].script.setInteractable(true);
+        }else{
+            spawnedBadges[i].script.setInteractable(false);
+        }
     }
 }
 
