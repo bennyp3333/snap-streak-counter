@@ -241,11 +241,19 @@ script.createEvent('SnapImageCaptureEvent').bind(function() {
     script.endTurn();
 });
 
+function onForceCapture(){
+    if (!isInitialized) return;
+    printDebug('ForceCaptured - ending turn');
+    script.endTurn();
+}
+
 async function initialize() {
     if (!script.turnBased) {
         printWarning('Turn Based component not assigned!');
         return;
     }
+
+    global.events.add("forceCapture", onForceCapture);
 
     // Listen for turn events
     script.turnBased.onTurnStart.add(onTurnStart);

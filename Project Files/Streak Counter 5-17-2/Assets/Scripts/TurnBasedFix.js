@@ -1,8 +1,11 @@
 // @input Component.ScriptComponent turnBased {"label": "Turn Based Component"}
+//@input bool enableForceCapture
 
 script.turnBased.endTurn = async function(){
     if (this.requireTurnSubmission) {
-        //this.turnDataController.setCaptureSnap(!!this.autoCaptureHelper);
+        if(script.enableForceCapture){
+            this.turnDataController.setCaptureSnap(!!this.autoCaptureHelper);
+        }
         this.turnDataController.endTurn();
         const isFinalTurn = await this.turnDataController.isFinalTurn();
         if (isFinalTurn) {
@@ -13,6 +16,13 @@ script.turnBased.endTurn = async function(){
         }
     }
 }
+
+script.forceCapture = function(){
+    if(script.enableForceCapture){
+        global.events.trigger("forceCapture");
+    }
+}
+
 /*
 function onTapped(eventData)
 {
