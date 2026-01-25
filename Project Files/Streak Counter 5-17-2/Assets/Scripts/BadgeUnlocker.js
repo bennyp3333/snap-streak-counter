@@ -138,7 +138,7 @@ function checkFreshStart(data) {
     // Current streak is 1 and there was a previous streak that was broken
     var context = script.streakController.getMemoContext();
 
-    if (data.currentStreak === 1 && context.previousStreak >= 1) {
+    if (data.currentStreak === 1 && context.previousStreak > 1) {
         script.badgeCarousel.unlockBadge("freshStart");
         debugPrint("Fresh Start badge unlocked - restarted after " + context.previousStreak + " day streak");
     }
@@ -173,15 +173,8 @@ function checkUnstableEnergy() {
         }
     }
 
-    // If streak was broken and previous streak was decent (5+), that's unstable
-    if (context.streakBroken && context.previousStreak >= 5) {
-        script.badgeCarousel.unlockBadge("unstableEnergy");
-        debugPrint("Unstable Energy badge unlocked - streak broken after " + context.previousStreak);
-        return;
-    }
-
     // Multiple rounds in one day shows intense/unstable usage
-    if (context.roundsCompletedToday >= 5) {
+    if (context.roundsCompletedToday >= 20) {
         script.badgeCarousel.unlockBadge("unstableEnergy");
         debugPrint("Unstable Energy badge unlocked - " + context.roundsCompletedToday + " rounds today");
     }

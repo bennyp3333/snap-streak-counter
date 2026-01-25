@@ -453,20 +453,54 @@ function generateAllMemos(ctx) {
         }
     }
     
-    // Response time patterns (one message)
-    if (ctx.lastResponseTimeMs) {
-        var lastResponseHours = ctx.lastResponseTimeMs / (1000 * 60 * 60);
-        if (lastResponseHours < 0.1) {
+    // Other user's response time - how fast THEY replied (one message)
+    if (ctx.otherUserResponseTimeMs) {
+        var otherResponseHours = ctx.otherUserResponseTimeMs / (1000 * 60 * 60);
+        var otherName = ctx.otherUserDisplayName || 'They';
+        if (otherResponseHours < 0.1) {
             addOne(PRIORITY_MEDIUM, [
-                "Speed demon! ⚡ That was fast!",
-                "Were you just waiting? 👀",
-                "Lightning quick response! ⚡",
-                "Instant reply energy!"
+                otherName + " replied instantly! ⚡",
+                otherName + " was waiting for you! 👀",
+                "Lightning fast from " + otherName + "! ⚡",
+                otherName + "'s got quick fingers!"
             ]);
-        } else if (lastResponseHours < 1) {
-            addOne(PRIORITY_MEDIUM - 5, ["Quick response! Nice!", "Speedy! 🏃", "Fast fingers! ⚡"]);
-        } else if (lastResponseHours > 20) {
-            addOne(PRIORITY_MEDIUM, ["Cutting it close! 😰", "Just under the wire!", "Close call! 😅"]);
+        } else if (otherResponseHours < 1) {
+            addOne(PRIORITY_MEDIUM - 5, [
+                otherName + " replied in under an hour!",
+                "Quick response from " + otherName + "!",
+                otherName + " didn't keep you waiting"
+            ]);
+        } else if (otherResponseHours > 20) {
+            addOne(PRIORITY_MEDIUM, [
+                otherName + " cut it close! 😰",
+                otherName + " almost forgot! 😅",
+                "Just in time from " + otherName + "!"
+            ]);
+        }
+    }
+    
+    // Current user's open time - how fast YOU opened (one message)
+    if (ctx.timeSinceLastSnapMs) {
+        var openTimeHours = ctx.timeSinceLastSnapMs / (1000 * 60 * 60);
+        if (openTimeHours < 0.1) {
+            addOne(PRIORITY_MEDIUM, [
+                "Speed demon! ⚡ You opened fast!",
+                "Were you just waiting? 👀",
+                "Eager to see their snap! 😏",
+                "Instant open energy!"
+            ]);
+        } else if (openTimeHours < 1) {
+            addOne(PRIORITY_MEDIUM - 5, [
+                "Opened within the hour! Nice!",
+                "Quick on the draw! 🤠",
+                "Speedy opener! ⚡"
+            ]);
+        } else if (openTimeHours > 20) {
+            addOne(PRIORITY_MEDIUM, [
+                "Cutting it close there! 😰",
+                "Almost too late! 😅",
+                "Just under the wire!"
+            ]);
         }
     }
     

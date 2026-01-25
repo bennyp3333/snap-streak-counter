@@ -1,5 +1,5 @@
 // StreakController.js
-// Version: 1.0.0
+// Version: 1.0.1
 // Description: Manages streak counting, statistics, and game state using the Turn Based component.
 //              Tracks streaks between two users with a 24hr rolling window + grace period.
 //              Provides APIs for stats display, memo context, and badge unlocking.
@@ -23,7 +23,6 @@
 // @input bool forceStreakValue = false {"label": "Force Streak Value", "showIf": "enableTestingMode"}
 // @input int forcedStreak = 0 {"label": "Forced Streak", "showIf": "forceStreakValue", "min": 0}
 // @input bool forceStreakBroken = false {"label": "Force Streak Broken", "showIf": "enableTestingMode"}
-// @input int brokenByUserIndex = 0 {"label": "Broken By User Index", "showIf": "forceStreakBroken", "min": 0, "max": 1}
 // @input bool forceStats = false {"label": "Force Stats", "showIf": "enableTestingMode"}
 // @input int forcedLongestStreak = 0 {"label": "Longest Streak", "showIf": "forceStats", "min": 0}
 // @input int forcedTotalSnaps = 0 {"label": "Total Snaps", "showIf": "forceStats", "min": 0}
@@ -34,9 +33,6 @@
 
 // ===== Constants =====
 
-var STAGE_RECAP = 'recap';
-var STAGE_CAPTURE = 'capture';
-
 var MS_PER_HOUR = 1000 * 60 * 60;
 var MS_PER_DAY = MS_PER_HOUR * 24;
 
@@ -44,7 +40,6 @@ var MS_PER_DAY = MS_PER_HOUR * 24;
 
 var isInitialized = false;
 var hasTurnEnded = false;
-var currentStage = STAGE_RECAP;
 var currentUserIndex = -1;
 var turnCount = 0;
 
@@ -53,6 +48,14 @@ var cachedStreakStats = null;
 var cachedCurrentUserStats = null;
 var cachedOtherUserStats = null;
 var cachedDisplayNames = { current: '', other: '' };
+
+// Stores the timestamp of when the other user sent their snap
+// Used to calculate response time when current user sends
+var cachedPrevSendTimestamp = 0;
+
+// Stores the other user's response time (passed via turn variables)
+// This is how long it took them to respond to the snap before theirs
+var cachedOtherUserResponseTimeMs = null;
 
 // Calculated values
 var pendingStreakIncrement = false;
@@ -87,6 +90,11 @@ function printWarning(message) {
 // ===== Testing Functions =====
 
 function applyTestingOverrides() {
+    if (!global.deviceInfoSystem.isEditor()){
+        script.enableTestingMode = false;
+        return;
+    }
+
     if (!script.enableTestingMode) return;
     
     printDebug('Testing mode enabled - applying overrides');
@@ -108,17 +116,6 @@ function applyTestingOverrides() {
         if (oldStreak !== cachedStreakStats.currentStreak) {
             fireStreakChangedCallbacks(cachedStreakStats.currentStreak, oldStreak);
         }
-    }
-    
-    // Force streak broken state
-    if (script.forceStreakBroken) {
-        streakBrokenThisTurn = true;
-        previousStreakValue = cachedStreakStats.currentStreak;
-        cachedStreakStats.lastStreakBrokenBy = script.brokenByUserIndex;
-        printDebug('Forced streak broken by user: ' + script.brokenByUserIndex);
-        
-        // Fire streak broken callback
-        fireStreakBrokenCallbacks(script.brokenByUserIndex, previousStreakValue);
     }
     
     // Force stats
@@ -237,8 +234,9 @@ async function onTurnStart(eventData) {
 
     currentUserIndex = eventData.currentUserIndex;
     turnCount = eventData.turnCount;
-    currentStage = STAGE_RECAP;
     hasTurnEnded = false;
+    cachedPrevSendTimestamp = 0; // Reset for this turn
+    cachedOtherUserResponseTimeMs = null; // Reset for this turn
 
     // Load display names
     cachedDisplayNames.current = await script.turnBased.getCurrentUserDisplayName();
@@ -251,21 +249,16 @@ async function onTurnStart(eventData) {
     // Initialize or load stats
     await loadOrInitializeStats();
 
-    // Process the turn - check timing, update streak
-    await processTurn();
-
     // Apply any testing overrides (editor only)
     applyTestingOverrides();
+
+    // Process the turn - check timing, update streak
+    await processTurn();
 
     isInitialized = true;
 
     // Fire streak ready callbacks
     fireStreakReadyCallbacks();
-    
-    // Legacy callback support
-    if (script.onStreakReady) {
-        script.onStreakReady();
-    }
 }
 
 function onTurnEnd() {
@@ -335,7 +328,7 @@ async function loadUserStats(userIndex) {
 
     printDebug('Loaded user ' + userIndex + ' stats: ' + JSON.stringify(userStats));
 
-    return userStats
+    return userStats;
 }
 
 function saveGlobalStats() {
@@ -349,7 +342,7 @@ function saveGlobalStats() {
     script.turnBased.setGlobalVariable('lastRoundCompletedDate', cachedStreakStats.lastRoundCompletedDate);
     script.turnBased.setGlobalVariable('roundsCompletedToday', cachedStreakStats.roundsCompletedToday);
 
-    printDebug('Saved global stats: ' + JSON.stringify(cachedStreakStats));
+    printDebug('Saved global stats');
 }
 
 function saveUserStats(userIndex, userStats) {
@@ -358,7 +351,7 @@ function saveUserStats(userIndex, userStats) {
     script.turnBased.setUserVariable(userIndex, 'responseCount', userStats.responseCount);
     script.turnBased.setUserVariable(userIndex, 'fastestResponse', userStats.fastestResponse);
 
-    printDebug('Loaded user ' + userIndex + ' stats: ' + JSON.stringify(userStats));
+    printDebug('Saved user ' + userIndex + ' stats');
 }
 
 // ===== Turn Processing & Streak Logic =====
@@ -384,32 +377,41 @@ async function processTurn() {
     // Get timing info from previous turn
     var prevSendTimestamp = previousTurnVars.sendTimestamp || 0;
     var prevSenderIndex = previousTurnVars.senderIndex !== undefined ? previousTurnVars.senderIndex : -1;
+    
+    // Get the other user's response time (how long it took them to respond)
+    // This was set when they sent their snap
+    cachedOtherUserResponseTimeMs = previousTurnVars.responseTimeMs || null;
+    
+    if (cachedOtherUserResponseTimeMs) {
+        printDebug('Other user response time: ' + formatTime(cachedOtherUserResponseTimeMs));
+    }
 
     if (prevSendTimestamp === 0) {
         printDebug('No previous send timestamp found');
         return;
     } else {
-        printDebug('Previous time stamp: ' + prevSendTimestamp);
+        printDebug('Previous send timestamp: ' + prevSendTimestamp);
     }
 
-    // Calculate response time
+    // Calculate time since last snap (for streak break check only)
     var timeSinceLastSnap = now - prevSendTimestamp;
     var streakWindowMs = (script.streakWindowHours + script.graceWindowHours) * MS_PER_HOUR;
 
     printDebug('Time since last snap: ' + formatTime(timeSinceLastSnap) + ', Window: ' + formatTime(streakWindowMs));
 
     // Check if streak is broken (current user took too long to open)
-    if (timeSinceLastSnap > streakWindowMs) {
+    if (timeSinceLastSnap > streakWindowMs || (script.enableTestingMode && script.forceStreakBroken)) {
         handleStreakBroken(currentUserIndex, prevSendTimestamp);
         return;
     }
 
-    // Update response time stats for current user
-    updateResponseTimeStats(timeSinceLastSnap);//TODO: check this
+    // Store the previous send timestamp so we can calculate response time when THIS user sends
+    // Response time is calculated in prepareSnapData(), not here on open
+    cachedPrevSendTimestamp = prevSendTimestamp;
 
     // Check if this completes a round (both users have sent)
     if (turnCount > 0) {
-        checkAndIncrementStreak(now);//TODO: check this
+        checkAndIncrementStreak(now);
     }
 }
 
@@ -494,6 +496,7 @@ function updateResponseTimeStats(responseTimeMs) {
     }
 
     saveUserStats(currentUserIndex, cachedCurrentUserStats);
+    printDebug('Updated response time stats - Response: ' + formatTime(responseTimeMs) + ', Total responses: ' + cachedCurrentUserStats.responseCount);
 }
 
 // ===== Utility Functions =====
@@ -525,6 +528,14 @@ script.prepareSnapData = function() {
     cachedStreakStats.totalSnaps++;
     saveGlobalStats();
 
+    // Calculate response time (only if we have a previous send timestamp)
+    // This is the time from when the other user sent to when this user sends back
+    var currentResponseTimeMs = null;
+    if (cachedPrevSendTimestamp > 0) {
+        currentResponseTimeMs = now - cachedPrevSendTimestamp;
+        updateResponseTimeStats(currentResponseTimeMs);
+    }
+
     // Update this user's last send timestamp
     cachedCurrentUserStats.lastSendTimestamp = now;
     saveUserStats(currentUserIndex, cachedCurrentUserStats);
@@ -532,8 +543,10 @@ script.prepareSnapData = function() {
     // Set turn variables to pass to next user
     script.turnBased.setCurrentTurnVariable('sendTimestamp', now);
     script.turnBased.setCurrentTurnVariable('senderIndex', currentUserIndex);
+    // Pass our response time so the other user can see how fast we responded
+    script.turnBased.setCurrentTurnVariable('responseTimeMs', currentResponseTimeMs);
 
-    printDebug('Snap data prepared - timestamp: ' + now);
+    printDebug('Snap data prepared - timestamp: ' + now + ', responseTime: ' + (currentResponseTimeMs ? formatTime(currentResponseTimeMs) : 'N/A'));
 };
 
 script.endTurn = function() {
@@ -547,22 +560,6 @@ script.endTurn = function() {
     script.turnBased.endTurn();
 };
 
-// ===== Public API - Stage Management =====
-
-script.setStage = function(stage) {
-    if (stage === STAGE_RECAP || stage === STAGE_CAPTURE) {
-        currentStage = stage;
-        printDebug('Stage set to: ' + stage);
-    }
-};
-
-script.getStage = function() {
-    return currentStage;
-};
-
-script.STAGE_RECAP = STAGE_RECAP;
-script.STAGE_CAPTURE = STAGE_CAPTURE;
-
 // ===== Public API - Event Subscriptions =====
 
 // Subscribe to streak changes (increment or reset)
@@ -570,7 +567,6 @@ script.STAGE_CAPTURE = STAGE_CAPTURE;
 script.onStreakChanged = function(callback) {
     if (typeof callback === 'function') {
         onStreakChangedCallbacks.push(callback);
-        //printDebug('Registered onStreakChanged callback');
         
         // If already initialized, fire immediately with current state
         if (isInitialized && cachedStreakStats) {
@@ -591,7 +587,6 @@ script.onStreakChanged = function(callback) {
 script.onStreakBroken = function(callback) {
     if (typeof callback === 'function') {
         onStreakBrokenCallbacks.push(callback);
-        //printDebug('Registered onStreakBroken callback');
         
         // If already initialized and streak was broken this turn, fire immediately
         if (isInitialized && streakBrokenThisTurn) {
@@ -612,7 +607,6 @@ script.onStreakBroken = function(callback) {
 script.onReady = function(callback) {
     if (typeof callback === 'function') {
         onStreakReadyCallbacks.push(callback);
-        //printDebug('Registered onReady callback');
         
         // If already initialized, fire immediately
         if (isInitialized) {
@@ -814,19 +808,14 @@ script.getWhoBreaksMoreStreaks = function() {
 script.getMemoContext = function() {
     var now = Date.now();
     var hourOfDay = new Date(now).getHours();
-
-    // Calculate last response time (how long other user took)
-    var lastResponseTimeMs = null;
-    var prevTurnVars = script.turnBased.getPreviousTurnVariables
-        ? script.turnBased.getPreviousTurnVariables()
-        : null;
-
-    if (prevTurnVars && prevTurnVars.sendTimestamp) {
-        lastResponseTimeMs = prevTurnVars.responseTimeMs || null;
+    
+    // Calculate how long since the other user sent (how fast current user opened)
+    var timeSinceLastSnapMs = null;
+    if (cachedPrevSendTimestamp > 0) {
+        timeSinceLastSnapMs = now - cachedPrevSendTimestamp;
     }
 
     return {
-        stage: currentStage,
         currentStreak: cachedStreakStats ? cachedStreakStats.currentStreak : 0,
         previousStreak: previousStreakValue,
         streakBroken: streakBrokenThisTurn,
@@ -837,7 +826,8 @@ script.getMemoContext = function() {
         otherUserDisplayName: cachedDisplayNames.other,
         hourOfDay: hourOfDay,
         roundsCompletedToday: cachedStreakStats ? cachedStreakStats.roundsCompletedToday : 0,
-        lastResponseTimeMs: lastResponseTimeMs,
+        otherUserResponseTimeMs: cachedOtherUserResponseTimeMs, // How long the other user took to respond
+        timeSinceLastSnapMs: timeSinceLastSnapMs, // How long since other user sent (how fast current user opened)
         currentUserStats: cachedCurrentUserStats,
         otherUserStats: cachedOtherUserStats,
         longestStreak: cachedStreakStats ? cachedStreakStats.longestStreak : 0,
@@ -859,173 +849,6 @@ script.getFullStats = async function() {
         timeRemaining: script.getTimeRemainingFormatted(),
         whoBreaksMore: script.getWhoBreaksMoreStreaks()
     };
-};
-
-// ===== Public API - Testing Controls =====
-
-// Manually set the streak (testing only)
-script.testSetStreak = function(value) {
-    if (!script.enableTestingMode) {
-        printWarning('testSetStreak requires enableTestingMode to be true');
-        return false;
-    }
-    
-    var oldStreak = cachedStreakStats.currentStreak;
-    cachedStreakStats.currentStreak = value;
-    if (value > cachedStreakStats.longestStreak) {
-        cachedStreakStats.longestStreak = value;
-    }
-    saveGlobalStats();
-    
-    if (oldStreak !== value) {
-        fireStreakChangedCallbacks(value, oldStreak);
-    }
-    
-    printDebug('Test: Set streak to ' + value);
-    return true;
-};
-
-// Manually increment the streak (testing only, bypasses daily limit)
-script.testIncrementStreak = function() {
-    if (!script.enableTestingMode) {
-        printWarning('testIncrementStreak requires enableTestingMode to be true');
-        return false;
-    }
-    
-    var oldStreak = cachedStreakStats.currentStreak;
-    cachedStreakStats.currentStreak++;
-    if (cachedStreakStats.currentStreak > cachedStreakStats.longestStreak) {
-        cachedStreakStats.longestStreak = cachedStreakStats.currentStreak;
-    }
-    pendingStreakIncrement = true;
-    saveGlobalStats();
-    
-    fireStreakChangedCallbacks(cachedStreakStats.currentStreak, oldStreak);
-    
-    printDebug('Test: Incremented streak to ' + cachedStreakStats.currentStreak);
-    return true;
-};
-
-// Manually trigger a streak break (testing only)
-script.testBreakStreak = function(brokenByUserIndex) {
-    if (!script.enableTestingMode) {
-        printWarning('testBreakStreak requires enableTestingMode to be true');
-        return false;
-    }
-    
-    var userIndex = brokenByUserIndex !== undefined ? brokenByUserIndex : currentUserIndex;
-    var oldStreak = cachedStreakStats.currentStreak;
-    previousStreakValue = cachedStreakStats.currentStreak;
-    streakBrokenThisTurn = true;
-    cachedStreakStats.lastStreakBrokenBy = userIndex;
-    
-    if (userIndex === 0) {
-        cachedStreakStats.user0StreaksBroken++;
-    } else {
-        cachedStreakStats.user1StreaksBroken++;
-    }
-    
-    cachedStreakStats.currentStreak = 0;
-    saveGlobalStats();
-    
-    fireStreakBrokenCallbacks(userIndex, oldStreak);
-    fireStreakChangedCallbacks(0, oldStreak);
-    
-    printDebug('Test: Broke streak (was ' + previousStreakValue + '), blamed user ' + userIndex);
-    return true;
-};
-
-// Reset all stats (testing only)
-script.testResetAllStats = function() {
-    if (!script.enableTestingMode) {
-        printWarning('testResetAllStats requires enableTestingMode to be true');
-        return false;
-    }
-    
-    cachedStreakStats = {
-        currentStreak: 0,
-        longestStreak: 0,
-        totalSnaps: 0,
-        streakStartTimestamp: Date.now(),
-        lastStreakBrokenBy: -1,
-        user0StreaksBroken: 0,
-        user1StreaksBroken: 0,
-        lastRoundCompletedDate: '',
-        roundsCompletedToday: 0
-    };
-    
-    cachedCurrentUserStats = {
-        lastSendTimestamp: 0,
-        totalResponseTime: 0,
-        responseCount: 0,
-        fastestResponse: Infinity
-    };
-    
-    cachedOtherUserStats = {
-        lastSendTimestamp: 0,
-        totalResponseTime: 0,
-        responseCount: 0,
-        fastestResponse: Infinity
-    };
-    
-    previousStreakValue = 0;
-    streakBrokenThisTurn = false;
-    pendingStreakIncrement = false;
-    
-    saveGlobalStats();
-    saveUserStats(0, cachedCurrentUserStats);
-    saveUserStats(1, cachedOtherUserStats);
-    
-    printDebug('Test: Reset all stats');
-    return true;
-};
-
-// Simulate multiple rounds quickly (testing only)
-script.testSimulateRounds = function(numRounds) {
-    if (!script.enableTestingMode) {
-        printWarning('testSimulateRounds requires enableTestingMode to be true');
-        return false;
-    }
-    
-    var oldStreak = cachedStreakStats.currentStreak;
-    
-    for (var i = 0; i < numRounds; i++) {
-        cachedStreakStats.currentStreak++;
-        cachedStreakStats.totalSnaps += 2; // Both users send
-        cachedStreakStats.roundsCompletedToday++;
-    }
-    
-    if (cachedStreakStats.currentStreak > cachedStreakStats.longestStreak) {
-        cachedStreakStats.longestStreak = cachedStreakStats.currentStreak;
-    }
-    
-    pendingStreakIncrement = true;
-    saveGlobalStats();
-    
-    fireStreakChangedCallbacks(cachedStreakStats.currentStreak, oldStreak);
-    
-    printDebug('Test: Simulated ' + numRounds + ' rounds, streak now ' + cachedStreakStats.currentStreak);
-    return true;
-};
-
-// Print current state for debugging
-script.testPrintState = function() {
-    var state = {
-        streak: cachedStreakStats.currentStreak,
-        longest: cachedStreakStats.longestStreak,
-        totalSnaps: cachedStreakStats.totalSnaps,
-        user0Broken: cachedStreakStats.user0StreaksBroken,
-        user1Broken: cachedStreakStats.user1StreaksBroken,
-        streakBrokenThisTurn: streakBrokenThisTurn,
-        previousStreak: previousStreakValue,
-        currentUser: currentUserIndex,
-        stage: currentStage
-    };
-    
-    var stateStr = JSON.stringify(state, null, 2);
-    printDebug('Current State:\n' + stateStr);
-    print('[StreakController] Current State:\n' + stateStr);
-    return state;
 };
 
 // ===== Public API - State Checks =====

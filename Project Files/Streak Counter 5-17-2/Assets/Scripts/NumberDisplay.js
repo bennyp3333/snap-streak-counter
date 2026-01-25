@@ -28,19 +28,27 @@
 var activeDigits = [];
 var currentNumber = null;
 
+var streakBroken = false;
+
 function init(){
     script.streakController.onReady(function(data) {
+        debugPrint('Streak ready, setting nummber');
         setNumber(data.currentStreak);
     });
     script.streakController.onStreakChanged(function(data) {
+        debugPrint('Streak changed, setting number');
         setNumber(data.currentStreak);
     });
     script.streakController.onStreakBroken(function(data) {
+        debugPrint('Streak changed, setting broken heart');
         setNumber(-1);
     });
 }
 
 function setNumber(num) {
+    if (streakBroken) return;
+    if (num == -1) streakBroken = true;
+
     if (num === currentNumber) {
         debugPrint("Number unchanged: " + num);
         return;

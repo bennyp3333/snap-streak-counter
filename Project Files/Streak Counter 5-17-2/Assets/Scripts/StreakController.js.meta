@@ -26,7 +26,6 @@
   ExportUid: 00000000-0000-0000-0000-000000000000
   PackagePolicy: CanBeUnpacked
   ScriptInputsHidden:
-    brokenByUserIndex: false
     enableTestingMode: false
     forceStats: false
     forceStreakBroken: false
@@ -59,7 +58,6 @@
       forceStreakValue: false
       forcedStreak: 0
       forceStreakBroken: false
-      brokenByUserIndex: 0
       forceStats: false
       forcedLongestStreak: 0
       forcedTotalSnaps: 0

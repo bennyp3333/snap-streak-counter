@@ -253,7 +253,7 @@ function expandBadge(badgeId){
     if(expanded) return;
     expanded = true;
 
-    debugPrint("Expaning badge: " + badgeId);
+    debugPrint("Expanding badge: " + badgeId);
 
     var topRight = selfScreenTransform.screenPointToLocalPoint(script.badgeEnd.localPointToScreenPoint(new vec2(1, 1)));
     var bottomLeft = selfScreenTransform.screenPointToLocalPoint(script.badgeEnd.localPointToScreenPoint(new vec2(-1, -1)));

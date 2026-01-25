@@ -2169,7 +2169,7 @@
   Enabled: true
   ScriptAsset: !<reference> 4f588529-d7a1-4792-958f-102377930869
   ScriptInputsDefault:
-    {}
+    printDebugStatements: true
   ScriptTypesDefault:
     {}
   ScriptInputs:
@@ -2187,7 +2187,7 @@
         - !<reference> f29b0dce-f13d-4b71-ae0b-c5cbb0d795da
         - !<reference> 93b83321-5de6-483f-b868-0aa8b94fc3f9
         - !<reference> 49a54351-37ca-497f-8618-467310c46ebe
-      memoCycleDelay: !<float> 4.000000
+      memoCycleDelay: !<float> 5.000000
       friendIcons: !<reference.SceneObject[]>
         - !<reference> 541cf1d2-799b-4934-9eb8-62a06ee6d7c5
         - !<reference> 521306f2-1e5a-4bec-b7d7-d9b16bbe0944
@@ -2203,7 +2203,7 @@
         - !<reference> 61f926ee-9b63-478d-bf58-5ccf2e7b5148
         - !<reference> 68e7c6df-41d8-4e2e-a9e3-114742c52e65
         - !<reference> a64be665-5169-454b-b585-9cc9566c0fe7
-      printDebugStatements: true
+      printDebugStatements: false
   ScriptTypes:
     "":
       {}
@@ -2478,8 +2478,8 @@
   Enabled: true
   IsAdvanced: false
   Constraints:
-    pinToLeft: false
-    pinToTop: false
+    pinToLeft: true
+    pinToTop: true
     pinToRight: false
     pinToBottom: false
     fixedWidth: false
@@ -2495,15 +2495,15 @@
   RawMode: true
   ForceBasic: true
   Anchor:
-    left: -0.500000
+    left: -1.000000
     bottom: 0.000000
     right: 1.000000
-    top: 0.950000
+    top: 1.000000
   Offset:
-    left: 0.000000
+    left: 10.000000
     bottom: 0.000000
     right: 0.000000
-    top: 0.000000
+    top: -10.000000
 - !<ScreenTransform/3173ef10-8856-42dc-b08f-0ffd03090181>
   PrefabRemaps:
     []
@@ -4804,6 +4804,18 @@
   RotationAngle: 0
   Pivot: {x: 0.000000, y: 0.000000}
   ExtentsTarget: !<reference> 00000000-0000-0000-0000-000000000000
+- !<Canvas/501b127b-5d26-4f2b-abe6-3211b6f7e0cd>
+  PrefabRemaps:
+    []
+  Name: Canvas
+  Enabled: true
+  UnitType: Points
+  SortingType: Hierarchy
+  WorldSpaceRect:
+    left: -15.000000
+    bottom: -20.000000
+    right: 15.000000
+    top: 20.000000
 - !<SceneObject/504c724f-d6a4-40f5-8f28-f03e42fcdcc1>
   PrefabRemaps:
     []
@@ -6531,6 +6543,7 @@
   ScriptInputsDefault:
     digitPositionY: true
     logoPositionY: true
+    debug: true
     debugName: true
     debugText: true
   ScriptTypesDefault:
@@ -6565,7 +6578,7 @@
         - !<reference> fc063a93-5519-4fef-b50a-c872a0b0949a
         - !<reference> bdac459f-c3d4-4a6a-8484-f982fc4f073e
       logoSparkles: !<reference.SceneObject> e9d05ef3-be38-4531-889e-e38436c56d50
-      debug: true
+      debug: false
       debugName: ""
       debugText: !<reference.Text> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
@@ -7516,7 +7529,7 @@
     right: 7.500000
     top: 2.250000
   OverflowVertical: Overflow
-  OverflowHorizontal: Overflow
+  OverflowHorizontal: Wrap
   Fill: !<TextFill>
     Mode: Solid
     Color: {x: 1.000000, y: 1.000000, z: 1.000000, w: 1.000000}
@@ -9545,6 +9558,7 @@
     - !<own> f03ede54-c46a-426a-b74d-a8f843f72fa2
   Components:
     - !<own> d85ce528-c14a-4ebd-9a7c-3fd5ccc60284
+    - !<own> 501b127b-5d26-4f2b-abe6-3211b6f7e0cd
 - !<ScreenTransform/a2d360d2-d36d-453b-9948-159f4c260d33>
   PrefabRemaps:
     []
@@ -9966,6 +9980,7 @@
   Enabled: true
   ScriptAsset: !<reference> e79b3a6f-7443-4f7c-9e7c-a46f404fe846
   ScriptInputsDefault:
+    debug: true
     debugName: true
     debugText: true
   ScriptTypesDefault:
@@ -9974,7 +9989,7 @@
     "":
       streakController: !<reference.ScriptComponent> d99c5880-55b6-4c85-9a5d-501f988df960
       badgeCarousel: !<reference.ScriptComponent> f6f42258-8724-42d6-998a-995aade3f913
-      debug: true
+      debug: false
       debugName: ""
       debugText: !<reference.Text> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
@@ -10333,7 +10348,6 @@
   ScriptInputsDefault:
     digitPositionY: true
     logoPositionY: true
-    debug: true
     debugName: true
     debugText: true
   ScriptTypesDefault:
@@ -10368,7 +10382,7 @@
         - !<reference> fc063a93-5519-4fef-b50a-c872a0b0949a
         - !<reference> bdac459f-c3d4-4a6a-8484-f982fc4f073e
       logoSparkles: !<reference.SceneObject> 1e46da04-7f8e-45ed-976f-5860b1515134
-      debug: false
+      debug: true
       debugName: ""
       debugText: !<reference.Text> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
@@ -13099,7 +13113,7 @@
   renderLayer: 4
   MipmapLevel: 0
   RenderOrder: 3
-  Size: 20.000000
+  Size: 1280.000000
   Near: -1.000000
   Far: 200.000000
   Fov: 63.541019
@@ -13129,6 +13143,7 @@
   Enabled: true
   ScriptAsset: !<reference> d902d943-a91e-40b0-8ff9-7cf856f0386d
   ScriptInputsDefault:
+    debug: true
     debugName: true
     debugText: true
   ScriptTypesDefault:
@@ -13138,7 +13153,7 @@
       streakController: !<reference.ScriptComponent> d99c5880-55b6-4c85-9a5d-501f988df960
       edgeMaterial: !<reference.Material> 33b1ff26-39c1-445c-aedc-229cee287f98
       smokeParticles: !<reference.SceneObject> 2b56ee26-ac73-426c-9f52-e5167f63e480
-      debug: true
+      debug: false
       debugName: ""
       debugText: !<reference.Text> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
@@ -13173,9 +13188,9 @@
   ScriptInputsDefault:
     streakWindowHours: true
     graceWindowHours: true
+    forceStreakValue: true
     forceStreakBroken: true
     forceStats: true
-    forcedLongestStreak: true
     forcedTotalSnaps: true
     forcedUser0StreaksBroken: true
     forcedUser1StreaksBroken: true
@@ -13189,17 +13204,16 @@
       graceWindowHours: !<float> 4.000000
       printDebugStatements: true
       enableTestingMode: true
-      forceStreakValue: true
+      forceStreakValue: false
       forcedStreak: 14
       forceStreakBroken: false
-      brokenByUserIndex: 1
       forceStats: false
-      forcedLongestStreak: 0
+      forcedLongestStreak: 10
       forcedTotalSnaps: 0
       forcedUser0StreaksBroken: 0
       forcedUser1StreaksBroken: 0
       forceTimeRemaining: false
-      forcedHoursRemaining: 1.170000
+      forcedHoursRemaining: 0.840000
   ScriptTypes:
     "":
       {}
@@ -13309,6 +13323,7 @@
   Enabled: true
   ScriptAsset: !<reference> 6056775e-db08-441b-aea4-74353ab5a12d
   ScriptInputsDefault:
+    debug: true
     debugName: true
     debugText: true
   ScriptTypesDefault:
@@ -13344,7 +13359,7 @@
         - !<reference> fa97ec5d-54bb-4ad9-9638-9c74677457c1
         - !<reference> 7a58558b-a573-48db-93d4-a5fdafee1992
         - !<reference> 11c70b15-b2d3-4119-a3f1-717f42a865b4
-      debug: true
+      debug: false
       debugName: Menu
       debugText: !<reference.Text> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
@@ -15226,6 +15241,7 @@
   Enabled: true
   ScriptAsset: !<reference> 21b6cede-13cd-40c5-9e1e-9dd65d705ebe
   ScriptInputsDefault:
+    debug: true
     debugName: true
     debugText: true
   ScriptTypesDefault:
@@ -15274,7 +15290,7 @@
       swipeMultiplier: 3.250000
       popupBadge: !<reference.Image> adfa2f3f-551f-44c2-9afe-4d955bf74b26
       awardTrack: !<reference.AudioTrackAsset> 1dd167ca-c73b-4c83-857c-76cab6cbe7c1
-      debug: true
+      debug: false
       debugName: ""
       debugText: !<reference.Text> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
