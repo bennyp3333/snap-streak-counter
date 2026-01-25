@@ -22,7 +22,7 @@ metaInfo:
   lensClientCompatibilities:
     - Mobile
   platformBundlesEnabled: false
-  iconHash: ""
+  iconHash: 5f71139d6af1c3ee6a6ea59cf69dd817
   videoPreviewHash: ""
   fromTemplateName: Default
   fromTemplateUrl: Lens Studio 5.15.0.25101318
