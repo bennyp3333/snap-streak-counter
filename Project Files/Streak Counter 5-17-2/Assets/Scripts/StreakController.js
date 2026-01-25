@@ -96,9 +96,38 @@ function applyTestingOverrides() {
     }
 
     if (!script.enableTestingMode) return;
-    
+
     printDebug('Testing mode enabled - applying overrides');
-    
+
+    // Force streak broken
+    if (script.forceStreakBroken) {
+        var oldStreak = cachedStreakStats.currentStreak;
+
+        // Simulate a streak break by the current user
+        if (!streakBrokenThisTurn && oldStreak > 0) {
+            streakBrokenThisTurn = true;
+            previousStreakValue = oldStreak;
+            cachedStreakStats.lastStreakBrokenBy = currentUserIndex;
+
+            if (currentUserIndex === 0) {
+                cachedStreakStats.user0StreaksBroken++;
+            } else {
+                cachedStreakStats.user1StreaksBroken++;
+            }
+
+            cachedStreakStats.currentStreak = 0;
+            cachedStreakStats.streakStartTimestamp = Date.now();
+            cachedStreakStats.lastRoundCompletedDate = '';
+            cachedStreakStats.roundsCompletedToday = 0;
+
+            printDebug('Forced streak break by user ' + currentUserIndex);
+
+            // Fire callbacks
+            fireStreakBrokenCallbacks(currentUserIndex, oldStreak);
+            fireStreakChangedCallbacks(0, oldStreak);
+        }
+    }
+
     // Force streak value
     if (script.forceStreakValue) {
         var oldStreak = cachedStreakStats.currentStreak;
@@ -245,6 +274,9 @@ async function onTurnStart(eventData) {
     } catch (e) {
         cachedDisplayNames.other = 'Friend';
     }
+
+    printDebug('current user: ' + cachedDisplayNames.current +
+                ' other user: ' + cachedDisplayNames.other);
 
     // Initialize or load stats
     await loadOrInitializeStats();
@@ -673,6 +705,10 @@ script.wasStreakBroken = function() {
 
 script.didStreakIncrement = function() {
     return pendingStreakIncrement;
+};
+
+script.getlastStreakBrokenBy = function() {
+    return cachedStreakStats ? cachedStreakStats.lastStreakBrokenBy : -1
 };
 
 script.getStreakBrokenByName = function() {

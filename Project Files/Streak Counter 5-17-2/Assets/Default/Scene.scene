@@ -13188,6 +13188,7 @@
   ScriptInputsDefault:
     streakWindowHours: true
     graceWindowHours: true
+    enableTestingMode: true
     forceStreakValue: true
     forceStreakBroken: true
     forceStats: true
@@ -13203,7 +13204,7 @@
       streakWindowHours: !<float> 24.000000
       graceWindowHours: !<float> 4.000000
       printDebugStatements: true
-      enableTestingMode: true
+      enableTestingMode: false
       forceStreakValue: false
       forcedStreak: 14
       forceStreakBroken: false

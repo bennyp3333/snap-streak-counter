@@ -250,7 +250,7 @@ function pressCallback() {
 function applyColor(color) {
 	if (!buttonImage || !buttonImage.mainPass) return;
 
-	currentAlpha = buttonImage.mainPass.baseColor.a;
+	var currentAlpha = buttonImage.mainPass.baseColor.a;
 
 	var newColor = new vec4(color.r, color.g, color.b, currentAlpha);
 	buttonImage.mainPass.baseColor = newColor;

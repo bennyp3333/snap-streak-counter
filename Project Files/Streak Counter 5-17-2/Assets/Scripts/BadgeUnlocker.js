@@ -135,12 +135,16 @@ function checkHolidayBadges() {
 
 function checkFreshStart(data) {
     // Fresh Start - awarded when restarting a streak after breaking it
-    // Current streak is 1 and there was a previous streak that was broken
-    var context = script.streakController.getMemoContext();
+    // Check if:
+    // 1. Current streak is 1 (just restarted)
+    // 2. A streak was previously broken (lastStreakBrokenBy !== -1)
+    var lastStreakBrokenBy = script.streakController.getlastStreakBrokenBy();
 
-    if (data.currentStreak === 1 && context.previousStreak > 1) {
+    if (data.currentStreak === 1 &&
+        lastStreakBrokenBy !== undefined &&
+        lastStreakBrokenBy !== -1) {
         script.badgeCarousel.unlockBadge("freshStart");
-        debugPrint("Fresh Start badge unlocked - restarted after " + context.previousStreak + " day streak");
+        debugPrint("Fresh Start badge unlocked - restarted after streak break");
     }
 }
 
