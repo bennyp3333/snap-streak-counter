@@ -3302,7 +3302,6 @@
     defaultColor: true
     pressedColor: true
     editAdvancedOptions: true
-    touchBlockingEnabled: true
     printDebugStatements: true
     printWarningStatements: true
   ScriptTypesDefault:
@@ -3330,7 +3329,7 @@
       useAudio: true
       tapAudioTrack: !<reference.AudioTrackAsset> 95392bff-ddaf-45c2-9c6e-cd65cf9ca1ef
       editAdvancedOptions: false
-      touchBlockingEnabled: true
+      touchBlockingEnabled: false
       printDebugStatements: false
       printWarningStatements: true
   ScriptTypes:
@@ -3658,7 +3657,6 @@
     defaultColor: true
     pressedColor: true
     editAdvancedOptions: true
-    touchBlockingEnabled: true
     printDebugStatements: true
     printWarningStatements: true
   ScriptTypesDefault:
@@ -3686,7 +3684,7 @@
       useAudio: true
       tapAudioTrack: !<reference.AudioTrackAsset> f76c1469-e1c1-434b-ba73-f7a5ec82a427
       editAdvancedOptions: false
-      touchBlockingEnabled: true
+      touchBlockingEnabled: false
       printDebugStatements: false
       printWarningStatements: true
   ScriptTypes:
@@ -9227,7 +9225,6 @@
     defaultColor: true
     pressedColor: true
     editAdvancedOptions: true
-    touchBlockingEnabled: true
     printDebugStatements: true
     printWarningStatements: true
   ScriptTypesDefault:
@@ -9255,7 +9252,7 @@
       useAudio: true
       tapAudioTrack: !<reference.AudioTrackAsset> 537e6e69-e3a4-4e73-a82b-a94f7bdec33d
       editAdvancedOptions: false
-      touchBlockingEnabled: true
+      touchBlockingEnabled: false
       printDebugStatements: false
       printWarningStatements: true
   ScriptTypes:
