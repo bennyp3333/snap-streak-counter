@@ -113,9 +113,11 @@ script.setPosition = function(pos, depth) {
 script.update = updatePosition;
 
 // ===== Initialize =====
-if (init()) {
-    updatePosition();
-}
+script.createEvent("OnStartEvent").bind(function(){
+    if (init()) {
+        updatePosition();
+    }
+});
 
 // ===== Debug Functions =====
 function printDebug(message) {

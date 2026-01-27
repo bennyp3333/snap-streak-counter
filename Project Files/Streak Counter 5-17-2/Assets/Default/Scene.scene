@@ -10169,7 +10169,7 @@
       faceObjects: !<reference.SceneObject[]>
         - !<reference> 38f9cc9e-8e97-4e9c-9038-c09878d62b13
       noFaceObjects: !<reference.SceneObject[]>
-        - !<reference> c92a90f5-cce2-42ae-9eb7-8c10b632967a
+        - !<reference> c5a1591b-b3de-4e57-91db-8625923b36be
       debug: true
       debugName: ""
       debugText: !<reference.Text> 00000000-0000-0000-0000-000000000000
@@ -10648,9 +10648,9 @@
       enabled: true
       attachTo: !<reference.SceneObject> 32acf3ad-1f12-4d69-9440-7358a5bb5b53
       smoothPosition: true
-      posSmoothing: !<float> 10.000000
+      posSmoothing: !<float> 20.000000
       smoothRotation: true
-      rotSmoothing: !<float> 5.000000
+      rotSmoothing: !<float> 8.000000
   ScriptTypes:
     "":
       {}
@@ -12038,7 +12038,7 @@
   LocalTransform: !<TransformEntity>
     Position: {x: -1.000000, y: 0.000000, z: 0.000000}
     Rotation: {x: 0.000000, y: 0.000000, z: 0.000000}
-    Scale: {x: 1.000000, y: 1.000000, z: 1.000000}
+    Scale: {x: 1.500000, y: 1.500000, z: 1.500000}
     HasSegmentScaleCompensation: false
   Children:
     - !<own> 9ad126c1-f531-4f4b-b792-3ef81f85053f
