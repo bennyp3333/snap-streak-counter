@@ -90,10 +90,12 @@ function printWarning(message) {
 // ===== Testing Functions =====
 
 function applyTestingOverrides() {
+    /*
     if (!global.deviceInfoSystem.isEditor()){
         script.enableTestingMode = false;
         return;
     }
+    */
 
     if (!script.enableTestingMode) return;
 

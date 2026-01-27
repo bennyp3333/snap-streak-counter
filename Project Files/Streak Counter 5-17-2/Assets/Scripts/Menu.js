@@ -16,9 +16,13 @@
 //@input SceneObject[] section2Bitmoji
 //@input SceneObject[] section3Bitmoji
 //@ui {"widget":"separator"}
+//@input bool testMode
+//@ui {"widget":"separator"}
 //@input bool debug
 //@input string debugName = "Menu" {"showIf":"debug"}
 //@input Component.Text debugText {"showIf":"debug"}
+
+var MS_PER_HOUR = 1000 * 60 * 60;
 
 var self = script.getSceneObject();
 var selfTransform = self.getTransform();
@@ -93,25 +97,45 @@ function loadStats(){
     if(!script.streakController.isReady()) return;
     script.streakController.getFullStats().then(stats => {
         script.currentStreakNum.text = stats.currentStreak.toString();
-        script.longestStreakNum.text = stats.longestStreak.toString();
-        script.totalSnapsNum.text = stats.totalSnaps.toString();
+        if(script.testMode){
+            var longestStreak = Math.max(Math.floor(Math.random() * 105), stats.currentStreak);
+            script.longestStreakNum.text = longestStreak.toString();
 
-        if(stats.averageResponseTimes.user1){
-            var formatUser1AvgRespTime = formatTime(stats.averageResponseTimes.user1.timeMs);
+            var totalSnaps = Math.max(Math.floor(Math.random() * 205), longestStreak);
+            script.totalSnapsNum.text = totalSnaps.toString();
+
+            var formatUser1AvgRespTime = formatTime(Math.floor(Math.random() * 20 * MS_PER_HOUR));
             script.avgResponseUser1Num.text = formatUser1AvgRespTime.number.toString();
             script.avgResponseUser1Units.text = formatUser1AvgRespTime.units;
-        }
-        
-        if(stats.averageResponseTimes.user2){
-            var formatUser2AvgRespTime = formatTime(stats.averageResponseTimes.user2.timeMs);
+
+            var formatUser2AvgRespTime = formatTime(Math.floor(Math.random() * 20 * MS_PER_HOUR));
             script.avgResponseUser2Num.text = formatUser2AvgRespTime.number.toString();
             script.avgResponseUser2Units.text = formatUser2AvgRespTime.units;
-        }
 
-        if(stats.fastestResponse.timeMs){
-            var formatFastestRespTime = formatTime(stats.fastestResponse.timeMs);
+            var formatFastestRespTime = formatTime(Math.floor(Math.random() * 10 * MS_PER_HOUR));
             script.fastestResponseNum.text = formatFastestRespTime.number.toString();
             script.fastestResponseUnits.text = formatFastestRespTime.units;
+        }else{
+            script.longestStreakNum.text = stats.longestStreak.toString();
+            script.totalSnapsNum.text = stats.totalSnaps.toString();
+
+            if(stats.averageResponseTimes.user1){
+                var formatUser1AvgRespTime = formatTime(stats.averageResponseTimes.user1.timeMs);
+                script.avgResponseUser1Num.text = formatUser1AvgRespTime.number.toString();
+                script.avgResponseUser1Units.text = formatUser1AvgRespTime.units;
+            }
+            
+            if(stats.averageResponseTimes.user2){
+                var formatUser2AvgRespTime = formatTime(stats.averageResponseTimes.user2.timeMs);
+                script.avgResponseUser2Num.text = formatUser2AvgRespTime.number.toString();
+                script.avgResponseUser2Units.text = formatUser2AvgRespTime.units;
+            }
+
+            if(stats.fastestResponse.timeMs){
+                var formatFastestRespTime = formatTime(stats.fastestResponse.timeMs);
+                script.fastestResponseNum.text = formatFastestRespTime.number.toString();
+                script.fastestResponseUnits.text = formatFastestRespTime.units;
+            }
         }
 
         if(stats.totalSnaps > 0){

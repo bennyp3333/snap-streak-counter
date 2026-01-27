@@ -42,6 +42,7 @@
     section2Bitmoji: false
     section3Bitmoji: false
     streakController: false
+    testMode: false
     totalSnapsBitmoji: false
     totalSnapsNum: false
   ScriptTypesHidden:
@@ -70,6 +71,7 @@
         []
       section3Bitmoji: !<reference.SceneObject[]>
         []
+      testMode: false
       debug: false
       debugName: Menu
       debugText: !<reference.Text> 00000000-0000-0000-0000-000000000000
