@@ -13390,6 +13390,7 @@
   ScriptInputsDefault:
     streakWindowHours: true
     graceWindowHours: true
+    enableTestingMode: true
     forceStreakValue: true
     forceStreakBroken: true
     forceStats: true
@@ -13405,7 +13406,7 @@
       streakWindowHours: !<float> 24.000000
       graceWindowHours: !<float> 4.000000
       printDebugStatements: true
-      enableTestingMode: true
+      enableTestingMode: false
       forceStreakValue: false
       forcedStreak: 14
       forceStreakBroken: false
@@ -13525,6 +13526,7 @@
   Enabled: true
   ScriptAsset: !<reference> 6056775e-db08-441b-aea4-74353ab5a12d
   ScriptInputsDefault:
+    testMode: true
     debug: true
     debugName: true
     debugText: true
@@ -13561,7 +13563,7 @@
         - !<reference> fa97ec5d-54bb-4ad9-9638-9c74677457c1
         - !<reference> 7a58558b-a573-48db-93d4-a5fdafee1992
         - !<reference> 11c70b15-b2d3-4119-a3f1-717f42a865b4
-      testMode: true
+      testMode: false
       debug: false
       debugName: Menu
       debugText: !<reference.Text> 00000000-0000-0000-0000-000000000000
