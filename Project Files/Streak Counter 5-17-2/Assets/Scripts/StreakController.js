@@ -90,12 +90,10 @@ function printWarning(message) {
 // ===== Testing Functions =====
 
 function applyTestingOverrides() {
-    /*
     if (!global.deviceInfoSystem.isEditor()){
         script.enableTestingMode = false;
         return;
     }
-    */
 
     if (!script.enableTestingMode) return;
 
@@ -374,6 +372,11 @@ async function loadUserStats(userIndex) {
 }
 
 function saveGlobalStats() {
+    printDebug('=== Saving Global Stats ===');
+    printDebug('currentStreak: ' + cachedStreakStats.currentStreak);
+    printDebug('lastRoundCompletedDate: "' + cachedStreakStats.lastRoundCompletedDate + '"');
+    printDebug('roundsCompletedToday: ' + cachedStreakStats.roundsCompletedToday);
+
     script.turnBased.setGlobalVariable('currentStreak', cachedStreakStats.currentStreak);
     script.turnBased.setGlobalVariable('longestStreak', cachedStreakStats.longestStreak);
     script.turnBased.setGlobalVariable('totalSnaps', cachedStreakStats.totalSnaps);
@@ -399,7 +402,7 @@ function saveUserStats(userIndex, userStats) {
 // ===== Turn Processing & Streak Logic =====
 
 async function processTurn() {
-    printDebug('Processing Turn');
+    printDebug('Processing Turn - Timestamp: ' + new Date(now).toUTCString());
     
     var now = Date.now();
     streakBrokenThisTurn = false;
@@ -487,29 +490,41 @@ function handleStreakBroken(userWhoWasLate, lastSnapTimestamp) {
 }
 
 function checkAndIncrementStreak(now) {
-    // Get today's date string for comparison
-    var todayDate = new Date(now).toDateString();
+    // Get today's date string for comparison (using UTC to avoid timezone mismatches)
+    var todayDate = new Date(now).toUTCString().split(' ').slice(0, 4).join(' '); // "Day, DD Mon YYYY" in UTC
     var lastRoundDate = cachedStreakStats.lastRoundCompletedDate;
+
+    // Debug: Log date comparison details
+    printDebug('Current UTC Date: "' + todayDate + '"');
+    printDebug('Last Round Date: "' + lastRoundDate + '"');
+    printDebug('Current Streak (before): ' + cachedStreakStats.currentStreak);
+    printDebug('Rounds Completed Today: ' + cachedStreakStats.roundsCompletedToday);
 
     // Reset daily round counter if it's a new day
     if (lastRoundDate !== todayDate) {
+        printDebug('New day detected - resetting roundsCompletedToday');
         cachedStreakStats.roundsCompletedToday = 0;
     }
 
     // Testing mode bypasses the 1-per-day limit
     var bypassDailyLimit = script.enableTestingMode;
-    
+    printDebug('Testing Mode Enabled: ' + bypassDailyLimit);
+
     // Only increment streak once per day (matching Snapchat behavior) unless testing
-    if (lastRoundDate !== todayDate || bypassDailyLimit) {
+    var shouldIncrement = lastRoundDate !== todayDate || bypassDailyLimit;
+    printDebug('Should Increment: ' + shouldIncrement + ' (datesMatch=' + (lastRoundDate === todayDate) + ', bypass=' + bypassDailyLimit + ')');
+
+    if (shouldIncrement) {
         var oldStreak = cachedStreakStats.currentStreak;
-        
+
         pendingStreakIncrement = true;
         cachedStreakStats.currentStreak++;
         cachedStreakStats.roundsCompletedToday++;
-        
+
         // Only update the date if not bypassing (so we can keep incrementing in test mode)
         if (!bypassDailyLimit) {
             cachedStreakStats.lastRoundCompletedDate = todayDate;
+            printDebug('Updated lastRoundCompletedDate to: "' + todayDate + '"');
         }
 
         // Update longest streak
@@ -517,14 +532,16 @@ function checkAndIncrementStreak(now) {
             cachedStreakStats.longestStreak = cachedStreakStats.currentStreak;
         }
 
-        printDebug('Streak incremented to ' + cachedStreakStats.currentStreak + (bypassDailyLimit ? ' (testing mode)' : ''));
-        
+        printDebug('✓ Streak INCREMENTED from ' + oldStreak + ' to ' + cachedStreakStats.currentStreak + (bypassDailyLimit ? ' (testing mode)' : ''));
+
         // Fire streak changed callback
         fireStreakChangedCallbacks(cachedStreakStats.currentStreak, oldStreak);
     } else {
-        printDebug('Round completed but streak already incremented today');
+        printDebug('✗ Streak NOT incremented - already incremented today');
         cachedStreakStats.roundsCompletedToday++;
     }
+
+    printDebug('Current Streak (after): ' + cachedStreakStats.currentStreak);
 
     saveGlobalStats();
 }

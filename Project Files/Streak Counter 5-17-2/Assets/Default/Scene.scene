@@ -9879,14 +9879,13 @@
   ScriptAsset: !<reference> 6fba5e91-bbc6-4fb1-bffe-c40cb65bc5c5
   ScriptInputsDefault:
     loggingEnabled: true
-    logLimit: true
     logTopToBottom: true
   ScriptTypesDefault:
     {}
   ScriptInputs:
     "":
       loggingEnabled: true
-      logLimit: 20
+      logLimit: 40
       logTopToBottom: false
       textComponent: !<reference.Text> 7d155c6d-1022-44ab-9299-894c94cce022
       useUniqueLayer: true
@@ -10437,6 +10436,7 @@
   ScriptInputsDefault:
     digitPositionY: true
     logoPositionY: true
+    debug: true
     debugName: true
     debugText: true
   ScriptTypesDefault:
@@ -10471,7 +10471,7 @@
         - !<reference> fc063a93-5519-4fef-b50a-c872a0b0949a
         - !<reference> bdac459f-c3d4-4a6a-8484-f982fc4f073e
       logoSparkles: !<reference.SceneObject> 1e46da04-7f8e-45ed-976f-5860b1515134
-      debug: true
+      debug: false
       debugName: ""
       debugText: !<reference.Text> 00000000-0000-0000-0000-000000000000
   ScriptTypes:
@@ -11749,7 +11749,7 @@
   PrefabRemaps:
     []
   Name: TextLogger
-  Enabled: false
+  Enabled: true
   Layers: 1
   LocalTransform: !<TransformEntity>
     Position: {x: 0.000000, y: 0.000000, z: 0.000000}
