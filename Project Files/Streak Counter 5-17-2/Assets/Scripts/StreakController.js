@@ -402,9 +402,10 @@ function saveUserStats(userIndex, userStats) {
 // ===== Turn Processing & Streak Logic =====
 
 async function processTurn() {
-    printDebug('Processing Turn - Timestamp: ' + new Date(now).toUTCString());
-    
     var now = Date.now();
+
+    printDebug('Processing Turn - Timestamp: ' + new Date(now).toUTCString());
+
     streakBrokenThisTurn = false;
     pendingStreakIncrement = false;
 
